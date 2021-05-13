@@ -9,11 +9,11 @@ public class RazerLineController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             razer.SetActive(true);
         }
-        if (Input.GetKeyUp(KeyCode.X))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             razer.SetActive(false);
         }
