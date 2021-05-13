@@ -16,14 +16,19 @@ public class RazerLine : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             canDestroy = true;
         }
-        if (Input.GetKeyUp(KeyCode.X))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             canDestroy = false;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(GameController.instance.songPosInBeats);
     }
 
     private void OnTriggerStay2D(Collider2D collision)

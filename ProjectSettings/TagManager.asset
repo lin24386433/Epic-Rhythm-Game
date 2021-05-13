@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Note
   - RazerLine
+  - LongNoteStart
+  - LongNoteEnd
   layers:
   - Default
   - TransparentFX

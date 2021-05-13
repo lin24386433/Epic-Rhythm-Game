@@ -9,6 +9,9 @@ public class GameController : MonoBehaviour
 	// See the image: http://shinerightstudio.com/posts/music-syncing-in-rhythm-games/pic1.png
 	public float[] singleNote;
 
+	public float[] longNoteStart;
+	public float[] longNoteEnd;
+
 	// How many beats each minute last.
 	public float songBPM;
 
@@ -31,13 +34,25 @@ public class GameController : MonoBehaviour
 	// Current song position. (We don't want to show this in Editor, hence the "NonSerialized")
 	public float songposition;
 
-	// Next index for the array "track".
-	private int indexOfNextNote;
+	// Next index for the array "singleNote".
+	private int indexOfNextNote = 0;
+
+	// Next index for the array "singleNote".
+	private int indexOfNextLongNote = 0;
 
 	// To record the time passed of the audio engine in the last frame. We use this to calculate the position of the song.
 	private float dsptimesong;
 
+	[SerializeField]
+	private float timeBeforeStart = 0f;
+
 	public GameObject musicNotePrefab;
+
+	public GameObject musicLongNotePrefab;
+
+	public GameObject musicLongNoteStartPrefab;
+
+	public GameObject musicLongNoteEndPrefab;
 
 	public Transform startPos;
 
@@ -47,8 +62,12 @@ public class GameController : MonoBehaviour
 
 	float beatToShow;
 
+	public static GameController instance;
+
 	void Start()
     {
+		instance = this;
+
 		// Use AudioSettings.dspTime to get the accurate time passed for the audio engine.
 		dsptimesong = (float)AudioSettings.dspTime;
 
@@ -58,8 +77,7 @@ public class GameController : MonoBehaviour
 
 		totalBeats = songAudioSource.clip.length / secPerBeat;
 
-		// Play song.
-		songAudioSource.Play();
+		StartCoroutine(WaitForPlayTime(timeBeforeStart));
 	}
 
 	void Update()
@@ -68,7 +86,7 @@ public class GameController : MonoBehaviour
 
 		songposition = (float)(AudioSettings.dspTime - dsptimesong - songOffset);
 
-		songPosInBeats = songposition / secPerBeat;
+		songPosInBeats = (songposition - timeBeforeStart) / secPerBeat;
 
 		// Check if we need to instantiate a new note. (We obtain the current beat of the song by (songposition / secondsPerBeat).)
 		// See the image for note spawning (note that the direction is reversed):
@@ -88,8 +106,41 @@ public class GameController : MonoBehaviour
 			// Update the next index.
 			indexOfNextNote++;
 		}
-		
 
+		if (indexOfNextLongNote < longNoteStart.Length && longNoteStart[indexOfNextLongNote] < beatToShow)
+		{
+
+			// Instantiate a new music note. (Search "Object Pooling" for more information if you wish to minimize the delay when instantiating game objects.)
+			// We don't care about the position and rotation because we will set them later in MusicNote.Initialize(...).
+			Note musicNoteStart = ((GameObject)Instantiate(musicLongNoteStartPrefab, new Vector2(100, 0), Quaternion.identity)).GetComponent<Note>();
+
+			musicNoteStart.Initialize(this, startPos, endPos, longNoteStart[indexOfNextLongNote]);
+
+			Note musicNoteEnd = ((GameObject)Instantiate(musicLongNoteEndPrefab, new Vector2(100, 0), Quaternion.identity)).GetComponent<Note>();
+
+			musicNoteEnd.Initialize(this, startPos, endPos, longNoteEnd[indexOfNextLongNote]);
+
+			LongNote longNote = Instantiate(musicLongNotePrefab, new Vector2(100, 0), Quaternion.identity).GetComponent<LongNote>();
+
+			longNote.startNote = musicNoteStart.gameObject;
+
+			longNote.endNote = musicNoteEnd.gameObject;
+
+			float longNoteLength = longNoteEnd[indexOfNextLongNote] - longNoteStart[indexOfNextLongNote];
+
+			Debug.Log(longNoteLength);
+
+			// Update the next index.
+			indexOfNextLongNote++;
+		}
+
+	}
+
+	IEnumerator WaitForPlayTime(float time)
+    {
+		yield return new WaitForSeconds(time);
+		// Play song.
+		songAudioSource.Play();
 	}
 
 }

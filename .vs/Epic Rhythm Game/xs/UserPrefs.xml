@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{6FC69395-A0A4-D852-4677-4ED2F4E40597}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LongNote.cs">
+    <Files>
+      <File FileName="Assets/Scripts/GameController.cs" Line="117" Column="68" />
+      <File FileName="Assets/Scripts/Note.cs" Line="33" Column="3" />
+      <File FileName="Assets/Scripts/RazerLine.cs" Line="27" Column="6" />
+      <File FileName="Assets/Scripts/LongNote.cs" Line="17" Column="6" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Epic Rhythm Game" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="LongNote.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d5280d4f-9266-4b51-a2ae-99c4dd87da3a" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
