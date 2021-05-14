@@ -9,6 +9,6 @@ public class MissDetecter : MonoBehaviour
         if(collision.tag == "Note")
             Destroy(collision.gameObject);
         if (collision.tag == "LongNoteStart")
-            Destroy(collision.transform.parent.gameObject);
+            collision.transform.parent.GetComponent<LongNote>().moving = false;
     }
 }

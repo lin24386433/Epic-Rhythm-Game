@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 229071463}
   - component: {fileID: 229071462}
   - component: {fileID: 229071461}
+  - component: {fileID: 229071467}
   - component: {fileID: 229071466}
   m_Layer: 0
   m_Name: DetectLine5
@@ -256,6 +257,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatSound: {fileID: 0}
+  keyToPress: 106
+  keyToPress2: 121
 --- !u!114 &229071462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,6 +475,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &229071467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229071459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11018fdc8bfa8c74b9868a764216e293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showLine: {fileID: 1608586840}
+  keyToPress: 106
+  keyToPress2: 121
 --- !u!1 &238593056
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,6 +586,7 @@ GameObject:
   - component: {fileID: 245789591}
   - component: {fileID: 245789590}
   - component: {fileID: 245789589}
+  - component: {fileID: 245789595}
   - component: {fileID: 245789594}
   m_Layer: 0
   m_Name: DetectLine3
@@ -605,6 +624,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatSound: {fileID: 0}
+  keyToPress: 98
+  keyToPress2: 110
 --- !u!114 &245789590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -821,6 +842,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &245789595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245789587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11018fdc8bfa8c74b9868a764216e293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showLine: {fileID: 2059869843}
+  keyToPress: 98
+  keyToPress2: 110
 --- !u!1 &314035263
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,6 +1035,7 @@ GameObject:
   - component: {fileID: 416528996}
   - component: {fileID: 416528995}
   - component: {fileID: 416528994}
+  - component: {fileID: 416529000}
   - component: {fileID: 416528999}
   m_Layer: 0
   m_Name: DetectLine2
@@ -1036,6 +1073,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatSound: {fileID: 0}
+  keyToPress: 103
+  keyToPress2: 98
 --- !u!114 &416528995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1252,6 +1291,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &416529000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416528992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11018fdc8bfa8c74b9868a764216e293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showLine: {fileID: 238593056}
+  keyToPress: 103
+  keyToPress2: 98
 --- !u!1 &418198442
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,6 +1484,7 @@ GameObject:
   - component: {fileID: 707138322}
   - component: {fileID: 707138321}
   - component: {fileID: 707138324}
+  - component: {fileID: 707138326}
   - component: {fileID: 707138325}
   m_Layer: 0
   m_Name: DetectLine1
@@ -1587,6 +1642,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatSound: {fileID: 0}
+  keyToPress: 121
+  keyToPress2: 103
 --- !u!82 &707138325
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1683,6 +1740,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &707138326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707138318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11018fdc8bfa8c74b9868a764216e293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showLine: {fileID: 892409151}
+  keyToPress: 121
+  keyToPress2: 103
 --- !u!1 &754856740
 GameObject:
   m_ObjectHideFlags: 0
@@ -2093,6 +2165,87 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1086883980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1086883981}
+  - component: {fileID: 1086883982}
+  m_Layer: 0
+  m_Name: Mask
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1086883981
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086883980}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 30, y: 30, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1676537052}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!331 &1086883982
+SpriteMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086883980}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -2135585597343286014, guid: eed45a33cd08446c8b88325cf82fc52f, type: 3}
+  m_MaskAlphaCutoff: 0
+  m_FrontSortingLayerID: 0
+  m_BackSortingLayerID: 0
+  m_FrontSortingLayer: 0
+  m_BackSortingLayer: 0
+  m_FrontSortingOrder: 0
+  m_BackSortingOrder: 0
+  m_IsCustomRangeActive: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1148723782
 GameObject:
   m_ObjectHideFlags: 0
@@ -2189,6 +2342,7 @@ GameObject:
   - component: {fileID: 1236520650}
   - component: {fileID: 1236520649}
   - component: {fileID: 1236520648}
+  - component: {fileID: 1236520654}
   - component: {fileID: 1236520653}
   m_Layer: 0
   m_Name: DetectLine4
@@ -2226,6 +2380,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatSound: {fileID: 0}
+  keyToPress: 110
+  keyToPress2: 106
 --- !u!114 &1236520649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2442,6 +2598,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1236520654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236520646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11018fdc8bfa8c74b9868a764216e293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showLine: {fileID: 982405688}
+  keyToPress: 110
+  keyToPress2: 106
 --- !u!1 &1294970450
 GameObject:
   m_ObjectHideFlags: 0
@@ -2452,7 +2623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1294970451}
   m_Layer: 0
-  m_Name: DetectLines
+  m_Name: DetectLinesGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2688,8 +2859,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1676537052}
   - component: {fileID: 1676537051}
-  - component: {fileID: 1676537050}
   - component: {fileID: 1676537053}
+  - component: {fileID: 1676537050}
   m_Layer: 0
   m_Name: MissDetecter
   m_TagString: Untagged
@@ -2697,8 +2868,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &1676537050
-BoxCollider2D:
+--- !u!58 &1676537050
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2711,18 +2882,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.5}
-  m_EdgeRadius: 0
+  m_Radius: 0.5
 --- !u!114 &1676537051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2743,9 +2904,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676537049}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_LocalPosition: {x: 0, y: -0.27, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_Children:
+  - {fileID: 1086883981}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

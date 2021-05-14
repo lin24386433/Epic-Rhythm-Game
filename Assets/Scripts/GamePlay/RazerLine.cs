@@ -7,7 +7,13 @@ public class RazerLine : MonoBehaviour
     [SerializeField]
     private AudioSource beatSound;
 
-    bool isPressed = false;
+    [SerializeField]
+    private KeyCode keyToPress;
+
+    [SerializeField]
+    private KeyCode keyToPress2;
+
+    private bool isPressed = false;
 
     private void Start()
     {
@@ -16,14 +22,19 @@ public class RazerLine : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(keyToPress) && Input.GetKey(keyToPress2))
         {
             isPressed = true;
         }
-        if (Input.GetKeyUp(KeyCode.Space))
+        else
         {
             isPressed = false;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log(Conductor.instance.songPosInBeats);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
