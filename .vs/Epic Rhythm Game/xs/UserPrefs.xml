@@ -1,11 +1,15 @@
 ﻿<Properties StartupConfiguration="{6FC69395-A0A4-D852-4677-4ED2F4E40597}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GamePlay/Note.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GamePlay/RazerLine.cs">
     <Files>
-      <File FileName="Assets/Scripts/GamePlay/RazerLine.cs" Line="30" Column="10" />
+      <File FileName="Assets/Scripts/GamePlay/RazerLine.cs" Line="25" Column="66" />
+      <File FileName="Assets/Scripts/GamePlay/CircleDetecter.cs" Line="47" Column="10" />
       <File FileName="Assets/Scripts/GamePlay/ShowLineController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/GamePlay/MissDetecter.cs" Line="4" Column="1" />
-      <File FileName="Assets/Scripts/GamePlay/LongNote.cs" Line="53" Column="11" />
+      <File FileName="Assets/Scripts/GamePlay/LongNote.cs" Line="49" Column="11" />
       <File FileName="Assets/Scripts/GamePlay/Note.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GamePlay/NoteGenerator.cs" Line="56" Column="3" />
+      <File FileName="Assets/Scripts/GamePlay/CircleNoteGenerator.cs" Line="12" Column="4" />
+      <File FileName="Assets/Scripts/GamePlay/Conductor.cs" Line="45" Column="41" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,7 +18,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
                 <Node name="GamePlay" expanded="True">
-                  <Node name="Note.cs" selected="True" />
+                  <Node name="RazerLine.cs" selected="True" />
                 </Node>
               </Node>
             </Node>

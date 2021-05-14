@@ -42,6 +42,8 @@ public class Conductor : MonoBehaviour
 
 	public GameObject musicLongNotePrefab;
 
+	public GameObject musicCircleNotePrefab;
+
 	void Start()
 	{
 		if(instance == null)
