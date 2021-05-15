@@ -35,8 +35,10 @@ public class Conductor : MonoBehaviour
 	[SerializeField]
 	private float timeBeforeStart = 0f;
 
+	[System.NonSerialized]
 	public float beatToShow;
 
+	[Space(10)]
 	[Header("Spawn Prefab")]
 	public GameObject musicNotePrefab;
 

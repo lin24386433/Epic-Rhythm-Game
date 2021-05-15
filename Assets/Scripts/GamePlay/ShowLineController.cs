@@ -7,6 +7,7 @@ public class ShowLineController : MonoBehaviour
     [SerializeField]
     private GameObject showLine;
 
+    [Space(10)]
     [SerializeField]
     private KeyCode keyToPress;
 

@@ -15,6 +15,7 @@ public class NoteGenerator : MonoBehaviour
 	// Next index for the array "singleNote".
 	private int indexOfNextLongNote = 0;
 
+	[Space(10)]
 	public Transform startPos;
 
 	public Transform endPos;

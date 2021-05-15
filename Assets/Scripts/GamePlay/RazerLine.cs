@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RazerLine : MonoBehaviour
-{
-    [SerializeField]
+{ 
     private AudioSource beatSound;
 
+    [Space(10)]
     [SerializeField]
     private KeyCode keyToPress;
 
