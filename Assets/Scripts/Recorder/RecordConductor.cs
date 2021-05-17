@@ -11,8 +11,9 @@ public class RecordConductor : MonoBehaviour
 
 	private float totalBeats;
 
+	[System.NonSerialized]
 	// How many seconds each beat last. This could be calculated by (60 / BPM).
-	private float secPerBeat;
+	public float secPerBeat;
 
 	[System.NonSerialized]
 	public float songPosInBeats;
@@ -47,11 +48,15 @@ public class RecordConductor : MonoBehaviour
 
 	public GameObject musicCircleNotePrefab;
 
-
-	void Start()
-	{
+    private void Awake()
+    {
 		if (instance == null)
 			instance = this;
+	}
+
+    void Start()
+	{
+		
 
 		// Use AudioSettings.dspTime to get the accurate time passed for the audio engine.
 		dsptimesong = (float)AudioSettings.dspTime;
@@ -62,14 +67,16 @@ public class RecordConductor : MonoBehaviour
 
 		totalBeats = songAudioSource.clip.length / secPerBeat;
 
-		StartCoroutine(WaitForPlayTime(timeBeforeStart));
+		//StartCoroutine(WaitForPlayTime(timeBeforeStart));
 	}
 
 	void Update()
 	{
 		songposition = (float)(AudioSettings.dspTime - dsptimesong - songOffset);
 
-		songPosInBeats = (songposition - timeBeforeStart) / secPerBeat;
+		//songPosInBeats = (songposition - timeBeforeStart) / secPerBeat;
+
+		songPosInBeats = songAudioSource.time / secPerBeat;
 
 		beatToShow = songposition / secPerBeat + BeatsShownInAdvance;
 

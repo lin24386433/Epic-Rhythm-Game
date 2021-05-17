@@ -9,21 +9,41 @@ public class NoteRecorder : MonoBehaviour
 	public float[] longNoteStart;
 	public float[] longNoteEnd;
 
-	// Next index for the array "singleNote".
-	private int indexOfNextNote = 0;
-
-	// Next index for the array "singleNote".
-	private int indexOfNextLongNote = 0;
-
 	[Space(10)]
 	public Transform startPos;
 
 	public Transform endPos;
 
-	private void Update()
+	private GameObject notesPool;
+
+	[SerializeField]
+	private KeyCode keyToPress;
+
+    private void Start()
+    {
+		SpawnNotes();
+	}
+
+    private void Update()
 	{
+        if (Input.GetKeyDown(keyToPress))
+        {
+			 
+        }
+	}
+
+	private void SpawnNotes()
+    {
+		notesPool = new GameObject(this.gameObject.name + " NotesPool");
+
+		// Next index for the array "singleNote".
+		int indexOfNextNote = 0;
+
+		// Next index for the array "singleNote".
+		int indexOfNextLongNote = 0;
+
 		// Check if there are still notes in the track, and check if the next note is within the bounds we intend to show on screen.
-		if (indexOfNextNote < singleNote.Length && singleNote[indexOfNextNote] < RecordConductor.instance.beatToShow)
+		while (indexOfNextNote < singleNote.Length)
 		{
 
 			// Instantiate a new music note. (Search "Object Pooling" for more information if you wish to minimize the delay when instantiating game objects.)
@@ -32,11 +52,13 @@ public class NoteRecorder : MonoBehaviour
 
 			musicNote.Initialize(RecordConductor.instance, startPos, endPos, singleNote[indexOfNextNote]);
 
+			musicNote.transform.SetParent(notesPool.transform);
+
 			// Update the next index.
 			indexOfNextNote++;
 		}
 
-		if (indexOfNextLongNote < longNoteStart.Length && longNoteStart[indexOfNextLongNote] < RecordConductor.instance.beatToShow)
+		while (indexOfNextLongNote < longNoteStart.Length)
 		{
 
 			// Instantiate a new music note. (Search "Object Pooling" for more information if you wish to minimize the delay when instantiating game objects.)
@@ -51,8 +73,11 @@ public class NoteRecorder : MonoBehaviour
 
 			longNote.Initialize(RecordConductor.instance, startPos, endPos);
 
+			longNote.transform.SetParent(notesPool.transform);
+
 			// Update the next index.
 			indexOfNextLongNote++;
 		}
 	}
+
 }
