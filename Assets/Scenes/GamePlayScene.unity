@@ -291,7 +291,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e83fca7d94f3f4097493a57296d77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beatSound: {fileID: 0}
   keyToPress: 106
   keyToPress2: 121
 --- !u!114 &229071462
@@ -422,7 +421,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c50a45eefba2e3548b175ca484105258, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 32f190c4f4b343941914b74a5afa3921, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -656,7 +655,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e83fca7d94f3f4097493a57296d77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beatSound: {fileID: 0}
   keyToPress: 98
   keyToPress2: 110
 --- !u!114 &245789590
@@ -791,7 +789,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c50a45eefba2e3548b175ca484105258, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 32f190c4f4b343941914b74a5afa3921, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1077,7 +1075,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.0000001
+  m_Radius: 0.8
 --- !u!50 &382139537
 Rigidbody2D:
   serializedVersion: 4
@@ -1124,7 +1122,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c50a45eefba2e3548b175ca484105258, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 32f190c4f4b343941914b74a5afa3921, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1275,7 +1273,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e83fca7d94f3f4097493a57296d77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beatSound: {fileID: 0}
   keyToPress: 103
   keyToPress2: 98
 --- !u!114 &416528995
@@ -1294,6 +1291,17 @@ MonoBehaviour:
   - 6
   - 6.5
   - 7.5
+  - 45
+  - 46
+  - 47
+  - 48
+  - 49
+  - 50
+  - 51
+  - 52
+  - 53
+  - 54
+  - 55
   longNoteStart: []
   longNoteEnd: []
   startPos: {fileID: 226108635}
@@ -1406,7 +1414,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c50a45eefba2e3548b175ca484105258, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 32f190c4f4b343941914b74a5afa3921, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1610,7 +1618,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.0000002
+  m_Radius: 0.8
 --- !u!50 &418198446
 Rigidbody2D:
   serializedVersion: 4
@@ -1657,7 +1665,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c50a45eefba2e3548b175ca484105258, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 32f190c4f4b343941914b74a5afa3921, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2107,6 +2115,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   singleNote:
   - 2
+  - 30
+  - 31.5
+  - 32
+  - 32.5
+  - 33
+  - 33.5
+  - 34
+  - 34.5
+  - 35
+  - 35.5
+  - 36
+  - 36.5
+  - 37
+  - 37.5
+  - 38
+  - 38.5
+  - 39
+  - 39.5
+  - 40
+  - 40.5
+  - 41
+  - 41.5
+  - 42
   longNoteStart:
   - 3.5
   longNoteEnd:
@@ -2172,7 +2203,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e83fca7d94f3f4097493a57296d77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beatSound: {fileID: 0}
   keyToPress: 121
   keyToPress2: 103
 --- !u!82 &707138325
@@ -2185,7 +2215,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c50a45eefba2e3548b175ca484105258, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 32f190c4f4b343941914b74a5afa3921, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2880,7 +2910,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.0000001
+  m_Radius: 0.8
 --- !u!50 &1148723786
 Rigidbody2D:
   serializedVersion: 4
@@ -2927,7 +2957,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c50a45eefba2e3548b175ca484105258, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 32f190c4f4b343941914b74a5afa3921, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3078,7 +3108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e83fca7d94f3f4097493a57296d77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beatSound: {fileID: 0}
   keyToPress: 110
   keyToPress2: 106
 --- !u!114 &1236520649
@@ -3097,6 +3126,17 @@ MonoBehaviour:
   - 17
   - 17.5
   - 18.5
+  - 44.5
+  - 45.5
+  - 46.5
+  - 47.5
+  - 48.5
+  - 49.5
+  - 50.5
+  - 51.5
+  - 52.5
+  - 53.5
+  - 54.5
   longNoteStart: []
   longNoteEnd: []
   startPos: {fileID: 824421183}
@@ -3209,7 +3249,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c50a45eefba2e3548b175ca484105258, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 32f190c4f4b343941914b74a5afa3921, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3793,7 +3833,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.9999999
+  m_Radius: 0.8
 --- !u!50 &1670678872
 Rigidbody2D:
   serializedVersion: 4
@@ -3840,7 +3880,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c50a45eefba2e3548b175ca484105258, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 32f190c4f4b343941914b74a5afa3921, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -4261,7 +4301,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.0000001
+  m_Radius: 0.8
 --- !u!114 &1753781856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4274,7 +4314,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f939391f3ec443fc96502ee69ac551a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  singleNote: []
+  singleNote:
+  - 60
+  - 60.5
+  - 61
+  - 61.5
+  - 62
+  - 62.5
+  - 63
+  - 63.5
+  - 64
+  - 64.5
+  - 65
+  - 65.5
+  - 66
+  - 66.5
+  - 67
+  - 67.5
+  - 68
+  - 68.5
+  - 69
+  - 69.5
+  - 70
   startPos: {fileID: 1483497483}
   endPos: {fileID: 1753781853}
 --- !u!82 &1753781857
@@ -4287,7 +4348,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c50a45eefba2e3548b175ca484105258, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 32f190c4f4b343941914b74a5afa3921, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

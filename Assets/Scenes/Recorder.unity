@@ -1595,7 +1595,7 @@ MonoBehaviour:
   - 9
   startPos: {fileID: 684205918}
   endPos: {fileID: 841076622}
-  keyToPress: 0
+  keyToPress: 122
 --- !u!1 &855701388
 GameObject:
   m_ObjectHideFlags: 0

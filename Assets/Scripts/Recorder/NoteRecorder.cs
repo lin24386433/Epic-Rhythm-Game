@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NoteRecorder : MonoBehaviour
 {
-	public float[] singleNote;
+	public List<float> singleNote;
 
 	public float[] longNoteStart;
 	public float[] longNoteEnd;
@@ -21,6 +21,8 @@ public class NoteRecorder : MonoBehaviour
 
     private void Start()
     {
+		singleNote = new List<float>();
+
 		SpawnNotes();
 	}
 
@@ -28,8 +30,9 @@ public class NoteRecorder : MonoBehaviour
 	{
         if (Input.GetKeyDown(keyToPress))
         {
-			 
-        }
+			singleNote.Add(RecordConductor.instance.songPosInBeats);
+			SpawnNotes();
+		}
 	}
 
 	private void SpawnNotes()
@@ -43,7 +46,7 @@ public class NoteRecorder : MonoBehaviour
 		int indexOfNextLongNote = 0;
 
 		// Check if there are still notes in the track, and check if the next note is within the bounds we intend to show on screen.
-		while (indexOfNextNote < singleNote.Length)
+		while (indexOfNextNote < singleNote.Count)
 		{
 
 			// Instantiate a new music note. (Search "Object Pooling" for more information if you wish to minimize the delay when instantiating game objects.)

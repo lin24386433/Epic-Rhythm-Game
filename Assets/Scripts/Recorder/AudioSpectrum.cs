@@ -41,8 +41,6 @@ public class AudioSpectrum : MonoBehaviour
     {
 		int sampleRate = (int)(RecordConductor.instance.songAudioSource.clip.frequency);
 
-		Debug.Log(sampleRate);
-
 		int samolesPerSec = sampleRate / 100;
 
 		for (int i = 0; i < sampleRate * (int)RecordConductor.instance.songAudioSource.clip.length; i += samolesPerSec)

@@ -35,6 +35,7 @@ public class Recorder : MonoBehaviour
     private void Update()
     {
         UIUpdate();
+
         if(RecordConductor.instance.songAudioSource.time == RecordConductor.instance.songAudioSource.clip.length)
         {
             RecordConductor.instance.songAudioSource.Stop();

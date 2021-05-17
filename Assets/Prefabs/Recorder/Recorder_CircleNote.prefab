@@ -117,3 +117,6 @@ MonoBehaviour:
   endPos: {fileID: 0}
   beat: 0
   moving: 1
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
