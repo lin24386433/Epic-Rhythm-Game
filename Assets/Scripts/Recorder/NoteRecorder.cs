@@ -6,8 +6,8 @@ public class NoteRecorder : MonoBehaviour
 {
 	public List<float> singleNote;
 
-	public float[] longNoteStart;
-	public float[] longNoteEnd;
+	public List<float> longNoteStart;
+	public List<float> longNoteEnd;
 
 	[Space(10)]
 	public Transform startPos;
@@ -21,15 +21,15 @@ public class NoteRecorder : MonoBehaviour
 
     private void Start()
     {
-		singleNote = new List<float>();
 
 		SpawnNotes();
 	}
 
     private void Update()
 	{
-        if (Input.GetKeyDown(keyToPress))
+        if (Input.GetKeyDown(keyToPress) && BeatNowAvaliable(RecordConductor.instance.songPosInBeats))
         {
+			Destroy(notesPool);
 			singleNote.Add(RecordConductor.instance.songPosInBeats);
 			SpawnNotes();
 		}
@@ -53,7 +53,7 @@ public class NoteRecorder : MonoBehaviour
 			// We don't care about the position and rotation because we will set them later in MusicNote.Initialize(...).
 			RecorderNote musicNote = ((GameObject)Instantiate(RecordConductor.instance.musicNotePrefab, startPos.transform.position, startPos.transform.rotation)).GetComponent<RecorderNote>();
 
-			musicNote.Initialize(RecordConductor.instance, startPos, endPos, singleNote[indexOfNextNote]);
+			musicNote.Initialize(RecordConductor.instance, this, startPos, endPos, singleNote[indexOfNextNote]);
 
 			musicNote.transform.SetParent(notesPool.transform);
 
@@ -61,7 +61,7 @@ public class NoteRecorder : MonoBehaviour
 			indexOfNextNote++;
 		}
 
-		while (indexOfNextLongNote < longNoteStart.Length)
+		while (indexOfNextLongNote < longNoteStart.Count)
 		{
 
 			// Instantiate a new music note. (Search "Object Pooling" for more information if you wish to minimize the delay when instantiating game objects.)
@@ -70,9 +70,9 @@ public class NoteRecorder : MonoBehaviour
 
 			RecorderLongNote longNote = Instantiate(RecordConductor.instance.musicLongNotePrefab, startPos.transform.position, startPos.transform.rotation).GetComponent<RecorderLongNote>();
 
-			longNote.startNote.GetComponent<RecorderNote>().Initialize(RecordConductor.instance, startPos, endPos, longNoteStart[indexOfNextLongNote]);
+			longNote.startNote.GetComponent<RecorderNote>().Initialize(RecordConductor.instance, this, startPos, endPos, longNoteStart[indexOfNextLongNote]);
 
-			longNote.endNote.GetComponent<RecorderNote>().Initialize(RecordConductor.instance, startPos, endPos, longNoteEnd[indexOfNextLongNote]);
+			longNote.endNote.GetComponent<RecorderNote>().Initialize(RecordConductor.instance, this, startPos, endPos, longNoteEnd[indexOfNextLongNote]);
 
 			longNote.Initialize(RecordConductor.instance, startPos, endPos);
 
@@ -81,6 +81,35 @@ public class NoteRecorder : MonoBehaviour
 			// Update the next index.
 			indexOfNextLongNote++;
 		}
+	}
+
+	bool BeatNowAvaliable(float beatNow)
+    {
+		foreach(float f in singleNote)
+        {
+			if (f == beatNow)
+				return false;
+        }
+
+		for(int i = 0; i < longNoteStart.Count; i++)
+        {
+			if (beatNow >= longNoteStart[i] && beatNow <= longNoteEnd[i])
+				return false;
+        }
+
+		return true;
+    }
+
+	public void DeleteNote(float beat)
+    {
+		Debug.Log("Delete : " + beat);
+		for(int i = 0; i < singleNote.Count; i++)
+        {
+			if(beat == singleNote[i])
+				singleNote.Remove(beat);
+		}
+		Destroy(notesPool);
+		SpawnNotes();
 	}
 
 }

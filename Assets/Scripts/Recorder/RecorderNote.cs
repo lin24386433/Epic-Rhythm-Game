@@ -8,6 +8,8 @@ public class RecorderNote : MonoBehaviour
 	// Keep a reference of the conductor.
 	private RecordConductor conductor;
 
+	private NoteRecorder recorder;
+
 	public bool moving = true;
 
 	public float beat = 0f;
@@ -21,16 +23,20 @@ public class RecorderNote : MonoBehaviour
 
 	[Space(20)]
 	[SerializeField]
-	private UnityEvent OnClick = new UnityEvent();
+	private UnityEvent OnLeftClick = new UnityEvent();
+
+	[SerializeField]
+	private UnityEvent OnRightClick = new UnityEvent();
 
 	private void Start()
     {
-		OnClick.AddListener(OnClicked);
+		OnLeftClick.AddListener(OnClicked);
     }
 
-    public void Initialize(RecordConductor conductor, Transform startPoint, Transform endPoint, float beat)
+    public void Initialize(RecordConductor conductor, NoteRecorder recorder, Transform startPoint, Transform endPoint, float beat)
 	{
 		this.conductor = conductor;
+		this.recorder = recorder;
 		this.startPos = startPoint;
 		this.endPos = endPoint;
 		this.beat = beat;
@@ -55,9 +61,24 @@ public class RecorderNote : MonoBehaviour
 
 			if (hit.collider.gameObject == this.gameObject)
 			{
-				Debug.Log("Button Clicked");
-				OnClick.Invoke();
+				OnLeftClick.Invoke();
             }
+		}
+
+		if (Input.GetMouseButtonDown(1))
+		{
+			Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
+
+			RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+
+			if (hit == false)
+				return;
+
+			if (hit.collider.gameObject == this.gameObject)
+			{
+				recorder.DeleteNote(beat);
+			}
 
 		}
 

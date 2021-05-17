@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CircleNoteRecorder : MonoBehaviour
 {
-	public float[] singleNote;
+	public List<float> singleNote;
 
 	/*
 	public float[] longNoteStart;
@@ -38,15 +38,15 @@ public class CircleNoteRecorder : MonoBehaviour
 		int indexOfNextNote = 0;
 
 		// Check if there are still notes in the track, and check if the next note is within the bounds we intend to show on screen.
-		while (indexOfNextNote < singleNote.Length)
+		while (indexOfNextNote < singleNote.Count)
 		{
 
 			// Instantiate a new music note. (Search "Object Pooling" for more information if you wish to minimize the delay when instantiating game objects.)
 			// We don't care about the position and rotation because we will set them later in MusicNote.Initialize(...).
 
-			RecorderNote musicNote = Instantiate(RecordConductor.instance.musicCircleNotePrefab, startPos.transform.position, startPos.transform.rotation).GetComponent<RecorderNote>();
+			RecorderCircleNote musicNote = Instantiate(RecordConductor.instance.musicCircleNotePrefab, startPos.transform.position, startPos.transform.rotation).GetComponent<RecorderCircleNote>();
 
-			musicNote.Initialize(RecordConductor.instance, startPos, endPos, singleNote[indexOfNextNote]);
+			musicNote.Initialize(RecordConductor.instance, this, startPos, endPos, singleNote[indexOfNextNote]);
 
 			musicNote.transform.SetParent(notesPool.transform);
 
@@ -74,4 +74,26 @@ public class CircleNoteRecorder : MonoBehaviour
 		}
 		*/
 	}
+
+	bool BeatNowAvaliable(float beatNow)
+	{
+		foreach (float f in singleNote)
+		{
+			if (f == beatNow)
+				return false;
+		}
+
+		return true;
+	}
+
+	public void DeleteNote(float beat)
+	{
+		foreach (float f in singleNote)
+		{
+			if (f == beat)
+				singleNote.Remove(f);
+		}
+		SpawnNotes();
+	}
+
 }

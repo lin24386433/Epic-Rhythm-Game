@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6093171783776172137}
   - component: {fileID: 2140024129716632702}
   - component: {fileID: 3977926260185927217}
-  - component: {fileID: 8777270796192437053}
+  - component: {fileID: -4374107367023778122}
   m_Layer: 0
   m_Name: Recorder_CircleNote
   m_TagString: Note
@@ -100,7 +100,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.5
---- !u!114 &8777270796192437053
+--- !u!114 &-4374107367023778122
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,14 +109,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 9172174244333824173}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e4bba4f885c86346b7fb56bbba0526f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bafb6b6991014f4197cd4740a2d971e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conductor: {fileID: 0}
+  moving: 1
+  beat: 0
   startPos: {fileID: 0}
   endPos: {fileID: 0}
-  beat: 0
-  moving: 1
-  OnClick:
+  OnLeftClick:
+    m_PersistentCalls:
+      m_Calls: []
+  OnRightClick:
     m_PersistentCalls:
       m_Calls: []
