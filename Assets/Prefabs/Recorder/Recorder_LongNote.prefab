@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2920533002752592064}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.327, z: 0}
+  m_LocalPosition: {x: 0, y: -5.327, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5113919363781875966}
@@ -122,11 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e4bba4f885c86346b7fb56bbba0526f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conductor: {fileID: 0}
-  startPos: {fileID: 0}
-  endPos: {fileID: 0}
-  beat: 0
-  moving: 1
 --- !u!1 &3293014778505740988
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3293014778505740988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.327, z: 0}
+  m_LocalPosition: {x: 0, y: 5.327, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5113919363781875966}
@@ -249,11 +244,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e4bba4f885c86346b7fb56bbba0526f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  conductor: {fileID: 0}
-  startPos: {fileID: 0}
-  endPos: {fileID: 0}
-  beat: 0
-  moving: 1
 --- !u!1 &5353405097521912894
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7363552304121168470}
   - component: {fileID: 1608380697696871171}
-  - component: {fileID: 9186407435835759501}
+  - component: {fileID: 600765510926777487}
   m_Layer: 0
   m_Name: middle
   m_TagString: LongNoteMiddle
@@ -337,14 +327,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
---- !u!61 &9186407435835759501
+--- !u!61 &600765510926777487
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5353405097521912894}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -361,7 +351,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5, y: 10}
+  m_Size: {x: 5, y: 12}
   m_EdgeRadius: 0
 --- !u!1 &8215479040168770643
 GameObject:

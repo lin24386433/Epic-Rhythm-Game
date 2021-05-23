@@ -10,7 +10,10 @@ public class CircleDetecter : MonoBehaviour
     [SerializeField]
     private KeyCode keyToPress;
 
-    private bool isPressed = false;
+    //
+    bool canDestroy = false;
+
+    GameObject obj;
 
     private void Start()
     {
@@ -19,31 +22,36 @@ public class CircleDetecter : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(keyToPress))
+        if(canDestroy)
         {
-            isPressed = true;
-        }
-        else
-        {
-            isPressed = false;
+            if (Input.GetKeyDown(keyToPress))
+            {
+                Destroy(obj);
+                beatSound.Play();
+            }
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(Conductor.instance.songPosInBeats);
+        if (collision.CompareTag("Note"))
+            canDestroy = true;
+        
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Note")
+        if(collision.CompareTag("Note"))
         {
-            if (isPressed)
-            {
-                Destroy(collision.gameObject);
-                beatSound.Play();
-            }
-
+            if (obj == null)
+                obj = collision.gameObject;
         }
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Note"))
+            canDestroy = false;
     }
 }

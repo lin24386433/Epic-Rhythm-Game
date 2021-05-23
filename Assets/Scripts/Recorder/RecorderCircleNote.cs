@@ -8,31 +8,27 @@ public class RecorderCircleNote : MonoBehaviour
 	// Keep a reference of the conductor.
 	private RecordConductor conductor;
 
-	private CircleNoteRecorder recorder;
+	[System.NonSerialized]
+	public CircleNoteRecorder recorder;
 
-	public bool moving = true;
+	private bool moving = true;
 
+	[System.NonSerialized]
 	public float beat = 0f;
 
-	[SerializeField]
 	private Transform startPos;
 
-	[SerializeField]
 	private Transform endPos;
 
-
-	[Space(20)]
-	[SerializeField]
-	private UnityEvent OnLeftClick = new UnityEvent();
-
-	[SerializeField]
-	private UnityEvent OnRightClick = new UnityEvent();
-
-	private void Start()
+	private void Update()
 	{
-		OnLeftClick.AddListener(OnClicked);
+		Movement();
+
+		MouseInput();
+
 	}
 
+	#region FUNC:Initialize(RecordConductor conductor, CircleNoteRecorder recorder, Transform startPoint, Transform endPoint, float beat)
 	public void Initialize(RecordConductor conductor, CircleNoteRecorder recorder, Transform startPoint, Transform endPoint, float beat)
 	{
 		this.conductor = conductor;
@@ -45,10 +41,20 @@ public class RecorderCircleNote : MonoBehaviour
 		transform.position = startPoint.position;
 		moving = true;
 	}
+	#endregion
 
-	void Update()
+	#region FUNC:Movement
+	private void Movement()
 	{
+		if (moving)
+		{
+			transform.position = startPos.position + (endPos.position - startPos.position) * (1f - ((beat - conductor.songPosInBeats) / conductor.BeatsShownInAdvance));
+		}
+	}
+	#endregion
 
+	private void MouseInput()
+	{
 		if (Input.GetMouseButtonDown(0))
 		{
 			Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -59,9 +65,9 @@ public class RecorderCircleNote : MonoBehaviour
 			if (hit == false)
 				return;
 
-			if (hit.collider.gameObject == this.gameObject)
+			if (hit.collider.gameObject == this.gameObject && !GameObject.Find("Recorder").GetComponent<Recorder>().noteDetailWindow.activeSelf && mousePos.y >= -2)
 			{
-				OnLeftClick.Invoke();
+				OnClicked();
 			}
 		}
 
@@ -75,22 +81,17 @@ public class RecorderCircleNote : MonoBehaviour
 			if (hit == false)
 				return;
 
-			if (hit.collider.gameObject == this.gameObject)
+			if (hit.collider.gameObject == this.gameObject && mousePos.y >= -2)
 			{
 				recorder.DeleteNote(beat);
 			}
 
 		}
-
-		if (moving)
-		{
-			transform.position = startPos.position + (endPos.position - startPos.position) * (1f - ((beat - conductor.songPosInBeats) / conductor.BeatsShownInAdvance));
-		}
-
 	}
 
 	private void OnClicked()
 	{
-
+		GameObject.Find("Recorder").GetComponent<Recorder>().noteDetailWindow.SetActive(true);
+		GameObject.Find("Recorder").GetComponent<Recorder>().noteDetailWindow.GetComponent<NoteDetailWindow>().Init(this);
 	}
 }

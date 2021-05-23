@@ -1,39 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class RecorderNote : MonoBehaviour
 {
 	// Keep a reference of the conductor.
 	private RecordConductor conductor;
 
-	private NoteRecorder recorder;
+	[System.NonSerialized]
+	public NoteRecorder recorder;
 
+	[System.NonSerialized]
 	public bool moving = true;
 
+	[System.NonSerialized]
 	public float beat = 0f;
 
-	[SerializeField]
 	private Transform startPos;
 
-	[SerializeField]
 	private Transform endPos;
 
+	private void Update()
+	{
+		Movement();
 
-	[Space(20)]
-	[SerializeField]
-	private UnityEvent OnLeftClick = new UnityEvent();
+		MouseInput();
 
-	[SerializeField]
-	private UnityEvent OnRightClick = new UnityEvent();
+	}
 
-	private void Start()
-    {
-		OnLeftClick.AddListener(OnClicked);
-    }
-
-    public void Initialize(RecordConductor conductor, NoteRecorder recorder, Transform startPoint, Transform endPoint, float beat)
+	#region FUNC:Initialize(RecordConductor conductor, NoteRecorder recorder, Transform startPoint, Transform endPoint, float beat)
+	public void Initialize(RecordConductor conductor, NoteRecorder recorder, Transform startPoint, Transform endPoint, float beat)
 	{
 		this.conductor = conductor;
 		this.recorder = recorder;
@@ -45,11 +41,21 @@ public class RecorderNote : MonoBehaviour
 		transform.position = startPoint.position;
 		moving = true;
 	}
+    #endregion
 
-	void Update()
-	{
+	#region FUNC:Movement
+	private void Movement()
+    {
+		if (moving)
+		{
+			transform.position = startPos.position + (endPos.position - startPos.position) * (1f - ((beat - conductor.songPosInBeats) / conductor.BeatsShownInAdvance));
+		}
+	}
+    #endregion
 
-		if (Input.GetMouseButtonDown(0))  
+    private void MouseInput()
+    {
+		if (Input.GetMouseButtonDown(0))
 		{
 			Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
@@ -59,10 +65,10 @@ public class RecorderNote : MonoBehaviour
 			if (hit == false)
 				return;
 
-			if (hit.collider.gameObject == this.gameObject)
+			if (hit.collider.gameObject == this.gameObject && CheckBeatInSingleNotes(beat) && !GameObject.Find("Recorder").GetComponent<Recorder>().noteDetailWindow.activeSelf && mousePos.y >= -2)
 			{
-				OnLeftClick.Invoke();
-            }
+				OnClicked();
+			}
 		}
 
 		if (Input.GetMouseButtonDown(1))
@@ -75,24 +81,30 @@ public class RecorderNote : MonoBehaviour
 			if (hit == false)
 				return;
 
-			if (hit.collider.gameObject == this.gameObject)
+			if (hit.collider.gameObject == this.gameObject && mousePos.y >= -2)
 			{
 				recorder.DeleteNote(beat);
 			}
 
 		}
-
-		if (moving)
-		{
-			transform.position = startPos.position + (endPos.position - startPos.position) * (1f - ((beat - conductor.songPosInBeats) / conductor.BeatsShownInAdvance));
-		}
-
 	}
 
 	private void OnClicked()
     {
+		GameObject.Find("Recorder").GetComponent<Recorder>().noteDetailWindow.SetActive(true);
+		GameObject.Find("Recorder").GetComponent<Recorder>().noteDetailWindow.GetComponent<NoteDetailWindow>().Init(this);
+	}
 
+	private bool CheckBeatInSingleNotes(float beat)
+    {
+		foreach(float f in recorder.singleNote)
+        {
+			if(beat == f)
+            {
+				return true;
+            }
+        }
+		return false;
     }
-
 
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class NoteGenerator : MonoBehaviour
 {
-	public float[] singleNote;
+	public List<float> singleNote;
 
-	public float[] longNoteStart;
-	public float[] longNoteEnd;
+	public List<float> longNoteStart;
+	public List<float> longNoteEnd;
 
 	// Next index for the array "singleNote".
 	private int indexOfNextNote = 0;
@@ -23,7 +23,7 @@ public class NoteGenerator : MonoBehaviour
     private void Update()
     {
 		// Check if there are still notes in the track, and check if the next note is within the bounds we intend to show on screen.
-		if (indexOfNextNote < singleNote.Length && singleNote[indexOfNextNote] < Conductor.instance.beatToShow)
+		if (indexOfNextNote < singleNote.Count && singleNote[indexOfNextNote] < Conductor.instance.beatToShow)
 		{
 
 			// Instantiate a new music note. (Search "Object Pooling" for more information if you wish to minimize the delay when instantiating game objects.)
@@ -36,7 +36,7 @@ public class NoteGenerator : MonoBehaviour
 			indexOfNextNote++;
 		}
 
-		if (indexOfNextLongNote < longNoteStart.Length && longNoteStart[indexOfNextLongNote] < Conductor.instance.beatToShow)
+		if (indexOfNextLongNote < longNoteStart.Count && longNoteStart[indexOfNextLongNote] < Conductor.instance.beatToShow)
 		{
 
 			// Instantiate a new music note. (Search "Object Pooling" for more information if you wish to minimize the delay when instantiating game objects.)

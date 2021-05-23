@@ -293,6 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyToPress: 106
   keyToPress2: 121
+  obj: {fileID: 0}
 --- !u!114 &229071462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,12 +306,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eda95348dee42e43aec61d407ac5877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  singleNote:
-  - 2.5
-  longNoteStart:
-  - 21
-  longNoteEnd:
-  - 23.5
+  singleNote: []
+  longNoteStart: []
+  longNoteEnd: []
   startPos: {fileID: 633444763}
   endPos: {fileID: 229071460}
 --- !u!50 &229071463
@@ -358,7 +356,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 10}
   m_EdgeRadius: 0
 --- !u!212 &229071465
 SpriteRenderer:
@@ -657,6 +655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyToPress: 98
   keyToPress2: 110
+  obj: {fileID: 0}
 --- !u!114 &245789590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -669,16 +668,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eda95348dee42e43aec61d407ac5877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  singleNote:
-  - 10
-  - 10.5
-  - 11.5
-  - 12
-  - 14
-  - 14.5
-  - 15
-  longNoteStart: []
-  longNoteEnd: []
+  singleNote: []
+  longNoteStart:
+  - 5
+  longNoteEnd:
+  - 8
   startPos: {fileID: 1734527610}
   endPos: {fileID: 245789588}
 --- !u!50 &245789591
@@ -726,7 +720,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 10}
   m_EdgeRadius: 0
 --- !u!212 &245789593
 SpriteRenderer:
@@ -890,6 +884,62 @@ MonoBehaviour:
   showLine: {fileID: 2059869843}
   keyToPress: 98
   keyToPress2: 110
+--- !u!1 &306154698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 306154700}
+  - component: {fileID: 306154699}
+  m_Layer: 0
+  m_Name: DataController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &306154699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306154698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266348e322a8b744faff4137a5add193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circleGenerator:
+  - {fileID: 1753781856}
+  - {fileID: 382139538}
+  - {fileID: 418198447}
+  - {fileID: 1670678873}
+  - {fileID: 1148723787}
+  noteGenerator:
+  - {fileID: 707138321}
+  - {fileID: 416528995}
+  - {fileID: 245789590}
+  - {fileID: 1236520649}
+  - {fileID: 229071462}
+  songName: Gurenge
+--- !u!4 &306154700
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306154698}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 192.35158, y: 76.257965, z: -135.71191}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &314035263
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,6 +1325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyToPress: 103
   keyToPress2: 98
+  obj: {fileID: 0}
 --- !u!114 &416528995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1288,20 +1339,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   singleNote:
-  - 6
-  - 6.5
-  - 7.5
-  - 45
-  - 46
-  - 47
-  - 48
-  - 49
-  - 50
-  - 51
-  - 52
-  - 53
-  - 54
-  - 55
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
   longNoteStart: []
   longNoteEnd: []
   startPos: {fileID: 226108635}
@@ -1351,7 +1394,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 10}
   m_EdgeRadius: 0
 --- !u!212 &416528998
 SpriteRenderer:
@@ -2113,35 +2156,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eda95348dee42e43aec61d407ac5877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  singleNote:
-  - 2
-  - 30
-  - 31.5
-  - 32
-  - 32.5
-  - 33
-  - 33.5
-  - 34
-  - 34.5
-  - 35
-  - 35.5
-  - 36
-  - 36.5
-  - 37
-  - 37.5
-  - 38
-  - 38.5
-  - 39
-  - 39.5
-  - 40
-  - 40.5
-  - 41
-  - 41.5
-  - 42
+  singleNote: []
   longNoteStart:
-  - 3.5
+  - 9
   longNoteEnd:
-  - 5.5
+  - 12
   startPos: {fileID: 800646541}
   endPos: {fileID: 707138319}
 --- !u!50 &707138322
@@ -2189,7 +2208,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 10}
   m_EdgeRadius: 0
 --- !u!114 &707138324
 MonoBehaviour:
@@ -2205,6 +2224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyToPress: 121
   keyToPress2: 103
+  obj: {fileID: 0}
 --- !u!82 &707138325
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3110,6 +3130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyToPress: 110
   keyToPress2: 106
+  obj: {fileID: 0}
 --- !u!114 &1236520649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3122,21 +3143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eda95348dee42e43aec61d407ac5877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  singleNote:
-  - 17
-  - 17.5
-  - 18.5
-  - 44.5
-  - 45.5
-  - 46.5
-  - 47.5
-  - 48.5
-  - 49.5
-  - 50.5
-  - 51.5
-  - 52.5
-  - 53.5
-  - 54.5
+  singleNote: []
   longNoteStart: []
   longNoteEnd: []
   startPos: {fileID: 824421183}
@@ -3186,7 +3193,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 10}
   m_EdgeRadius: 0
 --- !u!212 &1236520652
 SpriteRenderer:

@@ -67,7 +67,8 @@ public class Conductor : MonoBehaviour
 	{
 		songposition = (float)(AudioSettings.dspTime - dsptimesong - songOffset);
 
-		songPosInBeats = (songposition - timeBeforeStart) / secPerBeat;
+		//songPosInBeats = (songposition - timeBeforeStart) / secPerBeat;
+		songPosInBeats = songAudioSource.time / secPerBeat;
 
 		// Check if we need to instantiate a new note. (We obtain the current beat of the song by (songposition / secondsPerBeat).)
 		// See the image for note spawning (note that the direction is reversed):

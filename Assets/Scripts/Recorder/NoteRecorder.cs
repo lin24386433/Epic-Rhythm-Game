@@ -4,37 +4,36 @@ using UnityEngine;
 
 public class NoteRecorder : MonoBehaviour
 {
+	// Editable in editor
 	public List<float> singleNote;
 
 	public List<float> longNoteStart;
 	public List<float> longNoteEnd;
 
 	[Space(10)]
-	public Transform startPos;
+	[SerializeField]
+	private Transform startPos;
 
-	public Transform endPos;
-
-	private GameObject notesPool;
+	[SerializeField]
+	private Transform endPos;
 
 	[SerializeField]
 	private KeyCode keyToPress;
 
-    private void Start()
-    {
+	// Ineditable in editor
+	private GameObject notesPool;
 
+	private void Start()
+    {
 		SpawnNotes();
 	}
 
     private void Update()
 	{
-        if (Input.GetKeyDown(keyToPress) && BeatNowAvaliable(RecordConductor.instance.songPosInBeats))
-        {
-			Destroy(notesPool);
-			singleNote.Add(RecordConductor.instance.songPosInBeats);
-			SpawnNotes();
-		}
+		AddNote();
 	}
 
+	#region FUNC:SpawnNotes
 	private void SpawnNotes()
     {
 		notesPool = new GameObject(this.gameObject.name + " NotesPool");
@@ -74,7 +73,7 @@ public class NoteRecorder : MonoBehaviour
 
 			longNote.endNote.GetComponent<RecorderNote>().Initialize(RecordConductor.instance, this, startPos, endPos, longNoteEnd[indexOfNextLongNote]);
 
-			longNote.Initialize(RecordConductor.instance, startPos, endPos);
+			longNote.Initialize(RecordConductor.instance, this, startPos, endPos);
 
 			longNote.transform.SetParent(notesPool.transform);
 
@@ -82,27 +81,29 @@ public class NoteRecorder : MonoBehaviour
 			indexOfNextLongNote++;
 		}
 	}
+	#endregion
 
-	bool BeatNowAvaliable(float beatNow)
+	public void UpdateNote()
     {
-		foreach(float f in singleNote)
-        {
-			if (f == beatNow)
-				return false;
-        }
+		Destroy(notesPool);
+		SpawnNotes();
+	}
 
-		for(int i = 0; i < longNoteStart.Count; i++)
-        {
-			if (beatNow >= longNoteStart[i] && beatNow <= longNoteEnd[i])
-				return false;
-        }
+	#region FUNC:AddNote
+	private void AddNote()
+    {
+		if (Input.GetKeyDown(keyToPress) && BeatNowAvaliable(RecordConductor.instance.songPosInBeats))
+		{
+			Destroy(notesPool);
+			singleNote.Add(RecordConductor.instance.songPosInBeats);
+			SpawnNotes();
+		}
+	}
+	#endregion
 
-		return true;
-    }
-
+	#region FUNC:DeleteNote(float beat)
 	public void DeleteNote(float beat)
     {
-		Debug.Log("Delete : " + beat);
 		for(int i = 0; i < singleNote.Count; i++)
         {
 			if(beat == singleNote[i])
@@ -111,5 +112,42 @@ public class NoteRecorder : MonoBehaviour
 		Destroy(notesPool);
 		SpawnNotes();
 	}
+	#endregion
 
+	#region FUNC:DeleteLongNote(float startBeat, float endBeat)
+	public void DeleteLongNote(float startBeat, float endBeat)
+	{
+		for (int i = 0; i < longNoteStart.Count; i++)
+		{
+			if (startBeat == longNoteStart[i])
+				longNoteStart.Remove(startBeat);
+		}
+		for (int i = 0; i < longNoteEnd.Count; i++)
+		{
+			if (endBeat == longNoteEnd[i])
+				longNoteEnd.Remove(endBeat);
+		}
+		Destroy(notesPool);
+		SpawnNotes();
+	}
+    #endregion
+
+    #region FUNC:BeatNowAvaliable(float beatNow)
+    private bool BeatNowAvaliable(float beatNow)
+	{
+		foreach (float f in singleNote)
+		{
+			if (f == beatNow)
+				return false;
+		}
+
+		for (int i = 0; i < longNoteStart.Count; i++)
+		{
+			if (beatNow >= longNoteStart[i] && beatNow <= longNoteEnd[i])
+				return false;
+		}
+
+		return true;
+	}
+    #endregion
 }

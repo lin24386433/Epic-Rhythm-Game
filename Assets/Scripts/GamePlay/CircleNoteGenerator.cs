@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CircleNoteGenerator : MonoBehaviour
 {
-	public float[] singleNote;
+	public List<float> singleNote;
 
 	/*
 	public float[] longNoteStart;
@@ -24,7 +24,7 @@ public class CircleNoteGenerator : MonoBehaviour
 	private void Update()
 	{
 		// Check if there are still notes in the track, and check if the next note is within the bounds we intend to show on screen.
-		if (indexOfNextNote < singleNote.Length && singleNote[indexOfNextNote] < Conductor.instance.beatToShow)
+		if (indexOfNextNote < singleNote.Count && singleNote[indexOfNextNote] < Conductor.instance.beatToShow)
 		{
 
 			// Instantiate a new music note. (Search "Object Pooling" for more information if you wish to minimize the delay when instantiating game objects.)

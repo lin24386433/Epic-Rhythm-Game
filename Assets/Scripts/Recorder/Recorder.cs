@@ -17,7 +17,7 @@ public class Recorder : MonoBehaviour
     [SerializeField]
     private Button pauseStartBtn;
 
-
+    public GameObject noteDetailWindow;
 
     [SerializeField]
     private Sprite[] pauseStartSprites;
@@ -28,8 +28,11 @@ public class Recorder : MonoBehaviour
 
         songPlaySlider.onValueChanged.AddListener((delegate { OnSliderValueChanged(); }));
 
+        noteDetailWindow.SetActive(false);
+
         RecordConductor.instance.songAudioSource.Play();
         RecordConductor.instance.songAudioSource.Pause();
+
     }
 
     private void Update()

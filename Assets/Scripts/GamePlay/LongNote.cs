@@ -46,6 +46,11 @@ public class LongNote : MonoBehaviour
             startNote.GetComponent<Note>().moving = false;
         }
 
+        if(middleNote.transform.localScale.y <= -0.2f)
+        {
+            Destroy(this.gameObject);
+        }
+
         //Debug.Log(Vector2.Distance(startNote.transform.localPosition, endNote.transform.localPosition));
 
         /*

@@ -68,15 +68,21 @@
     <Compile Include="Assets\Scripts\Recorder\CircleNoteRecorder.cs" />
     <Compile Include="Assets\Scripts\GamePlay\Conductor.cs" />
     <Compile Include="Assets\Scripts\Recorder\AudioSpectrum.cs" />
+    <Compile Include="Assets\Scripts\Recorder\BaseLine.cs" />
     <Compile Include="Assets\Scripts\Recorder\RecorderNote.cs" />
     <Compile Include="Assets\Scripts\GamePlay\Note.cs" />
+    <Compile Include="Assets\Scripts\Recorder\NoteDetailWindow.cs" />
+    <Compile Include="Assets\Scripts\Recorder\RecorderCircleNote.cs" />
     <Compile Include="Assets\Scripts\Recorder\RecorderLongNote.cs" />
     <Compile Include="Assets\Scripts\GamePlay\CircleNoteGenerator.cs" />
     <Compile Include="Assets\Scripts\GamePlay\CircleDetecter.cs" />
     <Compile Include="Assets\Scripts\Recorder\SpectrumMovement.cs" />
-    <Compile Include="Assets\Scripts\Recorder\RecorderCircleNote.cs" />
+    <Compile Include="Assets\Scripts\NotesData\NotesData.cs" />
+    <Compile Include="Assets\Scripts\Recorder\RecorderDataController.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\DataController.cs" />
   </ItemGroup>
   <ItemGroup>
+     <None Include="Assets\SongDatas\Gurenge\NotesData.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.7f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
