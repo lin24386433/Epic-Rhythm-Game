@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class GameInfo 
 {
-    public static string songName = "";
+    public static string songName = "Gurenge";
 
     public static int gameScore = 0;
 

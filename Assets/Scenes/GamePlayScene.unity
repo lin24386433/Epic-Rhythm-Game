@@ -444,7 +444,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 20}
+  m_Size: {x: 0.2, y: 5}
   m_EdgeRadius: 0
 --- !u!212 &229071465
 SpriteRenderer:
@@ -766,10 +766,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   singleNote: []
-  longNoteStart:
-  - 5
-  longNoteEnd:
-  - 8
+  longNoteStart: []
+  longNoteEnd: []
   startPos: {fileID: 1734527610}
   endPos: {fileID: 245789588}
 --- !u!50 &245789591
@@ -817,7 +815,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 20}
+  m_Size: {x: 0.2, y: 5}
   m_EdgeRadius: 0
 --- !u!212 &245789593
 SpriteRenderer:
@@ -1388,7 +1386,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 5}
+  m_Size: {x: 0.1, y: 2}
   m_EdgeRadius: 0
 --- !u!1 &387054769
 GameObject:
@@ -1546,10 +1544,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   singleNote:
   - 15
+  - 15.5
   - 16
+  - 16.5
   - 17
+  - 17.5
   - 18
+  - 18.5
   - 19
+  - 19.5
   - 20
   longNoteStart: []
   longNoteEnd: []
@@ -1600,7 +1603,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 20}
+  m_Size: {x: 0.2, y: 5}
   m_EdgeRadius: 0
 --- !u!212 &416528998
 SpriteRenderer:
@@ -2033,7 +2036,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 5}
+  m_Size: {x: 0.1, y: 2}
   m_EdgeRadius: 0
 --- !u!1 &515415784
 GameObject:
@@ -2460,10 +2463,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   singleNote: []
-  longNoteStart:
-  - 9
-  longNoteEnd:
-  - 12
+  longNoteStart: []
+  longNoteEnd: []
   startPos: {fileID: 800646541}
   endPos: {fileID: 707138319}
 --- !u!50 &707138322
@@ -2511,7 +2512,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 20}
+  m_Size: {x: 0.2, y: 5}
   m_EdgeRadius: 0
 --- !u!114 &707138324
 MonoBehaviour:
@@ -3532,7 +3533,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 5}
+  m_Size: {x: 0.1, y: 2}
   m_EdgeRadius: 0
 --- !u!1 &1236520646
 GameObject:
@@ -3659,7 +3660,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 20}
+  m_Size: {x: 0.2, y: 5}
   m_EdgeRadius: 0
 --- !u!212 &1236520652
 SpriteRenderer:
@@ -4548,7 +4549,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 5}
+  m_Size: {x: 0.1, y: 2}
   m_EdgeRadius: 0
 --- !u!1 &1676537049
 GameObject:
@@ -4869,27 +4870,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   singleNote:
-  - 60
-  - 60.5
-  - 61
-  - 61.5
-  - 62
-  - 62.5
-  - 63
-  - 63.5
-  - 64
-  - 64.5
-  - 65
-  - 65.5
-  - 66
-  - 66.5
-  - 67
-  - 67.5
-  - 68
-  - 68.5
-  - 69
-  - 69.5
-  - 70
+  - 40
+  - 40.3
+  - 40.6
+  - 40.9
+  - 41.2
+  - 41.5
+  - 41.8
+  - 42.1
+  - 42.4
+  - 42.7
+  - 43
+  - 45.5
+  - 46
+  - 46.5
+  - 47
+  - 47.5
+  - 48
+  - 48.5
+  - 49
+  - 49.5
+  - 50
   startPos: {fileID: 1483497483}
   endPos: {fileID: 1753781853}
 --- !u!82 &1753781857
@@ -5037,7 +5038,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 5}
+  m_Size: {x: 0.1, y: 2}
   m_EdgeRadius: 0
 --- !u!1 &1789778779
 GameObject:
@@ -5149,7 +5150,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 650c2a063dda44c498a56ecbbe8606d0, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
