@@ -163,17 +163,27 @@ public class RazerLine : MonoBehaviour
         if (collision.CompareTag("Note"))
         {
             if(obj == null)
+            {
+                canDestroy = true;
                 obj = collision.gameObject;
+            }
+                
         }
         if(collision.CompareTag("LongNoteStart"))
         {
             if (obj == null)
+            {
+                canDestroy = true;
                 obj = collision.gameObject;
+            }
         }
         if(collision.CompareTag("LongNoteEnd"))
         {
             if (obj == null)
+            {
+                canDestroy = true;
                 obj = collision.gameObject;
+            }
 
         }
 

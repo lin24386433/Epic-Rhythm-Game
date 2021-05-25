@@ -90,7 +90,10 @@ public class CircleDetecter : MonoBehaviour
         if(collision.CompareTag("Note"))
         {
             if (obj == null)
+            {
+                canDestroy = true;
                 obj = collision.gameObject;
+            }
         }
         
     }
