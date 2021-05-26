@@ -34,9 +34,6 @@ public class RecordConductor : MonoBehaviour
 	// To record the time passed of the audio engine in the last frame. We use this to calculate the position of the song.
 	private float dsptimesong;
 
-	[SerializeField]
-	private float timeBeforeStart = 0f;
-
 	[System.NonSerialized]
 	public float beatToShow;
 
