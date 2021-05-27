@@ -2,37 +2,63 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SelectionMenu : MonoBehaviour
 {
-    public float angle = 0f;
+    private float angle = 0f;
 
-    public float speed = 1f;
+    public MainMenuDataController dataController;
 
-    public RectTransform[] menuBars;
+    [SerializeField]
+    private float speed = 1f;
 
-    public Text[] menuBarTxts;
+    [SerializeField]
+    private RectTransform[] menuBars;
 
-    public GameObject info;
+    [SerializeField]
+    private Text[] menuBarTxts;
 
-    public AudioSource audioPlayer;
+    [SerializeField]
+    private GameObject info;
 
-    public string[] datas;
+    [SerializeField]
+    private AudioSource musicPlayer;
 
-    public int index = 0;
+    [SerializeField]
+    private Image backgroundImg;
+
+    [SerializeField]
+    //private string[] datas;
+
+    private int index = 0;
+
+    private int selectedIndex = 0;
 
     private AudioSource audioSource;
 
     private Animator animator;
 
-    private void Awake()
-    {
-        SelectionMenuUpdate();
-    }
+    // selecting var
+    float timer = 0f;
+    bool onSelecting = false;
+    float stopTime = 0.5f;
+
+    // enter play scene
+    bool isGoingToPlay = false;
+    public GameObject mask;
 
     private void Start()
     {
-        
+        SelectionMenuUpdate();
+
+        musicPlayer.PlayOneShot(dataController.audioClips[selectedIndex]);
+
+        Texture2D myImg = dataController.backgroundImages[selectedIndex];
+
+        Sprite s = Sprite.Create(myImg, new Rect(0, 0, myImg.width, myImg.height), Vector2.zero);
+
+        backgroundImg.sprite = s;
 
         audioSource = GetComponent<AudioSource>();
 
@@ -41,50 +67,106 @@ public class SelectionMenu : MonoBehaviour
 
     private void Update()
     {
+        if (onSelecting)
+        {
+            timer += Time.deltaTime;
+            if(timer >= stopTime)   // selecting end
+            {
+                onSelecting = false;
+                timer = 0f;
+
+                animator.SetBool("onSelecting", false);
+
+                Texture2D myImg = dataController.backgroundImages[selectedIndex];
+                Sprite s = Sprite.Create(myImg, new Rect(0, 0, myImg.width, myImg.height), Vector2.zero);
+                backgroundImg.sprite = s;
+                
+                musicPlayer.Stop();
+                musicPlayer.PlayOneShot(dataController.audioClips[selectedIndex]);
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             angle -= 72;
             index = (int)((int)angle / 72);
-            audioSource.Play();
-            animator.SetTrigger("changing");
-            audioPlayer.Play();
+
+            onSelecting = true;
+            timer = 0f;
+
+            animator.SetBool("onSelecting", true);
+
             SelectionMenuUpdate();
+
+            audioSource.Play();
         }
+
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             angle += 72;
             index = (int)((int)angle / 72);
-            audioSource.Play();
-            animator.SetTrigger("changing");
-            audioPlayer.Play();
+
+            onSelecting = true;
+            timer = 0f;
+
+            animator.SetBool("onSelecting", true);
+
             SelectionMenuUpdate();
+
+            audioSource.Play();
         }
 
-        
+        if (Input.GetKeyDown(KeyCode.Return) && !isGoingToPlay)
+        {
+            StartCoroutine(GamePlay());
+            isGoingToPlay = true;
+        }
+
+
     }
 
-    private void SelectionMenuUpdate()
+    private IEnumerator GamePlay()
     {
+        yield return new WaitForSeconds(0.3f);
+        animator.SetBool("onSelecting", true);
+        this.GetComponent<Animator>().SetBool("isExited", true);
+        yield return new WaitForSeconds(0.5f);
+        mask.GetComponent<Animator>().SetBool("Start", false);
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadSceneAsync(1);
+    }
+
+    public void SelectionMenuUpdate()
+    {
+        int songNameCount = dataController.songNames.Count;
+
         int barNow = index >= 0 ? index % menuBars.Length : (index % menuBars.Length == 0) ? 0 : menuBars.Length - Mathf.Abs(index % menuBars.Length);
 
         if (index >= 0)
         {
-            menuBarTxts[(barNow - 1) < 0 ? menuBars.Length - 1 : barNow - 1].text = datas[(index % datas.Length - 1) < 0 ? datas.Length - 1 : index % datas.Length - 1];
+            menuBarTxts[(barNow - 1) < 0 ? menuBars.Length - 1 : barNow - 1].text = dataController.songNames[(index % songNameCount - 1) < 0 ? songNameCount - 1 : index % songNameCount - 1];
 
-            menuBarTxts[barNow].text = datas[index % datas.Length];
+            menuBarTxts[barNow].text = dataController.songNames[index % songNameCount];
 
-            menuBarTxts[(barNow + 1) >= menuBars.Length ? 0 : barNow + 1].text = datas[(index % datas.Length + 1) >= datas.Length ? 0 : index % datas.Length + 1];
+            menuBarTxts[(barNow + 1) >= menuBars.Length ? 0 : barNow + 1].text = dataController.songNames[(index % songNameCount + 1) >= songNameCount ? 0 : index % songNameCount + 1];
+
+            selectedIndex = index % songNameCount;
+
         }
         else
         {
-            int x = (index % datas.Length == 0) ? 0 : datas.Length - Mathf.Abs(index % datas.Length);
+            int x = (index % songNameCount == 0) ? 0 : songNameCount - Mathf.Abs(index % songNameCount);
 
-            menuBarTxts[(barNow - 1) < 0 ? menuBars.Length - 1 : barNow - 1].text = datas[datas.Length - Mathf.Abs(index % datas.Length) - 1];
+            menuBarTxts[(barNow - 1) < 0 ? menuBars.Length - 1 : barNow - 1].text = dataController.songNames[songNameCount - Mathf.Abs(index % songNameCount) - 1];
 
-            menuBarTxts[barNow].text = datas[x];
+            menuBarTxts[barNow].text = dataController.songNames[x];
 
-            menuBarTxts[(barNow + 1) >= menuBars.Length ? 0 : barNow + 1].text = (x + 1) >= datas.Length ? datas[0] : datas[x + 1];
+            menuBarTxts[(barNow + 1) >= menuBars.Length ? 0 : barNow + 1].text = (x + 1) >= songNameCount ? dataController.songNames[0] : dataController.songNames[x + 1];
+
+            selectedIndex = x;
+
         }
+
     }
 
     private void FixedUpdate()
@@ -105,4 +187,6 @@ public class SelectionMenu : MonoBehaviour
             }
         }
     }
+
+
 }
