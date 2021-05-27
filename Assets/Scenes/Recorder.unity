@@ -968,7 +968,6 @@ MonoBehaviour:
   songBPM: 135
   BeatsShownInAdvance: 2
   songOffset: 0
-  timeBeforeStart: 2
   musicNotePrefab: {fileID: 2361986334176429007, guid: 2e3023ea38010154fbfecb7787f4fd54, type: 3}
   musicLongNotePrefab: {fileID: 8215479040168770643, guid: 774572e479086574e9c5d7894a6848b5, type: 3}
   musicCircleNotePrefab: {fileID: 9172174244333824173, guid: c5794498ce12f2249b47acb2e02942ed, type: 3}
@@ -998,7 +997,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be38a44e2f3b944cbfd499d733bf2b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleFactor: 150
   squarePrefab: {fileID: 8222513605941122090, guid: 8dfb69e13c361bc4c8b8026d13e1b2bb, type: 3}
   baseLine: {fileID: 115049856}
 --- !u!1 &411645666
@@ -3430,7 +3428,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 10}
   m_EdgeRadius: 0
 --- !u!114 &1263602092
 MonoBehaviour:

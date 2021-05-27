@@ -9,6 +9,7 @@ TagManager:
   - LongNoteStart
   - LongNoteEnd
   - LongNoteMiddle
+  - BeatSoundTrigger
   layers:
   - Default
   - TransparentFX

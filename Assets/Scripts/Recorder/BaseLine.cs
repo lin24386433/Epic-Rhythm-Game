@@ -13,7 +13,7 @@ public class BaseLine : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Note" || collision.tag == "LongNoteStart" || collision.tag == "LongNoteEnd")
+        if(collision.tag == "BeatSoundTrigger")
         {
             audioSource.Play();
         }

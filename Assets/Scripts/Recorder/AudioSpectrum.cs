@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class AudioSpectrum : MonoBehaviour
 {
-	public float scaleFactor = 10;
+	private float scaleFactor = 10;
 
 	public GameObject squarePrefab;
 
@@ -22,6 +22,15 @@ public class AudioSpectrum : MonoBehaviour
 	void Start()
 	{
 		audioSource = GetComponent<AudioSource>();
+
+        if (RecordConductor.instance.songAudioSource.clip.frequency > 46000)
+        {
+			scaleFactor = 100f;
+		}
+        else
+        {
+			scaleFactor = 150f;
+		}
 
 		samples = new float[(int)RecordConductor.instance.songAudioSource.clip.length * 100];
 		squares = new GameObject[(int)RecordConductor.instance.songAudioSource.clip.length * 100];
