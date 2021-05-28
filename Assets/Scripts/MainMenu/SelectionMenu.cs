@@ -127,18 +127,18 @@ public class SelectionMenu : MonoBehaviour
 
         if (isGoingToPlay)
         {
-            musicPlayer.volume = Mathf.Lerp(musicPlayer.volume, 0f, Time.deltaTime * 0.5f);
+            musicPlayer.volume = Mathf.Lerp(musicPlayer.volume, 0f, Time.deltaTime * 1f);
         }
 
     }
 
     private IEnumerator GamePlay()
     {
-        yield return new WaitForSeconds(0.3f);
-        animator.SetBool("onSelecting", true);
         this.GetComponent<Animator>().SetBool("isExited", true);
+        yield return new WaitForSeconds(0.3f);
+        animator.SetBool("onSelecting", true);       
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         mask.GetComponent<Animator>().SetBool("Start", false);
        
 

@@ -11,6 +11,7 @@ public enum songDifficulty
     master
 }
 
+[System.Serializable]
 public class SongData 
 {
     public string songName;

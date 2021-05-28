@@ -18,8 +18,6 @@ public class DataController : MonoBehaviour
     [SerializeField]
     private Image bgImg;
 
-    public string songName = "Gurenge";
-
     // Save Datas
     private NotesData notesDataToSave;
 
@@ -95,7 +93,7 @@ public class DataController : MonoBehaviour
             Directory.CreateDirectory(path);
 
         // Directory : [songName]
-        path = Path.Combine(path, songName);
+        path = Path.Combine(path, GameInfo.songName);
 
         if (!Directory.Exists(path))
             Directory.CreateDirectory(path);
@@ -120,7 +118,7 @@ public class DataController : MonoBehaviour
         // Get data from path : Application.dataPath/SongDatas/[songName]/NoteData.txt
         string path = Path.Combine(Application.dataPath, "SongDatas");
 
-        path = Path.Combine(path, songName);
+        path = Path.Combine(path, GameInfo.songName);
 
         path = Path.Combine(path, "NotesData" + ".txt");
 
@@ -151,41 +149,6 @@ public class DataController : MonoBehaviour
         }
 
         return list;
-    }
-
-    private void OnSaveBtnClicked()
-    {
-        notesDataToSave = new NotesData();
-
-        #region data
-        notesDataToSave.circleNote_Single1 = ListToArray(circleGenerator[0].singleNote);
-        notesDataToSave.circleNote_Single2 = ListToArray(circleGenerator[1].singleNote);
-        notesDataToSave.circleNote_Single3 = ListToArray(circleGenerator[2].singleNote);
-        notesDataToSave.circleNote_Single4 = ListToArray(circleGenerator[3].singleNote);
-        notesDataToSave.circleNote_Single5 = ListToArray(circleGenerator[4].singleNote);
-
-        notesDataToSave.singleNote1 = ListToArray(noteGenerator[0].singleNote);
-        notesDataToSave.longNoteStart1 = ListToArray(noteGenerator[0].longNoteStart);
-        notesDataToSave.longNoteEnd1 = ListToArray(noteGenerator[0].longNoteEnd);
-
-        notesDataToSave.singleNote2 = ListToArray(noteGenerator[1].singleNote);
-        notesDataToSave.longNoteStart2 = ListToArray(noteGenerator[1].longNoteStart);
-        notesDataToSave.longNoteEnd2 = ListToArray(noteGenerator[1].longNoteEnd);
-
-        notesDataToSave.singleNote3 = ListToArray(noteGenerator[2].singleNote);
-        notesDataToSave.longNoteStart3 = ListToArray(noteGenerator[2].longNoteStart);
-        notesDataToSave.longNoteEnd3 = ListToArray(noteGenerator[2].longNoteEnd);
-
-        notesDataToSave.singleNote4 = ListToArray(noteGenerator[3].singleNote);
-        notesDataToSave.longNoteStart4 = ListToArray(noteGenerator[3].longNoteStart);
-        notesDataToSave.longNoteEnd4 = ListToArray(noteGenerator[3].longNoteEnd);
-
-        notesDataToSave.singleNote5 = ListToArray(noteGenerator[4].singleNote);
-        notesDataToSave.longNoteStart5 = ListToArray(noteGenerator[4].longNoteStart);
-        notesDataToSave.longNoteEnd5 = ListToArray(noteGenerator[4].longNoteEnd);
-        #endregion
-
-        NotesDataSaveToJson(notesDataToSave);
     }
 
     private void SetLoadedDataToAllRecorder()

@@ -1,0 +1,10 @@
+{
+    "songName": "Fantastic Departure",
+    "songLength": 138.74400329589845,
+    "songDifficulty": 2,
+    "maxCombo": 313,
+    "maxScore": 156500,
+    "playerHighCombo": 0,
+    "playerHighScore": 0,
+    "playTimes": 0
+}

@@ -1,0 +1,10 @@
+{
+    "songName": "Gurenge",
+    "songLength": 89.36489868164063,
+    "songDifficulty": 2,
+    "maxCombo": 130,
+    "maxScore": 65000,
+    "playerHighCombo": 0,
+    "playerHighScore": 0,
+    "playTimes": 0
+}

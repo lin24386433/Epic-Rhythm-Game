@@ -44,4 +44,35 @@ public class NotesData
     public float[] longNoteStart5;
     public float[] longNoteEnd5;
 
+    public NotesData()
+    {
+        circleNote_Single1 = new float[0];
+        circleNote_Single2 = new float[0];
+        circleNote_Single3 = new float[0];
+        circleNote_Single4 = new float[0];
+        circleNote_Single5 = new float[0];
+
+        singleNote1 = new float[0];
+        longNoteStart1 = new float[0];
+        longNoteEnd1 = new float[0];
+
+        singleNote2 = new float[0];
+        longNoteStart2 = new float[0];
+        longNoteEnd2 = new float[0];
+
+        singleNote3 = new float[0];
+        longNoteStart3 = new float[0];
+        longNoteEnd3 = new float[0];
+
+        singleNote4 = new float[0];
+        longNoteStart4 = new float[0];
+        longNoteEnd4 = new float[0];
+
+        singleNote5 = new float[0];
+        longNoteStart5 = new float[0];
+        longNoteEnd5 = new float[0];
+
+
+    }
+
 }

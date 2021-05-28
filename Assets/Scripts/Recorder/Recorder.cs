@@ -17,6 +17,14 @@ public class Recorder : MonoBehaviour
     [SerializeField]
     private Button pauseStartBtn;
 
+    [SerializeField]
+    private Dropdown dropDown;
+
+    public string songSelected;
+
+    private int selectedIndex = 0;
+
+
     public GameObject noteDetailWindow;
 
     [SerializeField]
@@ -24,9 +32,17 @@ public class Recorder : MonoBehaviour
 
     private void Start()
     {
+        songSelected = GetComponent<RecorderDataController>().songsInFolder[0];
+
         pauseStartBtn.onClick.AddListener(OnPauseStartBtnClicked);
 
         songPlaySlider.onValueChanged.AddListener((delegate { OnSliderValueChanged(); }));
+
+        dropDown.ClearOptions();
+
+        dropDown.AddOptions(GetComponent<RecorderDataController>().songsInFolder);
+
+        dropDown.onValueChanged.AddListener(delegate { OnDropDownValueChanged(); });
 
         noteDetailWindow.SetActive(false);
 
@@ -81,4 +97,24 @@ public class Recorder : MonoBehaviour
         beatNowTxt.text = RecordConductor.instance.songPosInBeats.ToString("0.00");
     }
 
+    private void OnDropDownValueChanged()
+    {
+        selectedIndex = dropDown.value;
+
+        RecorderDataController dataController = GetComponent<RecorderDataController>();
+
+        songSelected = dataController.songsInFolder[selectedIndex];
+
+        beatNowTxt.text = 0.ToString("0.00");
+        RecordConductor.instance.songAudioSource.time = 0f;
+        StartCoroutine(dataController.SetAudioFromFileToConductor(songSelected));
+
+        dataController.notesDataToLoad = dataController.NotesDataLoadedFromJson(songSelected);
+        dataController.SongDataLoadedFromJson(songSelected);
+
+        dataController.SetLoadedDataToAllRecorder();
+
+        dataController.UpdateAllRecorder();
+
+    }
 }

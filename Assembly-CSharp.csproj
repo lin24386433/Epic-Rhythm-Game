@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\GamePlay\Controller\ShowLineController.cs" />
     <Compile Include="Assets\Scripts\GamePlay\Detecter\RazerLine.cs" />
     <Compile Include="Assets\Scripts\GamePlay\Note\NoteGenerator.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\MainMenuDataController.cs" />
     <Compile Include="Assets\Scripts\DevGameController.cs" />
     <Compile Include="Assets\Scripts\Recorder\RecorderDataController.cs" />
     <Compile Include="Assets\Scripts\GamePlay\Detecter\MissDetecter.cs" />
@@ -85,10 +86,12 @@
     <Compile Include="Assets\Scripts\GamePlay\Detecter\CircleDetecter.cs" />
     <Compile Include="Assets\Scripts\Data\NotesData.cs" />
     <Compile Include="Assets\Scripts\Recorder\SpectrumMovement.cs" />
-    <Compile Include="Assets\Scripts\MainMenu\MainMenuDataController.cs" />
   </ItemGroup>
   <ItemGroup>
+     <None Include="Assets\SongDatas\Gurenge\SongData.txt" />
      <None Include="Assets\SongDatas\Gurenge\NotesData.txt" />
+     <None Include="Assets\SongDatas\Fantastic Departure\NotesData.txt" />
+     <None Include="Assets\SongDatas\Fantastic Departure\SongData.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
