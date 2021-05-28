@@ -33,7 +33,7 @@ public class LongNote : MonoBehaviour
 
         beat = (endNote.GetComponent<Note>().beat + startNote.GetComponent<Note>().beat) / 2f;
        
-        middleNote.transform.localScale = new Vector2(startNote.transform.localScale.x, ((endNote.transform.localPosition.y - startNote.transform.localPosition.y) - 1) / 9.656f);
+        middleNote.transform.localScale = new Vector2(startNote.transform.localScale.x, ((endNote.transform.localPosition.y - startNote.transform.localPosition.y) - 1) / 9.62f);
 
         if (moving)
         {

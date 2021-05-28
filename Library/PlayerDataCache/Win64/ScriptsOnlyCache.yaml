@@ -38,7 +38,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateEditor
     - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
@@ -72,11 +71,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
       Script: {instanceID: 0}
     - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -89,33 +94,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1508}
     - Class: 114
-      Script: {instanceID: 1786}
+      Script: {instanceID: 1788}
     - Class: 114
-      Script: {instanceID: 1860}
+      Script: {instanceID: 1862}
     - Class: 114
-      Script: {instanceID: 2090}
+      Script: {instanceID: 2092}
     - Class: 114
-      Script: {instanceID: 2154}
+      Script: {instanceID: 2156}
     - Class: 114
-      Script: {instanceID: 2466}
+      Script: {instanceID: 2468}
     - Class: 114
-      Script: {instanceID: 2612}
+      Script: {instanceID: 2614}
     - Class: 114
-      Script: {instanceID: 2686}
+      Script: {instanceID: 2688}
     - Class: 114
-      Script: {instanceID: 2786}
+      Script: {instanceID: 2788}
     - Class: 114
-      Script: {instanceID: 2998}
+      Script: {instanceID: 3000}
     - Class: 114
-      Script: {instanceID: 3458}
+      Script: {instanceID: 3460}
     - Class: 114
-      Script: {instanceID: 3580}
+      Script: {instanceID: 3582}
     - Class: 114
-      Script: {instanceID: 4344}
+      Script: {instanceID: 4346}
     - Class: 114
-      Script: {instanceID: 4634}
+      Script: {instanceID: 4636}
     - Class: 114
-      Script: {instanceID: 4756}
+      Script: {instanceID: 4758}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -133,6 +138,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
       Script: {instanceID: 0}
     - Class: 331
       Script: {instanceID: 0}
@@ -168,19 +175,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1490}
     - Class: 114
-      Script: {instanceID: 2090}
+      Script: {instanceID: 1570}
     - Class: 114
-      Script: {instanceID: 2466}
+      Script: {instanceID: 2092}
     - Class: 114
-      Script: {instanceID: 2612}
+      Script: {instanceID: 2468}
     - Class: 114
-      Script: {instanceID: 2692}
+      Script: {instanceID: 2614}
     - Class: 114
-      Script: {instanceID: 2786}
+      Script: {instanceID: 2694}
     - Class: 114
-      Script: {instanceID: 2998}
+      Script: {instanceID: 2788}
     - Class: 114
-      Script: {instanceID: 22876}
+      Script: {instanceID: 3000}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -246,6 +253,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.U2D.Animation
     className: SpriteSkin
+  - hash:
+      serializedVersion: 2
+      Hash: eed84c468a0ff539575c48924f273164
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainMenuDataController
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -332,7 +345,7 @@ ScriptsOnlyBuild:
     className: Recorder
   - hash:
       serializedVersion: 2
-      Hash: 902b10ae77e22f7554f1b1e28ce2f0a6
+      Hash: 9d0ca38e77daa94176ff7ebbcc06adf9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GamePlayController
@@ -446,13 +459,13 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 74f07ceac3f3462a21575b274dd644d7
+      Hash: 7a6581681f37d21bc07683d581242f83
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DataController
   - hash:
       serializedVersion: 2
-      Hash: 58770167044cc4b1fb8546fdf9c4cec4
+      Hash: 220871345426448ea7ee4b0198188fe7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SelectionMenu
@@ -876,12 +889,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SpectrumMovement
-  - hash:
-      serializedVersion: 2
-      Hash: eed84c468a0ff539575c48924f273164
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MainMenuDataController
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity

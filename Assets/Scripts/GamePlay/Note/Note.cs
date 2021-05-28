@@ -29,6 +29,7 @@ public class Note : MonoBehaviour
 
 	void Update()
 	{
+		//this.transform.localScale = new Vector3(1,1,1);
 		if (moving)
 		{
 			transform.position = startPos.position + (endPos.position - startPos.position) * (1f - ((beat - conductor.songPosInBeats) / conductor.BeatsShownInAdvance));

@@ -9,6 +9,8 @@ public class GamePlayController : MonoBehaviour
 {
     public static GamePlayController instance;
 
+    public GameObject mask;
+
     private int score = 0;
 
     private int combo = 0;
@@ -28,6 +30,8 @@ public class GamePlayController : MonoBehaviour
 
         scoreTxt.text = score.ToString();
         comboTxt.text = combo.ToString();
+
+        mask.GetComponent<Animator>().SetBool("Start", true);
     }
 
     public void AddScore(int scoreToAdd)
@@ -40,6 +44,8 @@ public class GamePlayController : MonoBehaviour
     {
         combo += 1;
         comboTxt.text = combo.ToString();
+        comboTxt.gameObject.transform.localScale = new Vector2(1.35f, 1.35f);
+        StartCoroutine(ComboAnimate());
     }
     public void ResetCombo()
     {
@@ -47,5 +53,10 @@ public class GamePlayController : MonoBehaviour
         comboTxt.text = "";
     }
 
+    private IEnumerator ComboAnimate()
+    {
+        yield return new WaitForSeconds(0.08f);
+        comboTxt.gameObject.transform.localScale = new Vector2(1, 1);
+    }
 
 }

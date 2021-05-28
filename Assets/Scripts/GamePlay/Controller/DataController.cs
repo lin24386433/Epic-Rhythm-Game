@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.IO;
+using UnityEngine.Networking;
+
 
 public class DataController : MonoBehaviour
 {
@@ -12,6 +15,9 @@ public class DataController : MonoBehaviour
     [SerializeField]
     private NoteGenerator[] noteGenerator;
 
+    [SerializeField]
+    private Image bgImg;
+
     public string songName = "Gurenge";
 
     // Save Datas
@@ -21,9 +27,61 @@ public class DataController : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(LoadImageFromFile());
+
         notesDataToLoad = NotesDataLoadedFromJson();
 
         SetLoadedDataToAllRecorder();
+
+    }
+
+    private IEnumerator LoadImageFromFile()
+    {
+
+        // File to find : Application.dataPath/SongDatas/Gurenge/music.mp3
+        string path = Path.Combine(Application.dataPath, "SongDatas");
+
+        path = Path.Combine(path, GameInfo.songName);
+
+        path = Path.Combine(path, "bg.jpg");
+
+#if UNITY_STANDALONE_OSX
+
+        string url = "file://" + path;
+
+#endif
+
+#if UNITY_STANDALONE_LINUX
+
+        string url = "file://" + path;
+
+#endif
+
+#if UNITY_STANDALONE_WIN
+
+        string url = "file:///" + path;
+
+#endif
+
+        using (UnityWebRequest uwr = UnityWebRequestTexture.GetTexture(url))
+        {
+            yield return uwr.SendWebRequest();
+
+            if (uwr.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(uwr.error);
+            }
+            else
+            {
+                // Get downloaded asset bundle
+                var texture = DownloadHandlerTexture.GetContent(uwr);
+
+                Texture2D myImg = texture;
+                Sprite sprite = Sprite.Create(myImg, new Rect(0, 0, myImg.width, myImg.height), Vector2.zero);
+                bgImg.sprite = sprite;
+       
+            }
+        }
 
     }
 

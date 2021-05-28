@@ -29,7 +29,10 @@ public class SelectionMenu : MonoBehaviour
     private Image backgroundImg;
 
     [SerializeField]
-    //private string[] datas;
+    private Sprite[] unselectedPoints;
+
+    [SerializeField]
+    private Sprite selectedPoint;
 
     private int index = 0;
 
@@ -56,9 +59,9 @@ public class SelectionMenu : MonoBehaviour
 
         Texture2D myImg = dataController.backgroundImages[selectedIndex];
 
-        Sprite s = Sprite.Create(myImg, new Rect(0, 0, myImg.width, myImg.height), Vector2.zero);
+        Sprite sprite = Sprite.Create(myImg, new Rect(0, 0, myImg.width, myImg.height), Vector2.zero);
 
-        backgroundImg.sprite = s;
+        backgroundImg.sprite = sprite;
 
         audioSource = GetComponent<AudioSource>();
 
@@ -78,8 +81,8 @@ public class SelectionMenu : MonoBehaviour
                 animator.SetBool("onSelecting", false);
 
                 Texture2D myImg = dataController.backgroundImages[selectedIndex];
-                Sprite s = Sprite.Create(myImg, new Rect(0, 0, myImg.width, myImg.height), Vector2.zero);
-                backgroundImg.sprite = s;
+                Sprite sprite = Sprite.Create(myImg, new Rect(0, 0, myImg.width, myImg.height), Vector2.zero);
+                backgroundImg.sprite = sprite;
                 
                 musicPlayer.Stop();
                 musicPlayer.PlayOneShot(dataController.audioClips[selectedIndex]);
@@ -122,6 +125,10 @@ public class SelectionMenu : MonoBehaviour
             isGoingToPlay = true;
         }
 
+        if (isGoingToPlay)
+        {
+            musicPlayer.volume = Mathf.Lerp(musicPlayer.volume, 0f, Time.deltaTime * 0.5f);
+        }
 
     }
 
@@ -130,8 +137,11 @@ public class SelectionMenu : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         animator.SetBool("onSelecting", true);
         this.GetComponent<Animator>().SetBool("isExited", true);
+
         yield return new WaitForSeconds(0.5f);
         mask.GetComponent<Animator>().SetBool("Start", false);
+       
+
         yield return new WaitForSeconds(3f);
         SceneManager.LoadSceneAsync(1);
     }
@@ -145,23 +155,39 @@ public class SelectionMenu : MonoBehaviour
         if (index >= 0)
         {
             menuBarTxts[(barNow - 1) < 0 ? menuBars.Length - 1 : barNow - 1].text = dataController.songNames[(index % songNameCount - 1) < 0 ? songNameCount - 1 : index % songNameCount - 1];
+            menuBars[(barNow - 1) < 0 ? menuBars.Length - 1 : barNow - 1].localScale = new Vector2(0.9f,0.9f);
+            menuBars[(barNow - 1) < 0 ? menuBars.Length - 1 : barNow - 1].GetComponentsInChildren<Image>()[1].sprite = unselectedPoints[(barNow - 1) < 0 ? menuBars.Length - 1 : barNow - 1];
 
             menuBarTxts[barNow].text = dataController.songNames[index % songNameCount];
+            menuBars[barNow].localScale = new Vector2(1.2f, 1.2f);
+            menuBars[barNow].GetComponentsInChildren<Image>()[1].sprite = selectedPoint;
+
+            GameInfo.songName = dataController.songNames[index % songNameCount];
 
             menuBarTxts[(barNow + 1) >= menuBars.Length ? 0 : barNow + 1].text = dataController.songNames[(index % songNameCount + 1) >= songNameCount ? 0 : index % songNameCount + 1];
+            menuBars[(barNow + 1) >= menuBars.Length ? 0 : barNow + 1].localScale = new Vector2(0.9f, 0.9f);
+            menuBars[(barNow + 1) >= menuBars.Length ? 0 : barNow + 1].GetComponentsInChildren<Image>()[1].sprite = unselectedPoints[(barNow + 1) >= menuBars.Length ? 0 : barNow + 1];
 
             selectedIndex = index % songNameCount;
 
         }
         else
         {
-            int x = (index % songNameCount == 0) ? 0 : songNameCount - Mathf.Abs(index % songNameCount);
+            int x = (index % songNameCount == 0) ? 0 : songNameCount - Mathf.Abs(index % songNameCount);          
 
             menuBarTxts[(barNow - 1) < 0 ? menuBars.Length - 1 : barNow - 1].text = dataController.songNames[songNameCount - Mathf.Abs(index % songNameCount) - 1];
+            menuBars[(barNow - 1) < 0 ? menuBars.Length - 1 : barNow - 1].localScale = new Vector2(0.9f, 0.9f);
+            menuBars[(barNow - 1) < 0 ? menuBars.Length - 1 : barNow - 1].GetComponentsInChildren<Image>()[1].sprite = unselectedPoints[(barNow - 1) < 0 ? menuBars.Length - 1 : barNow - 1];
 
             menuBarTxts[barNow].text = dataController.songNames[x];
+            menuBars[barNow].localScale = new Vector2(1.2f, 1.2f);
+            menuBars[barNow].GetComponentsInChildren<Image>()[1].sprite = selectedPoint;
+
+            GameInfo.songName = dataController.songNames[x];
 
             menuBarTxts[(barNow + 1) >= menuBars.Length ? 0 : barNow + 1].text = (x + 1) >= songNameCount ? dataController.songNames[0] : dataController.songNames[x + 1];
+            menuBars[(barNow + 1) >= menuBars.Length ? 0 : barNow + 1].localScale = new Vector2(0.9f, 0.9f);
+            menuBars[(barNow + 1) >= menuBars.Length ? 0 : barNow + 1].GetComponentsInChildren<Image>()[1].sprite = unselectedPoints[(barNow + 1) >= menuBars.Length ? 0 : barNow + 1];
 
             selectedIndex = x;
 
