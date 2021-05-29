@@ -78,6 +78,8 @@ public class NoteDetailWindow : MonoBehaviour
 
         isLongNoteToggle.gameObject.SetActive(false);
 
+        isLongNoteToggle.isOn = false;
+
         beatTxt2.gameObject.SetActive(false);
 
         inputField2.gameObject.SetActive(false);
@@ -136,6 +138,12 @@ public class NoteDetailWindow : MonoBehaviour
 
             float endBeatToSave = float.Parse(inputField2.text);
 
+            if (!CanAddBeat(startBeatToSave) || !CanAddBeat(endBeatToSave))
+            {
+                return;
+            }
+
+
             if (note != null)
             {
                 note.recorder.DeleteNote(note.beat);
@@ -162,6 +170,10 @@ public class NoteDetailWindow : MonoBehaviour
         {
             float beatToSave = float.Parse(inputField1.text);
 
+            if (!CanAddBeat(beatToSave))
+            {
+                return;
+            }
 
             if (note != null)
             {
@@ -170,6 +182,7 @@ public class NoteDetailWindow : MonoBehaviour
                 note.recorder.singleNote.Add(beatToSave);
 
                 note.recorder.UpdateNote();
+
 
             }
             else if (longNote != null)
@@ -199,5 +212,18 @@ public class NoteDetailWindow : MonoBehaviour
 
         this.gameObject.SetActive(false);
     }
+
+    private bool CanAddBeat(float beat)
+    {
+        if(beat >= RecordConductor.instance.totalBeats || beat < 0f)
+        {
+            return false;
+        }
+
+        
+        return true;
+    }
+
+    
 
 }

@@ -9,7 +9,7 @@ public class RecordConductor : MonoBehaviour
 	// How many beats each minute last.
 	public float songBPM;
 
-	private float totalBeats;
+	public float totalBeats;
 
 	[System.NonSerialized]
 	// How many seconds each beat last. This could be calculated by (60 / BPM).

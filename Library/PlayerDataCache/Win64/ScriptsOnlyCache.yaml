@@ -35,10 +35,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -327,7 +325,7 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: 6d6ad7cf139273f9b937823b5283e480
+      Hash: 777e1ef19a0b1f032c708d19556230ad
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RecorderDataController
@@ -339,7 +337,7 @@ ScriptsOnlyBuild:
     className: MissDetecter
   - hash:
       serializedVersion: 2
-      Hash: ccb9a52bc1205aaee6208562bcf1c3ea
+      Hash: 24567d7cbc4bf8bdb2a1acb3a2edf209
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Recorder
@@ -399,7 +397,7 @@ ScriptsOnlyBuild:
     className: NoteRecorder
   - hash:
       serializedVersion: 2
-      Hash: 22329cee67139613afb2c6013162eb69
+      Hash: 6a9241b4c1e6ce838a2b68263337e369
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RecordConductor
@@ -459,7 +457,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 7a6581681f37d21bc07683d581242f83
+      Hash: 8f656f72d3b75be30a2247fbf26d0d1b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: DataController

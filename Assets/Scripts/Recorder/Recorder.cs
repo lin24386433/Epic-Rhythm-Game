@@ -15,6 +15,9 @@ public class Recorder : MonoBehaviour
     private Slider songPlaySlider;
 
     [SerializeField]
+    private float scrollSensitivity = 0.01f;
+
+    [SerializeField]
     private Button pauseStartBtn;
 
     [SerializeField]
@@ -29,6 +32,7 @@ public class Recorder : MonoBehaviour
 
     [SerializeField]
     private Sprite[] pauseStartSprites;
+
 
     private void Start()
     {
@@ -61,6 +65,8 @@ public class Recorder : MonoBehaviour
             isPlaying = false;
             pauseStartBtn.image.sprite = pauseStartSprites[0];
         }
+
+        songPlaySlider.value += Input.GetAxis("Mouse ScrollWheel") * scrollSensitivity;
     }
 
     void UIUpdate()

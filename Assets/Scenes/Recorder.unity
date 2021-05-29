@@ -2014,6 +2014,7 @@ MonoBehaviour:
   isPlaying: 0
   beatNowTxt: {fileID: 832991246}
   songPlaySlider: {fileID: 1365448779}
+  scrollSensitivity: 0.01
   pauseStartBtn: {fileID: 816970381}
   dropDown: {fileID: 1500662143}
   songSelected: 
@@ -2060,7 +2061,6 @@ MonoBehaviour:
   - {fileID: 332661165}
   - {fileID: 1772079503}
   songsInFolder: []
-  songName: Gurenge
   saveBtn: {fileID: 106123350}
   recorderSongData:
     songName: 
