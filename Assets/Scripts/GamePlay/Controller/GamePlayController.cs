@@ -4,6 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 
+public enum ScoreType
+{
+    Perfect = 500,
+    Good = 300,
+    Bad = 100,
+    Miss = 0
+}
 
 public class GamePlayController : MonoBehaviour
 {
@@ -11,9 +18,23 @@ public class GamePlayController : MonoBehaviour
 
     public GameObject mask;
 
+    public float perfectOffset = 0.3f;
+
+    public float goodOffset = 0.5f;
+
     private int score = 0;
 
     private int combo = 0;
+
+    private int highCombo = 0;
+
+    private int perfectCount = 0;
+
+    private int goodCount = 0;
+
+    private int badCount = 0;
+
+    private int missCount = 0;
 
     // UI
     [SerializeField]
@@ -21,6 +42,9 @@ public class GamePlayController : MonoBehaviour
 
     [SerializeField]
     private Text comboTxt;
+
+    [SerializeField]
+    private Text songNameTxt;
 
     private void Awake()
     {
@@ -30,24 +54,68 @@ public class GamePlayController : MonoBehaviour
 
         scoreTxt.text = score.ToString();
         comboTxt.text = combo.ToString();
+        songNameTxt.text = GameInfo.songName;
 
         mask.GetComponent<Animator>().SetBool("Start", true);
     }
 
-    public void AddScore(int scoreToAdd)
+    public void SongFinished()
     {
-        score += scoreToAdd;
-        scoreTxt.text = score.ToString();
+        GameInfo.perfectCount = perfectCount;
+        GameInfo.goodCount = goodCount;
+        GameInfo.badCount = badCount;
+        GameInfo.missCount = missCount;
+        GameInfo.gameScore = score;
+        GameInfo.gameCombo = highCombo;
+
+        Debug.Log("Perfect : " + GameInfo.perfectCount);
+        Debug.Log("Good : " + GameInfo.goodCount);
+        Debug.Log("Bad : " + GameInfo.badCount);
+        Debug.Log("Miss : " + GameInfo.missCount);
+        Debug.Log("Combo : " + GameInfo.gameCombo);
+
     }
 
-    public void AddCombo()
+    public void AddScore(ScoreType type)
+    {
+        score += (int)type;
+        scoreTxt.text = score.ToString();
+        switch (type)
+        {
+            case ScoreType.Perfect:
+                AddCombo();
+                perfectCount++;
+                break;
+            case ScoreType.Good:
+                AddCombo();
+                goodCount++;
+                break;
+            case ScoreType.Bad:
+                ResetCombo();
+                badCount++;
+                break;
+            case ScoreType.Miss:
+                ResetCombo();
+                missCount++;
+                break;
+        }
+    }
+
+    private void AddCombo()
     {
         combo += 1;
+
+        if(combo >= highCombo)
+        {
+            highCombo = combo;
+        }
+
         comboTxt.text = combo.ToString();
         comboTxt.gameObject.transform.localScale = new Vector2(1.35f, 1.35f);
         StartCoroutine(ComboAnimate());
     }
-    public void ResetCombo()
+
+    private void ResetCombo()
     {
         combo = 0;
         comboTxt.text = "";

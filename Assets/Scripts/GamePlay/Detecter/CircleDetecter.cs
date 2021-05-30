@@ -11,21 +11,6 @@ public class CircleDetecter : MonoBehaviour
     private KeyCode keyToPress;
 
     [SerializeField]
-    private float perfectRange = 0.5f;
-
-    [SerializeField]
-    private float goodRange = 0.7f;
-
-    [SerializeField]
-    private int perfectScore = 500;
-
-    [SerializeField]
-    private int goodScore = 300;
-
-    [SerializeField]
-    private int badScore = 100;
-
-    [SerializeField]
     private GameObject[] effects;
 
     //
@@ -48,26 +33,7 @@ public class CircleDetecter : MonoBehaviour
                 if (obj == null)
                     return;
 
-                float dis = Vector2.Distance(obj.transform.position, this.transform.position);
-
-                if (dis <= perfectRange)
-                {
-                    Instantiate(effects[0], this.transform.position, this.transform.rotation);
-                    GamePlayController.instance.AddCombo();
-                    GamePlayController.instance.AddScore(perfectScore);
-                }
-                else if (dis <= goodRange)
-                {
-                    Instantiate(effects[1], this.transform.position, this.transform.rotation);
-                    GamePlayController.instance.AddCombo();
-                    GamePlayController.instance.AddScore(goodScore);
-                }
-                else
-                {
-                    Instantiate(effects[2], this.transform.position, this.transform.rotation);
-                    GamePlayController.instance.AddCombo();
-                    GamePlayController.instance.AddScore(badScore);
-                }
+                DetectHitAccuracy(obj);
 
                 GameObject objToDelete = obj;
                 obj = null;
@@ -75,6 +41,29 @@ public class CircleDetecter : MonoBehaviour
                 
                 beatSound.Play();
             }
+        }
+    }
+
+    private void DetectHitAccuracy(GameObject beatIn)
+    {
+        float beat = beatIn.GetComponent<Note>().beat;
+
+        float beatOffset = Mathf.Abs(beat - Conductor.instance.songPosInBeats);
+
+        if (beatOffset <= GamePlayController.instance.perfectOffset)
+        {
+            Instantiate(effects[0], this.transform.position, this.transform.rotation);
+            GamePlayController.instance.AddScore(ScoreType.Perfect);
+        }
+        else if (beatOffset <= GamePlayController.instance.goodOffset)
+        {
+            Instantiate(effects[1], this.transform.position, this.transform.rotation);
+            GamePlayController.instance.AddScore(ScoreType.Good);
+        }
+        else
+        {
+            Instantiate(effects[2], this.transform.position, this.transform.rotation);
+            GamePlayController.instance.AddScore(ScoreType.Bad);
         }
     }
 
@@ -106,7 +95,7 @@ public class CircleDetecter : MonoBehaviour
             if (obj != null)    // Miss 
             {
                 Instantiate(effects[3], this.transform.position, this.transform.rotation);
-                GamePlayController.instance.ResetCombo();
+                GamePlayController.instance.AddScore(ScoreType.Miss);
             }
             obj = null;
         }

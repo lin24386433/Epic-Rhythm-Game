@@ -28,7 +28,7 @@ public class NoteGenerator : MonoBehaviour
 
 			// Instantiate a new music note. (Search "Object Pooling" for more information if you wish to minimize the delay when instantiating game objects.)
 			// We don't care about the position and rotation because we will set them later in MusicNote.Initialize(...).
-			Note musicNote = ((GameObject)Instantiate(Conductor.instance.musicNotePrefab, startPos.transform.position, startPos.transform.rotation)).GetComponent<Note>();
+			Note musicNote = ((GameObject)Instantiate(Conductor.instance.musicNotePrefab, new Vector2(-100, -100), startPos.transform.rotation)).GetComponent<Note>();
 
 			musicNote.Initialize(Conductor.instance, startPos, endPos, singleNote[indexOfNextNote]);
 
@@ -43,7 +43,7 @@ public class NoteGenerator : MonoBehaviour
 			// We don't care about the position and rotation because we will set them later in MusicNote.Initialize(...).
 
 
-			LongNote longNote = Instantiate(Conductor.instance.musicLongNotePrefab, startPos.transform.position, startPos.transform.rotation).GetComponent<LongNote>();
+			LongNote longNote = Instantiate(Conductor.instance.musicLongNotePrefab, new Vector2(-100, -100), startPos.transform.rotation).GetComponent<LongNote>();
 
 			longNote.startNote.GetComponent<Note>().Initialize(Conductor.instance, startPos, endPos, longNoteStart[indexOfNextLongNote]);
 

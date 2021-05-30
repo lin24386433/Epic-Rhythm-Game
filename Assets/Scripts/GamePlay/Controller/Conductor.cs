@@ -136,6 +136,14 @@ public class Conductor : MonoBehaviour
 		yield return new WaitForSeconds(time);
 		// Play song.
 		songAudioSource.Play();
+
+		Invoke("SongFinished", songAudioSource.clip.length);
+	}
+
+	private void SongFinished()
+    {
+		GamePlayController.instance.SongFinished();
+
 	}
 
 }

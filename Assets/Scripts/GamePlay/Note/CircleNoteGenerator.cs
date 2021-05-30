@@ -29,7 +29,7 @@ public class CircleNoteGenerator : MonoBehaviour
 
 			// Instantiate a new music note. (Search "Object Pooling" for more information if you wish to minimize the delay when instantiating game objects.)
 			// We don't care about the position and rotation because we will set them later in MusicNote.Initialize(...).
-			Note musicNote = ((GameObject)Instantiate(Conductor.instance.musicCircleNotePrefab, startPos.transform.position, startPos.transform.rotation)).GetComponent<Note>();
+			Note musicNote = ((GameObject)Instantiate(Conductor.instance.musicCircleNotePrefab, new Vector2(-100, -100), startPos.transform.rotation)).GetComponent<Note>();
 
 			musicNote.Initialize(Conductor.instance, startPos, endPos, singleNote[indexOfNextNote]);
 

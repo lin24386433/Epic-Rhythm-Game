@@ -6,9 +6,12 @@ public class MissDetecter : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Note")
+        if(collision.CompareTag("Note"))
             Destroy(collision.gameObject);
-        if (collision.tag == "LongNoteStart")
+        if (collision.CompareTag("LongNoteStart"))
+        {
             collision.transform.parent.GetComponent<LongNote>().moving = false;
+        }
+
     }
 }

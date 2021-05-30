@@ -14,28 +14,12 @@ public class RazerLine : MonoBehaviour
     private KeyCode keyToPress2;
 
     [SerializeField]
-    private float perfectRange = 0.5f;
-
-    [SerializeField]
-    private float goodRange = 0.7f;
-
-    [SerializeField]
-    private int perfectScore = 500;
-
-    [SerializeField]
-    private int goodScore = 300;
-
-    [SerializeField]
-    private int badScore = 100;
-
-
-    [SerializeField]
     private GameObject[] effects;
 
     //
     private bool canDestroy = false;
 
-    private GameObject obj;
+    public GameObject obj;
 
     private void Start()
     {
@@ -46,34 +30,16 @@ public class RazerLine : MonoBehaviour
     {
         if (canDestroy)
         {
-            if (Input.GetKeyDown(keyToPress) && Input.GetKey(keyToPress2) || Input.GetKey(keyToPress) && Input.GetKeyDown(keyToPress2))
+            // Down
+            if ((Input.GetKeyDown(keyToPress) && Input.GetKey(keyToPress2)) || (Input.GetKey(keyToPress) && Input.GetKeyDown(keyToPress2)))
             {
                 if (obj == null)
                     return;
 
-                float dis = Vector2.Distance(obj.transform.position, this.transform.position);
-
-                if(dis <= perfectRange)
-                {
-                    Instantiate(effects[0], this.transform.position, this.transform.rotation);
-                    GamePlayController.instance.AddCombo();
-                    GamePlayController.instance.AddScore(perfectScore);
-                }
-                else if (dis <= goodRange)
-                {
-                    Instantiate(effects[1], this.transform.position, this.transform.rotation);
-                    GamePlayController.instance.AddCombo();
-                    GamePlayController.instance.AddScore(goodScore);
-                }
-                else 
-                {
-                    Instantiate(effects[2], this.transform.position, this.transform.rotation);
-                    GamePlayController.instance.AddCombo();
-                    GamePlayController.instance.AddScore(badScore);
-                }
-
                 if (obj.CompareTag("Note"))
                 {
+                    DetectHitAccuracy(obj);
+
                     GameObject objToDelete = obj;
                     obj = null;
                     Destroy(objToDelete);
@@ -84,7 +50,11 @@ public class RazerLine : MonoBehaviour
                 {
                     if (obj.transform.GetComponentInParent<LongNote>().moving)
                     {
+                        DetectHitAccuracy(obj);
+
                         obj.transform.GetComponentInParent<LongNote>().moving = false;
+
+                        obj.transform.GetComponentInParent<LongNote>().isHolding = true;
 
                         obj.transform.GetComponentInParent<LongNote>().startNote.transform.position = this.transform.position;
                         beatSound.Play();
@@ -92,32 +62,14 @@ public class RazerLine : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyUp(keyToPress) && Input.GetKey(keyToPress2) || Input.GetKey(keyToPress) && Input.GetKeyUp(keyToPress2) || Input.GetKeyUp(keyToPress) && Input.GetKeyUp(keyToPress2))
+            // Up
+            if ((Input.GetKeyUp(keyToPress) && Input.GetKey(keyToPress2)) || (Input.GetKey(keyToPress) && Input.GetKeyUp(keyToPress2)) || (Input.GetKeyUp(keyToPress) && Input.GetKeyUp(keyToPress2)))
             {
                 if (obj == null)
                     return;
-                if (obj.CompareTag("LongNoteEnd"))
+                if (obj.CompareTag("LongNoteEnd") && obj.transform.GetComponentInParent<LongNote>().isHolding)
                 {
-                    float dis = Vector2.Distance(obj.transform.position, this.transform.position);
-
-                    if (dis <= perfectRange)
-                    {
-                        Instantiate(effects[0], this.transform.position, this.transform.rotation);
-                        GamePlayController.instance.AddCombo();
-                        GamePlayController.instance.AddScore(perfectScore);
-                    }
-                    else if (dis <= goodRange)
-                    {
-                        Instantiate(effects[1], this.transform.position, this.transform.rotation);
-                        GamePlayController.instance.AddCombo();
-                        GamePlayController.instance.AddScore(goodScore);
-                    }
-                    else
-                    {
-                        Instantiate(effects[2], this.transform.position, this.transform.rotation);
-                        GamePlayController.instance.AddCombo();
-                        GamePlayController.instance.AddScore(badScore);
-                    }
+                    DetectHitAccuracy(obj);
 
                     GameObject objToDelete = obj.transform.parent.gameObject;
                     obj = null;
@@ -129,9 +81,13 @@ public class RazerLine : MonoBehaviour
                 {
                     if (obj.transform.parent != null)
                     {
-                        Destroy(obj.transform.parent.gameObject);
-                        Instantiate(effects[3], this.transform.position, this.transform.rotation);
-                        GamePlayController.instance.ResetCombo();
+                        if (obj.transform.GetComponentInParent<LongNote>().isHolding)
+                        {
+                            Destroy(obj.transform.parent.gameObject);
+                            Instantiate(effects[3], this.transform.position, this.transform.rotation);
+                            GamePlayController.instance.AddScore(ScoreType.Miss);
+                        }
+                        
                     }
                         
                 }
@@ -140,6 +96,31 @@ public class RazerLine : MonoBehaviour
         }   
 
     }
+
+    private void DetectHitAccuracy(GameObject beatIn)
+    {
+        float beat = beatIn.GetComponent<Note>().beat;
+
+        float beatOffset = Mathf.Abs(beat - Conductor.instance.songPosInBeats);
+
+        if (beatOffset <= GamePlayController.instance.perfectOffset)
+        {
+            Instantiate(effects[0], this.transform.position, this.transform.rotation);
+            GamePlayController.instance.AddScore(ScoreType.Perfect);
+        }
+        else if (beatOffset <= GamePlayController.instance.goodOffset)
+        {
+            Instantiate(effects[1], this.transform.position, this.transform.rotation);
+            GamePlayController.instance.AddScore(ScoreType.Good);
+        }
+        else
+        {
+            Instantiate(effects[2], this.transform.position, this.transform.rotation);
+            GamePlayController.instance.AddScore(ScoreType.Bad);
+        }
+
+    }
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -197,7 +178,7 @@ public class RazerLine : MonoBehaviour
             if (obj != null)
             {
                 Instantiate(effects[3], this.transform.position, this.transform.rotation);
-                GamePlayController.instance.ResetCombo();
+                GamePlayController.instance.AddScore(ScoreType.Miss);
             }
             obj = null;
         }
@@ -205,14 +186,16 @@ public class RazerLine : MonoBehaviour
         {
             canDestroy = false;
             obj = null;
+            if (!collision.transform.GetComponentInParent<LongNote>().isHolding)
+                GamePlayController.instance.AddScore(ScoreType.Miss);
         }
-        if (collision.CompareTag("LongNoteEnd"))
+        if (collision.CompareTag("LongNoteEnd") && !collision.transform.GetComponentInParent<LongNote>().isHolding)
         {
             canDestroy = false;
             if (obj != null)
             {
                 Instantiate(effects[3], this.transform.position, this.transform.rotation);
-                GamePlayController.instance.ResetCombo();
+                GamePlayController.instance.AddScore(ScoreType.Miss);
             }
             obj = null;
         }

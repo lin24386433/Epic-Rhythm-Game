@@ -10,6 +10,10 @@ public class LongNote : MonoBehaviour
 
     public GameObject endNote;
 
+    public bool moving = true;
+
+    public bool isHolding = false;
+
     private Conductor conductor;
 
     private Transform startPos;
@@ -18,7 +22,7 @@ public class LongNote : MonoBehaviour
 
     private float beat;
 
-    public bool moving = true;
+    
 
     public void Initialize(Conductor conductor, Transform startPoint, Transform endPoint)
     {
@@ -48,6 +52,8 @@ public class LongNote : MonoBehaviour
 
         if(middleNote.transform.localScale.y <= -0.2f)
         {
+            if(isHolding)
+                GamePlayController.instance.AddScore(ScoreType.Miss);
             Destroy(this.gameObject);
         }
 
