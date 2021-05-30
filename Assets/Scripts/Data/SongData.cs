@@ -2,23 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum songDifficulty
-{
-    easy,
-    normal,
-    hard,
-    expert,
-    master
-}
-
 [System.Serializable]
-public class SongData 
+public class SongData
 {
     public string songName;
 
     public float songLength;
 
-    public songDifficulty songDifficulty = songDifficulty.easy;
+    public SongDifficulty songDifficulty;
 
     public int maxCombo;
 
@@ -30,5 +21,17 @@ public class SongData
     public int playerHighScore;
 
     public int playTimes;
+
+    public SongData()
+    {
+        songName = "";
+        songLength = 0f;
+        songDifficulty = SongDifficulty.Easy;
+        maxCombo = 0;
+        maxScore = 0;
+        playerHighCombo = 0;
+        playerHighScore = 0;
+        playTimes = 0;
+    }
 
 }

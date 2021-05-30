@@ -2,15 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.IO;
 
-public enum ScoreType
-{
-    Perfect = 500,
-    Good = 300,
-    Bad = 100,
-    Miss = 0
-}
 
 public class GamePlayController : MonoBehaviour
 {
@@ -68,11 +62,7 @@ public class GamePlayController : MonoBehaviour
         GameInfo.gameScore = score;
         GameInfo.gameCombo = highCombo;
 
-        Debug.Log("Perfect : " + GameInfo.perfectCount);
-        Debug.Log("Good : " + GameInfo.goodCount);
-        Debug.Log("Bad : " + GameInfo.badCount);
-        Debug.Log("Miss : " + GameInfo.missCount);
-        Debug.Log("Combo : " + GameInfo.gameCombo);
+        SceneManager.LoadSceneAsync(2);
 
     }
 

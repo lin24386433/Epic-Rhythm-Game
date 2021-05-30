@@ -77,7 +77,7 @@ public class DataController : MonoBehaviour
                 Texture2D myImg = texture;
                 Sprite sprite = Sprite.Create(myImg, new Rect(0, 0, myImg.width, myImg.height), Vector2.zero);
                 bgImg.sprite = sprite;
-       
+                GameInfo.songImg = sprite;
             }
         }
 

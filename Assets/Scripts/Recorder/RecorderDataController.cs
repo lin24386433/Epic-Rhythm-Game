@@ -313,7 +313,7 @@ public class RecorderDataController : MonoBehaviour
 
         data.songLength = RecordConductor.instance.songAudioSource.clip.length;
 
-        data.songDifficulty = songDifficulty.hard;
+        data.songDifficulty = SongDifficulty.Hard;
 
         data.maxCombo = MaxCombo();
 

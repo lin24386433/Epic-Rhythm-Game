@@ -86,6 +86,10 @@
     <Compile Include="Assets\Scripts\GamePlay\Detecter\CircleDetecter.cs" />
     <Compile Include="Assets\Scripts\Data\NotesData.cs" />
     <Compile Include="Assets\Scripts\Recorder\SpectrumMovement.cs" />
+    <Compile Include="Assets\Scripts\ConcludeController\ConcludeController.cs" />
+    <Compile Include="Assets\Scripts\Data\Enumerations.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\MainMenuController.cs" />
+    <Compile Include="Assets\Scripts\ConcludeController\AnimationController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\SongDatas\Gurenge\SongData.txt" />

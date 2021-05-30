@@ -13,6 +13,8 @@ public class MainMenuDataController : MonoBehaviour
     public GameObject selectionMenu;
     public GameObject mask;
 
+    public SongData data;
+
     private void Awake()
     {
         StartCoroutine(LoadAsset());
@@ -20,6 +22,28 @@ public class MainMenuDataController : MonoBehaviour
         selectionMenu.SetActive(false);
     }
 
+    public SongData SongDataLoadedFromJson()
+    {
+        // Get data from path : Application.dataPath/SongDatas/[songName]/NoteData.txt
+        string path = Path.Combine(Application.dataPath, "SongDatas");
+
+        path = Path.Combine(path, GameInfo.songName);
+
+        path = Path.Combine(path, "SongData" + ".txt");
+
+        if (!File.Exists(path))
+        {
+            return new SongData();
+        }
+
+        string loadData;
+
+        loadData = File.ReadAllText(path);
+
+        //把字串轉換成Data物件
+        return JsonUtility.FromJson<SongData>(loadData);
+
+    }
 
     private IEnumerator LoadAsset()
     {

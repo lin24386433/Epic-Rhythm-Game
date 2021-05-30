@@ -100,6 +100,7 @@ public class SelectionMenu : MonoBehaviour
             animator.SetBool("onSelecting", true);
 
             SelectionMenuUpdate();
+            MainMenuController.instance.SetSongInfo();
 
             audioSource.Play();
         }
@@ -115,6 +116,7 @@ public class SelectionMenu : MonoBehaviour
             animator.SetBool("onSelecting", true);
 
             SelectionMenuUpdate();
+            MainMenuController.instance.SetSongInfo();
 
             audioSource.Play();
         }

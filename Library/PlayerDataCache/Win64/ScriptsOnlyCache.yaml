@@ -1,13 +1,16 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AnimationController
     - CircleDetecter
     - CircleNoteGenerator
+    - ConcludeController
     - Conductor
     - DataController
     - Effect
     - GamePlayController
     - LongNote
+    - MainMenuController
     - MainMenuDataController
     - MissDetecter
     - Note
@@ -19,6 +22,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
@@ -34,8 +38,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -44,11 +50,76 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Outline
     - UnityEngine.UI.Text
   sceneClasses:
+    Assets/Scenes/ConcludeScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1490}
+    - Class: 114
+      Script: {instanceID: 2092}
+    - Class: 114
+      Script: {instanceID: 2468}
+    - Class: 114
+      Script: {instanceID: 2614}
+    - Class: 114
+      Script: {instanceID: 2788}
+    - Class: 114
+      Script: {instanceID: 3000}
+    - Class: 114
+      Script: {instanceID: 3102}
+    - Class: 114
+      Script: {instanceID: 3368}
+    - Class: 114
+      Script: {instanceID: 26290}
+    - Class: 114
+      Script: {instanceID: 83094}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/GamePlayScene.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -59,6 +130,8 @@ ScriptsOnlyBuild:
     - Class: 21
       Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 43
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
@@ -126,6 +199,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
     - Class: 212
       Script: {instanceID: 0}
     - Class: 213
@@ -185,6 +262,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 2788}
     - Class: 114
       Script: {instanceID: 3000}
+    - Class: 114
+      Script: {instanceID: 78924}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -222,7 +301,7 @@ ScriptsOnlyBuild:
     className: ShowLineController
   - hash:
       serializedVersion: 2
-      Hash: 052c96380e547619f6534cfd0f6e7af2
+      Hash: 721f56a2aa29bbcd49e18997feb47904
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RazerLine
@@ -252,7 +331,7 @@ ScriptsOnlyBuild:
     className: SpriteSkin
   - hash:
       serializedVersion: 2
-      Hash: eed84c468a0ff539575c48924f273164
+      Hash: 1156dde5fd14ce892fb49ccd1625e068
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainMenuDataController
@@ -342,7 +421,7 @@ ScriptsOnlyBuild:
     className: Recorder
   - hash:
       serializedVersion: 2
-      Hash: 9d0ca38e77daa94176ff7ebbcc06adf9
+      Hash: bb44fe5828957f23ebd68fae920fe0bd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GamePlayController
@@ -372,7 +451,7 @@ ScriptsOnlyBuild:
     className: PlaymodeTestsController
   - hash:
       serializedVersion: 2
-      Hash: 5ea6c284c5ae4bd2baec29f034cbc0a1
+      Hash: 8f4b692ef2262e85a0cc247ef78a2b95
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LongNote
@@ -846,7 +925,7 @@ ScriptsOnlyBuild:
     className: CircleNoteGenerator
   - hash:
       serializedVersion: 2
-      Hash: eebe368a55e44c5c2d6643ce8046e9b0
+      Hash: ac358cb8df0f43f0acc7cf8d93bc81be
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CircleDetecter
@@ -886,8 +965,27 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SpectrumMovement
+  - hash:
+      serializedVersion: 2
+      Hash: bed767966db2731439490d3d17a8357a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ConcludeController
+  - hash:
+      serializedVersion: 2
+      Hash: ac005b165215c0c63dacaff9c66b98d4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainMenuController
+  - hash:
+      serializedVersion: 2
+      Hash: 83558e2b28970d976b7cc585565ff01a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AnimationController
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/GamePlayScene.unity
+  - Assets/Scenes/ConcludeScene.unity
   playerPath: C:/Users/lin/Documents/Epic-Rhythm-Game/builds/Windows/New Rhythm Game.exe

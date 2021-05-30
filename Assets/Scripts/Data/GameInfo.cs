@@ -6,16 +6,18 @@ public static class GameInfo
 {
     public static string songName = "Fantastic Departure";
 
-    public static int gameScore = 0;
+    public static Sprite songImg;
 
-    public static int gameCombo = 0;
+    public static int gameScore = -1;
 
-    public static int perfectCount = 0;
+    public static int gameCombo = -1;
 
-    public static int goodCount = 0;
+    public static int perfectCount = -1;
 
-    public static int badCount = 0;
+    public static int goodCount = -1;
 
-    public static int missCount = 0;
+    public static int badCount = -1;
+
+    public static int missCount = -1;
 
 }
