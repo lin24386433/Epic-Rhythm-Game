@@ -8,16 +8,16 @@ public static class GameInfo
 
     public static Sprite songImg;
 
-    public static int gameScore = -1;
+    public static int gameScore = 146000;
 
-    public static int gameCombo = -1;
+    public static int gameCombo = 100;
 
-    public static int perfectCount = -1;
+    public static int perfectCount = 100;
 
-    public static int goodCount = -1;
+    public static int goodCount = 10;
 
-    public static int badCount = -1;
+    public static int badCount = 10;
 
-    public static int missCount = -1;
+    public static int missCount = 10;
 
 }

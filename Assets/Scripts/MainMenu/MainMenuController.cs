@@ -24,6 +24,9 @@ public class MainMenuController : MonoBehaviour
     [SerializeField]
     private Sprite[] rankSprites;
 
+    [SerializeField]
+    private string[] difficultyHex;
+
     SongData data;
 
     private void Awake()
@@ -36,14 +39,17 @@ public class MainMenuController : MonoBehaviour
 
     private void Start()
     {
-        SetSongInfo();
+        StartCoroutine(SetSongInfo());
     }
 
-    public void SetSongInfo()
+    public IEnumerator SetSongInfo()
     {
         data = dataCtrl.SongDataLoadedFromJson();
+
+        yield return new WaitForSeconds(0.1f);
+
         highScoreTxt.text = data.playerHighScore.ToString();
-        difficultyTxt.text = data.songDifficulty.ToString();
+        difficultyTxt.text = data.songDifficulty.ToString();     
 
         float acc;
 
@@ -70,6 +76,44 @@ public class MainMenuController : MonoBehaviour
         {
             rankImg.sprite = rankSprites[4];
         }
+
+        Color color;
+
+        switch (data.songDifficulty)
+        {
+            case SongDifficulty.Easy:
+                if (ColorUtility.TryParseHtmlString(difficultyHex[0], out color))
+                {
+                    difficultyTxt.color = color;
+                }
+                break;
+            case SongDifficulty.Normal:
+                if (ColorUtility.TryParseHtmlString(difficultyHex[1], out color))
+                {
+                    difficultyTxt.color = color;
+                }
+                break;
+            case SongDifficulty.Hard:
+                if (ColorUtility.TryParseHtmlString(difficultyHex[2], out color))
+                {
+                    difficultyTxt.color = color;
+                }
+                break;
+            case SongDifficulty.Expert:
+                if (ColorUtility.TryParseHtmlString(difficultyHex[3], out color))
+                {
+                    difficultyTxt.color = color;
+                }
+                break;
+            case SongDifficulty.Master:
+                if (ColorUtility.TryParseHtmlString(difficultyHex[4], out color))
+                {
+                    difficultyTxt.color = color;
+                }
+                break;
+        }
+
     }
+
 
 }

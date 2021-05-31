@@ -15,13 +15,16 @@ public class CircleDetecter : MonoBehaviour
 
     //
     bool canDestroy = false;
+    
+    private GameObject obj;
 
     [SerializeField]
-    private GameObject obj;
+    private GameObject point;
 
     private void Start()
     {
         beatSound = GetComponent<AudioSource>();
+
     }
 
     private void Update()
@@ -30,6 +33,8 @@ public class CircleDetecter : MonoBehaviour
         {
             if (Input.GetKeyDown(keyToPress))
             {
+                
+
                 if (obj == null)
                     return;
 
@@ -41,6 +46,15 @@ public class CircleDetecter : MonoBehaviour
                 
                 beatSound.Play();
             }
+            
+        }
+        if (Input.GetKeyDown(keyToPress))
+        {
+            point.transform.localScale = new Vector2(1.2f, 1.2f);
+        }
+        if (Input.GetKeyUp(keyToPress))
+        {
+            point.transform.localScale = new Vector2(1, 1);
         }
     }
 

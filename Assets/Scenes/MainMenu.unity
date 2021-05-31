@@ -2645,6 +2645,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 569f92964be71944f844e16a7a95010e, type: 3}
   - {fileID: 21300000, guid: d99887ec83aa4a743b1f7bf54764587b, type: 3}
   - {fileID: 21300000, guid: 138c2cb0fc789a44399ab898d5112cac, type: 3}
+  difficultyHex:
+  - '#a3ffa9'
+  - '#b6fbff'
+  - '#fe7c7c'
+  - '#c07dff'
+  - '#ff0000'
 --- !u!4 &1842525820
 Transform:
   m_ObjectHideFlags: 0

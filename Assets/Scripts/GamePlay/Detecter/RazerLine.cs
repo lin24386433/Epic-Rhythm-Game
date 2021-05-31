@@ -19,7 +19,7 @@ public class RazerLine : MonoBehaviour
     //
     private bool canDestroy = false;
 
-    public GameObject obj;
+    private GameObject obj;
 
     private void Start()
     {
