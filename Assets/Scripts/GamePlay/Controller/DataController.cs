@@ -23,7 +23,7 @@ public class DataController : MonoBehaviour
 
     private NotesData notesDataToLoad;
 
-    private void Start()
+    private void Awake()
     {
         StartCoroutine(LoadImageFromFile());
 

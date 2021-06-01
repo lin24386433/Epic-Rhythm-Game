@@ -56,6 +56,12 @@ public class ConcludeController : MonoBehaviour
     [SerializeField]
     private string[] difficultyHex;
 
+    [SerializeField]
+    private Animator pantegonAnimator;
+
+    [SerializeField]
+    private Animator sceneMaskAnimator;
+
     [Space(20)]
     [SerializeField]
     private float addNumberSpeed = 200f;
@@ -336,12 +342,14 @@ public class ConcludeController : MonoBehaviour
     private void OnNextBtnClicked()
     {
         nextBtn.gameObject.GetComponent<AudioSource>().Play();
+        sceneMaskAnimator.gameObject.SetActive(true);
         StartCoroutine(WaitForChangeScene(0));
     }
 
     private void OnRetryBtnClicked()
     {
         retryBtn.gameObject.GetComponent<AudioSource>().Play();
+        pantegonAnimator.SetTrigger("GameEnd");
         StartCoroutine(WaitForChangeScene(1));
     }
 

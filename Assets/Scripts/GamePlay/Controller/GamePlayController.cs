@@ -10,6 +10,8 @@ public class GamePlayController : MonoBehaviour
 {
     public static GamePlayController instance;
 
+    public GamePlayTransitionController transitionController;
+
     public GameObject mask;
 
     public float perfectOffset = 0.3f;
@@ -47,10 +49,10 @@ public class GamePlayController : MonoBehaviour
 
 
         scoreTxt.text = score.ToString();
-        comboTxt.text = combo.ToString();
+        
         songNameTxt.text = GameInfo.songName;
 
-        mask.GetComponent<Animator>().SetBool("Start", true);
+        //mask.GetComponent<Animator>().SetBool("Start", true);
     }
 
     public void SongFinished()
@@ -62,7 +64,9 @@ public class GamePlayController : MonoBehaviour
         GameInfo.gameScore = score;
         GameInfo.gameCombo = highCombo;
 
-        SceneManager.LoadSceneAsync(2);
+        StartCoroutine(transitionController.ExitScene());
+
+        
 
     }
 

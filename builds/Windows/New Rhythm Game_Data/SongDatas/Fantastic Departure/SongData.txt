@@ -5,6 +5,6 @@
     "maxCombo": 326,
     "maxScore": 163000,
     "playerHighCombo": 139,
-    "playerHighScore": 148600,
-    "playTimes": 44
+    "playerHighScore": 149800,
+    "playTimes": 73
 }

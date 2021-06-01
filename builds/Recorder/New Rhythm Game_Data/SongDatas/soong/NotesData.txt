@@ -1,0 +1,44 @@
+{
+    "circleNote_Single1": [
+        0.0
+    ],
+    "circleNote_Single2": [
+        0.0
+    ],
+    "circleNote_Single3": [
+        0.0
+    ],
+    "circleNote_Single4": [
+        0.0
+    ],
+    "circleNote_Single5": [],
+    "singleNote1": [
+        0.0
+    ],
+    "longNoteStart1": [],
+    "longNoteEnd1": [],
+    "singleNote2": [
+        0.0
+    ],
+    "longNoteStart2": [],
+    "longNoteEnd2": [],
+    "singleNote3": [
+        0.0
+    ],
+    "longNoteStart3": [],
+    "longNoteEnd3": [],
+    "singleNote4": [
+        1.2486562728881837
+    ],
+    "longNoteStart4": [
+        0.0
+    ],
+    "longNoteEnd4": [
+        3.0
+    ],
+    "singleNote5": [
+        0.0
+    ],
+    "longNoteStart5": [],
+    "longNoteEnd5": []
+}

@@ -49,7 +49,7 @@ public class SelectionMenu : MonoBehaviour
 
     // enter play scene
     bool isGoingToPlay = false;
-    public GameObject mask;
+    public GameObject pantegonAni;
 
     private void Start()
     {
@@ -141,7 +141,8 @@ public class SelectionMenu : MonoBehaviour
         animator.SetBool("onSelecting", true);       
 
         yield return new WaitForSeconds(1f);
-        mask.GetComponent<Animator>().SetBool("Start", false);
+
+        pantegonAni.SetActive(true);
        
 
         yield return new WaitForSeconds(3f);

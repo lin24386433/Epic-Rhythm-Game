@@ -71,7 +71,7 @@
     <Compile Include="Assets\Scripts\GamePlay\Note\LongNote.cs" />
     <Compile Include="Assets\Scripts\Recorder\NoteRecorder.cs" />
     <Compile Include="Assets\Scripts\Recorder\RecordConductor.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\Controller\DataController.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\Controller\GamePlayDataController.cs" />
     <Compile Include="Assets\Scripts\MainMenu\SelectionMenu.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MainMenuController.cs" />
     <Compile Include="Assets\Scripts\Data\SongData.cs" />
@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\GamePlay\Others\Effect.cs" />
     <Compile Include="Assets\Scripts\Recorder\AudioSpectrum.cs" />
     <Compile Include="Assets\Scripts\Recorder\BaseLine.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\Particles\Particles.cs" />
     <Compile Include="Assets\Scripts\Recorder\RecorderNote.cs" />
     <Compile Include="Assets\Scripts\Data\Enumerations.cs" />
     <Compile Include="Assets\Scripts\GamePlay\Note\Note.cs" />
@@ -89,8 +90,8 @@
     <Compile Include="Assets\Scripts\GamePlay\Note\CircleNoteGenerator.cs" />
     <Compile Include="Assets\Scripts\GamePlay\Detecter\CircleDetecter.cs" />
     <Compile Include="Assets\Scripts\Data\NotesData.cs" />
-    <Compile Include="Assets\Scripts\Recorder\SpectrumMovement.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\Particles\Particles.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\Controller\GamePlayTransitionController.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\Controller\DataController.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\SongDatas\Gurenge\SongData.txt" />

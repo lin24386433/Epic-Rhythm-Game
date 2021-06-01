@@ -11,10 +11,12 @@ public class Conductor : MonoBehaviour
 	// How many beats each minute last.
 	public float songBPM;
 
-	private float totalBeats;
+	[System.NonSerialized]
+	public float totalBeats;
 
 	// How many seconds each beat last. This could be calculated by (60 / BPM).
-	private float secPerBeat;
+	[System.NonSerialized]
+	public float secPerBeat;
 
 	[System.NonSerialized]
 	public float songPosInBeats;
@@ -26,7 +28,8 @@ public class Conductor : MonoBehaviour
 	public float songOffset;
 
 	// This plays the song
-	private AudioSource songAudioSource;
+	[System.NonSerialized]
+	public AudioSource songAudioSource;
 
 	// Current song position. (We don't want to show this in Editor, hence the "NonSerialized")
 	private float songposition;
@@ -53,8 +56,6 @@ public class Conductor : MonoBehaviour
 		if(instance == null)
 			instance = this;
 
-		StartCoroutine(LoadAudioFromFile());
-
 		// Use AudioSettings.dspTime to get the accurate time passed for the audio engine.
 		dsptimesong = (float)AudioSettings.dspTime;
 
@@ -62,7 +63,7 @@ public class Conductor : MonoBehaviour
 
 		songAudioSource = GetComponent<AudioSource>();
 
-		StartCoroutine(WaitForPlayTime(timeBeforeStart));
+		//StartCoroutine(WaitForPlayTime(timeBeforeStart));
 	}
 
 
@@ -81,59 +82,11 @@ public class Conductor : MonoBehaviour
 
 	}
 
-	private IEnumerator LoadAudioFromFile()
+	
+
+	public IEnumerator WaitForPlayTime()
 	{
-		AudioClip myClip = null;
-
-		// File to find : Application.dataPath/SongDatas/Gurenge/music.mp3
-		string path = Path.Combine(Application.dataPath, "SongDatas");
-
-		path = Path.Combine(path, GameInfo.songName);
-
-		path = Path.Combine(path, "music.mp3");
-
-#if UNITY_STANDALONE_OSX
-
-        string url = "file://" + path;
-
-#endif
-
-#if UNITY_STANDALONE_LINUX
-
-        string url = "file://" + path;
-
-#endif
-
-#if UNITY_STANDALONE_WIN
-
-		string url = "file:///" + path;
-
-#endif
-
-		using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.MPEG))
-		{
-			yield return www.SendWebRequest();
-
-			if (www.result == UnityWebRequest.Result.ConnectionError)
-			{
-				Debug.Log(www.error);
-			}
-			else
-			{
-				myClip = DownloadHandlerAudioClip.GetContent(www);
-			}
-		}
-
-		myClip.name = "music";
-
-		songAudioSource.clip = myClip;
-
-		totalBeats = songAudioSource.clip.length / secPerBeat;
-	}
-
-	IEnumerator WaitForPlayTime(float time)
-	{
-		yield return new WaitForSeconds(time);
+		yield return new WaitForSeconds(timeBeforeStart);
 		// Play song.
 		songAudioSource.Play();
 

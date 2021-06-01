@@ -1,23 +1,17 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - AnimationController
-    - CircleDetecter
-    - CircleNoteGenerator
-    - ConcludeController
-    - Conductor
-    - DataController
-    - Effect
-    - GamePlayController
-    - LongNote
-    - MainMenuController
-    - MainMenuDataController
-    - MissDetecter
-    - Note
-    - NoteGenerator
-    - RazerLine
-    - SelectionMenu
-    - ShowLineController
+    - AudioSpectrum
+    - BaseLine
+    - CircleNoteRecorder
+    - NoteDetailWindow
+    - NoteRecorder
+    - RecordConductor
+    - Recorder
+    - RecorderCircleNote
+    - RecorderDataController
+    - RecorderLongNote
+    - RecorderNote
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
@@ -38,8 +32,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -50,78 +46,18 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.Dropdown
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.InputField
     - UnityEngine.UI.Mask
-    - UnityEngine.UI.Outline
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
+    - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
   sceneClasses:
-    Assets/Scenes/ConcludeScene.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 74
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
-    - Class: 83
-      Script: {instanceID: 0}
-    - Class: 91
-      Script: {instanceID: 0}
-    - Class: 95
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 1490}
-    - Class: 114
-      Script: {instanceID: 1716}
-    - Class: 114
-      Script: {instanceID: 2010}
-    - Class: 114
-      Script: {instanceID: 2096}
-    - Class: 114
-      Script: {instanceID: 2472}
-    - Class: 114
-      Script: {instanceID: 2618}
-    - Class: 114
-      Script: {instanceID: 2794}
-    - Class: 114
-      Script: {instanceID: 3006}
-    - Class: 114
-      Script: {instanceID: 3108}
-    - Class: 114
-      Script: {instanceID: 3374}
-    - Class: 114
-      Script: {instanceID: 3976}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    Assets/Scenes/GamePlayScene.unity:
+    Assets/Scenes/Recorder.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -152,46 +88,58 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
-    - Class: 95
-      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1476}
+      Script: {instanceID: 1492}
     - Class: 114
-      Script: {instanceID: 1478}
+      Script: {instanceID: 1608}
     - Class: 114
-      Script: {instanceID: 1490}
+      Script: {instanceID: 1666}
     - Class: 114
-      Script: {instanceID: 1508}
+      Script: {instanceID: 1782}
     - Class: 114
-      Script: {instanceID: 1790}
+      Script: {instanceID: 1822}
     - Class: 114
-      Script: {instanceID: 1864}
+      Script: {instanceID: 2098}
     - Class: 114
-      Script: {instanceID: 2096}
+      Script: {instanceID: 2260}
     - Class: 114
-      Script: {instanceID: 2160}
+      Script: {instanceID: 2268}
     - Class: 114
-      Script: {instanceID: 2472}
+      Script: {instanceID: 2474}
     - Class: 114
-      Script: {instanceID: 2618}
+      Script: {instanceID: 2620}
     - Class: 114
-      Script: {instanceID: 2692}
+      Script: {instanceID: 2796}
     - Class: 114
-      Script: {instanceID: 2794}
+      Script: {instanceID: 2848}
     - Class: 114
-      Script: {instanceID: 3006}
+      Script: {instanceID: 3008}
     - Class: 114
-      Script: {instanceID: 3466}
+      Script: {instanceID: 3016}
     - Class: 114
-      Script: {instanceID: 3588}
+      Script: {instanceID: 3110}
     - Class: 114
-      Script: {instanceID: 4354}
+      Script: {instanceID: 3418}
     - Class: 114
-      Script: {instanceID: 4644}
+      Script: {instanceID: 3662}
     - Class: 114
-      Script: {instanceID: 4766}
+      Script: {instanceID: 3810}
+    - Class: 114
+      Script: {instanceID: 3816}
+    - Class: 114
+      Script: {instanceID: 3980}
+    - Class: 114
+      Script: {instanceID: 4052}
+    - Class: 114
+      Script: {instanceID: 4162}
+    - Class: 114
+      Script: {instanceID: 4454}
+    - Class: 114
+      Script: {instanceID: 4538}
+    - Class: 114
+      Script: {instanceID: 4584}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -214,80 +162,15 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
-    - Class: 225
-      Script: {instanceID: 0}
     - Class: 331
       Script: {instanceID: 0}
-    Assets/Scenes/MainMenu.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 43
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 74
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
-    - Class: 83
-      Script: {instanceID: 0}
-    - Class: 91
-      Script: {instanceID: 0}
-    - Class: 95
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 1490}
-    - Class: 114
-      Script: {instanceID: 1570}
-    - Class: 114
-      Script: {instanceID: 2096}
-    - Class: 114
-      Script: {instanceID: 2472}
-    - Class: 114
-      Script: {instanceID: 2618}
-    - Class: 114
-      Script: {instanceID: 2698}
-    - Class: 114
-      Script: {instanceID: 2778}
-    - Class: 114
-      Script: {instanceID: 2794}
-    - Class: 114
-      Script: {instanceID: 3006}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 196
-      Script: {instanceID: 0}
-    - Class: 198
-      Script: {instanceID: 0}
-    - Class: 199
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    - Class: 225
-      Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 8f656f72d3b75be30a2247fbf26d0d1b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DataController
   - hash:
       serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
@@ -302,7 +185,7 @@ ScriptsOnlyBuild:
     className: ShowLineController
   - hash:
       serializedVersion: 2
-      Hash: 721f56a2aa29bbcd49e18997feb47904
+      Hash: 6225b04069a050074f72d58b656226da
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RazerLine
@@ -398,7 +281,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 4d277a2d4cab2520a9b9cc4680499858
+      Hash: 1d3e0496347ca27d3d6d596ed3dbfe0b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ConcludeController
@@ -428,7 +311,7 @@ ScriptsOnlyBuild:
     className: Recorder
   - hash:
       serializedVersion: 2
-      Hash: bb44fe5828957f23ebd68fae920fe0bd
+      Hash: d8d52b4543fdb60a1eb4ba54a3b74e84
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GamePlayController
@@ -551,10 +434,10 @@ ScriptsOnlyBuild:
       Hash: 8f656f72d3b75be30a2247fbf26d0d1b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: DataController
+    className: GamePlayDataController
   - hash:
       serializedVersion: 2
-      Hash: 220871345426448ea7ee4b0198188fe7
+      Hash: ae9a2501d8a278c2d9f2906a841da157
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SelectionMenu
@@ -788,6 +671,12 @@ ScriptsOnlyBuild:
     className: BaseLine
   - hash:
       serializedVersion: 2
+      Hash: 47b669c66bb30349c0b0436456b34b5f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Particles
+  - hash:
+      serializedVersion: 2
       Hash: a5781dc71a671b1ad2b38de19f24b71f
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -944,7 +833,7 @@ ScriptsOnlyBuild:
     className: CircleNoteGenerator
   - hash:
       serializedVersion: 2
-      Hash: ac358cb8df0f43f0acc7cf8d93bc81be
+      Hash: e0491f926ab9c11deb1b50441e0a47b9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CircleDetecter
@@ -954,6 +843,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalEmitter
+  - hash:
+      serializedVersion: 2
+      Hash: 72747a491c1b2b3b31f85e8124222331
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GamePlayTransitionController
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -978,15 +873,8 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: SpectrumMovement
   platform: 19
   scenePathNames:
-  - Assets/Scenes/MainMenu.unity
-  - Assets/Scenes/GamePlayScene.unity
-  - Assets/Scenes/ConcludeScene.unity
-  playerPath: C:/Users/lin/Documents/Epic-Rhythm-Game/builds/Windows/New Rhythm Game.exe
+  - Assets/Scenes/Recorder.unity
+  playerPath: C:/Users/lin/Documents/Epic-Rhythm-Game/builds/Recorder/New Rhythm
+    Game.exe
