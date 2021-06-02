@@ -1,0 +1,10 @@
+{
+    "songName": "HomeSweetHome",
+    "songLength": 82.41600036621094,
+    "songDifficulty": 2,
+    "maxCombo": 144,
+    "maxScore": 72000,
+    "playerHighCombo": 79,
+    "playerHighScore": 67600,
+    "playTimes": 8
+}

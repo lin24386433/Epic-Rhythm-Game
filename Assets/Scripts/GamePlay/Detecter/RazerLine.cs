@@ -31,7 +31,7 @@ public class RazerLine : MonoBehaviour
         if (canDestroy)
         {
             // Down
-            if ((Input.GetKeyDown(keyToPress) && Input.GetKey(keyToPress2)) || (Input.GetKey(keyToPress) && Input.GetKeyDown(keyToPress2)))
+            if (((Input.GetKeyDown(keyToPress) && Input.GetKey(keyToPress2)) || (Input.GetKey(keyToPress) && Input.GetKeyDown(keyToPress2))) && !GamePlayController.instance.isPaused)
             {
                 if (obj == null)
                     return;
@@ -63,7 +63,7 @@ public class RazerLine : MonoBehaviour
             }
 
             // Up
-            if ((Input.GetKeyUp(keyToPress) && Input.GetKey(keyToPress2)) || (Input.GetKey(keyToPress) && Input.GetKeyUp(keyToPress2)) || (Input.GetKeyUp(keyToPress) && Input.GetKeyUp(keyToPress2)))
+            if (((Input.GetKeyUp(keyToPress) && Input.GetKey(keyToPress2)) || (Input.GetKey(keyToPress) && Input.GetKeyUp(keyToPress2)) || (Input.GetKeyUp(keyToPress) && Input.GetKeyUp(keyToPress2))) && !GamePlayController.instance.isPaused)
             {
                 if (obj == null)
                     return;

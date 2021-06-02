@@ -140,6 +140,8 @@ public class MainMenuDataController : MonoBehaviour
         selectionMenu.GetComponent<SelectionMenu>().SelectionMenuUpdate();
 
         mask.GetComponent<Animator>().SetBool("Start", true);
+
+        mask.transform.GetChild(0).gameObject.SetActive(false);
     }
 
 }

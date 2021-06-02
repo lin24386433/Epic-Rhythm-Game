@@ -78,7 +78,7 @@ public class Conductor : MonoBehaviour
 		// Check if we need to instantiate a new note. (We obtain the current beat of the song by (songposition / secondsPerBeat).)
 		// See the image for note spawning (note that the direction is reversed):
 		// http://shinerightstudio.com/posts/music-syncing-in-rhythm-games/pic2.png
-		beatToShow = songposition / secPerBeat + BeatsShownInAdvance;
+		beatToShow = songAudioSource.time / secPerBeat + BeatsShownInAdvance;
 
 	}
 

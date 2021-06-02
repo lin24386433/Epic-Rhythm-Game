@@ -5,8 +5,8 @@ using UnityEngine;
 public enum ScoreType
 {
     Perfect = 500,
-    Good = 300,
-    Bad = 100,
+    Good = 350,
+    Bad = 200,
     Miss = 0
 }
 

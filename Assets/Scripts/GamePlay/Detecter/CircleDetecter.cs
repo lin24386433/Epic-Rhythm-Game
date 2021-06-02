@@ -31,7 +31,7 @@ public class CircleDetecter : MonoBehaviour
     {
         if(canDestroy)
         {
-            if (Input.GetKeyDown(keyToPress))
+            if (Input.GetKeyDown(keyToPress) && !GamePlayController.instance.isPaused)
             {
                 
 
@@ -48,11 +48,11 @@ public class CircleDetecter : MonoBehaviour
             }
             
         }
-        if (Input.GetKeyDown(keyToPress))
+        if (Input.GetKeyDown(keyToPress) && !GamePlayController.instance.isPaused)
         {
             point.transform.localScale = new Vector2(1.2f, 1.2f);
         }
-        if (Input.GetKeyUp(keyToPress))
+        if (Input.GetKeyUp(keyToPress) && !GamePlayController.instance.isPaused)
         {
             point.transform.localScale = new Vector2(1, 1);
         }

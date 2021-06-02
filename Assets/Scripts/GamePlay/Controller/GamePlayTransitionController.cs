@@ -23,7 +23,7 @@ public class GamePlayTransitionController : MonoBehaviour
         StartCoroutine(Conductor.instance.WaitForPlayTime());
     }
 
-    public IEnumerator ExitScene()
+    public IEnumerator ExitScene(int sceneID)
     {
         songNameAndScoreAnimator.SetTrigger("Out");
 
@@ -33,7 +33,7 @@ public class GamePlayTransitionController : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        SceneManager.LoadSceneAsync(2);
+        SceneManager.LoadSceneAsync(sceneID);
     }
 
 }

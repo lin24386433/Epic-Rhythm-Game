@@ -14,6 +14,9 @@ public class GamePlayController : MonoBehaviour
 
     public GameObject mask;
 
+    [System.NonSerialized]
+    public bool isPaused = false;
+
     public float perfectOffset = 0.3f;
 
     public float goodOffset = 0.5f;
@@ -64,7 +67,7 @@ public class GamePlayController : MonoBehaviour
         GameInfo.gameScore = score;
         GameInfo.gameCombo = highCombo;
 
-        StartCoroutine(transitionController.ExitScene());
+        StartCoroutine(transitionController.ExitScene(2));
 
         
 
