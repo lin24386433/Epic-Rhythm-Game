@@ -7,6 +7,7 @@ public class RecordConductor : MonoBehaviour
 	public static RecordConductor instance;
 
 	// How many beats each minute last.
+	//[System.NonSerialized]
 	public float songBPM;
 
 	public float totalBeats;

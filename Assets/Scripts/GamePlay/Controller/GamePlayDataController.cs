@@ -17,9 +17,6 @@ public class GamePlayDataController : MonoBehaviour
     [SerializeField]
     private Image bgImg;
 
-    // Save Datas
-    private NotesData notesDataToSave;
-
     private NotesData notesDataToLoad;
 
     private void Awake()
@@ -30,7 +27,48 @@ public class GamePlayDataController : MonoBehaviour
         
         notesDataToLoad = NotesDataLoadedFromJson();
 
+
         SetLoadedDataToAllRecorder();
+
+    }
+
+    private void Start()
+    {
+        Conductor.instance.songBPM = SongDataLoadedFromJson(GameInfo.songName).songBPM;
+
+        Conductor.instance.secPerBeat = 60 / Conductor.instance.songBPM;
+
+        //Conductor.instance.totalBeats = Conductor.instance.gameObject.GetComponent<AudioSource>().clip.length / Conductor.instance.secPerBeat;
+    }
+
+    public SongData SongDataLoadedFromJson(string name)
+    {
+        string loadData;
+
+        //---------------Path---------------------
+
+        // Path Setting : Application.dataPath/SongDatas/[songName]/NotesData.txt
+        string path = Path.Combine(Application.dataPath, "SongDatas");
+
+        // Directory : SongDatas
+        if (!Directory.Exists(path))
+            Directory.CreateDirectory(path);
+
+        // Directory : [songName]
+        path = Path.Combine(path, name);
+
+        // File : NotesData.txt
+        path = Path.Combine(path, "SongData" + ".txt");
+
+        if (!File.Exists(path))
+            return new SongData();
+
+        //--------------------------------------
+
+        loadData = File.ReadAllText(path);
+
+        //把字串轉換成Data物件
+        return JsonUtility.FromJson<SongData>(loadData);
 
     }
 
@@ -83,7 +121,7 @@ public class GamePlayDataController : MonoBehaviour
 
         Conductor.instance.gameObject.GetComponent<AudioSource>().clip = myClip;
 
-        Conductor.instance.totalBeats = Conductor.instance.songAudioSource.clip.length / Conductor.instance.secPerBeat;
+        
     }
 
     private IEnumerator LoadImageFromFile()
@@ -136,33 +174,6 @@ public class GamePlayDataController : MonoBehaviour
 
     }
 
-    private void NotesDataSaveToJson(NotesData data)
-    {
-        // Path Setting : Application.dataPath/SongDatas/[songName]/NotesData.txt
-        string path = Path.Combine(Application.dataPath, "SongDatas");
-
-        // Directory : SongDatas
-        if (!Directory.Exists(path))
-            Directory.CreateDirectory(path);
-
-        // Directory : [songName]
-        path = Path.Combine(path, GameInfo.songName);
-
-        if (!Directory.Exists(path))
-            Directory.CreateDirectory(path);
-
-        // File : NotesData.txt
-        path = Path.Combine(path, "NotesData" + ".txt");
-
-        // Data To Json String
-        string jsonInfo = JsonUtility.ToJson(data, true);
-
-        // Json String Save in text file
-        File.WriteAllText(path, jsonInfo);
-
-        Debug.Log("寫入完成");
-        Debug.Log("dataPath: " + path);
-    }
 
     private NotesData NotesDataLoadedFromJson()
     {

@@ -4,7 +4,7 @@
     "songDifficulty": 2,
     "maxCombo": 326,
     "maxScore": 163000,
-    "playerHighCombo": 139,
-    "playerHighScore": 148600,
-    "playTimes": 69
+    "playerHighCombo": 0,
+    "playerHighScore": 0,
+    "playTimes": 0
 }

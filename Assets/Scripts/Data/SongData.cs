@@ -7,6 +7,8 @@ public class SongData
 {
     public string songName;
 
+    public float songBPM;
+
     public float songLength;
 
     public SongDifficulty songDifficulty;
@@ -25,6 +27,7 @@ public class SongData
     public SongData()
     {
         songName = "";
+        songBPM = 120;
         songLength = 0f;
         songDifficulty = SongDifficulty.Easy;
         maxCombo = 0;

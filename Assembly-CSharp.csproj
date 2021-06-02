@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\Data\SongData.cs" />
     <Compile Include="Assets\Scripts\Recorder\CircleNoteRecorder.cs" />
     <Compile Include="Assets\Scripts\GamePlay\Controller\Conductor.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\Controller\PauseController.cs" />
     <Compile Include="Assets\Scripts\GamePlay\Others\Effect.cs" />
     <Compile Include="Assets\Scripts\Recorder\AudioSpectrum.cs" />
     <Compile Include="Assets\Scripts\Recorder\BaseLine.cs" />
@@ -92,15 +93,20 @@
     <Compile Include="Assets\Scripts\GamePlay\Detecter\CircleDetecter.cs" />
     <Compile Include="Assets\Scripts\Data\NotesData.cs" />
     <Compile Include="Assets\Scripts\GamePlay\Controller\GamePlayTransitionController.cs" />
-    <Compile Include="Assets\Scripts\GamePlay\Controller\PauseController.cs" />
   </ItemGroup>
   <ItemGroup>
+     <None Include="Assets\SongDatas\五等分の気持ち - 中野家の五つ子\NotesData.txt" />
      <None Include="Assets\SongDatas\Gurenge\SongData.txt" />
      <None Include="Assets\SongDatas\Gurenge\NotesData.txt" />
+     <None Include="Assets\SongDatas\五等分の気持ち - 中野家の五つ子\SongData.txt" />
      <None Include="Assets\SongDatas\Fantastic Departure\NotesData.txt" />
      <None Include="Assets\SongDatas\HomeSweetHome\NotesData.txt" />
+     <None Include="Assets\SongDatas\恋になりたいAQUARIUM\NotesData.txt" />
+     <None Include="Assets\SongDatas\HAPPY PARTY TRAIN\SongData.txt" />
      <None Include="Assets\SongDatas\HomeSweetHome\SongData.txt" />
      <None Include="Assets\SongDatas\Fantastic Departure\SongData.txt" />
+     <None Include="Assets\SongDatas\恋になりたいAQUARIUM\SongData.txt" />
+     <None Include="Assets\SongDatas\HAPPY PARTY TRAIN\NotesData.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.9f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

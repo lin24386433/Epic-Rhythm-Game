@@ -1,0 +1,11 @@
+{
+    "songName": "五等分の気持ち - 中野家の五つ子",
+    "songBPM": 175.0,
+    "songLength": 89.27999877929688,
+    "songDifficulty": 2,
+    "maxCombo": 278,
+    "maxScore": 139000,
+    "playerHighCombo": 75,
+    "playerHighScore": 125350,
+    "playTimes": 2
+}

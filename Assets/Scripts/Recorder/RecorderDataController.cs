@@ -26,7 +26,7 @@ public class RecorderDataController : MonoBehaviour
     public NotesData notesDataToLoad;
 
     [SerializeField]
-    private SongData recorderSongData;
+    public SongData recorderSongData;
 
 
     private void Awake()
@@ -37,6 +37,8 @@ public class RecorderDataController : MonoBehaviour
         notesDataToLoad = NotesDataLoadedFromJson(songsInFolder[0]);
         recorderSongData = SongDataLoadedFromJson(songsInFolder[0]);
 
+        RecordConductor.instance.songBPM = recorderSongData.songBPM;
+
         StartCoroutine(SetAudioFromFileToConductor(songsInFolder[0]));
 
         SetLoadedDataToAllRecorder();       
@@ -44,6 +46,8 @@ public class RecorderDataController : MonoBehaviour
 
     private void Start()
     {
+        
+
         saveBtn.onClick.AddListener(OnSaveBtnClicked);
     }
 
@@ -213,6 +217,13 @@ public class RecorderDataController : MonoBehaviour
             else
             {
                 RecordConductor.instance.gameObject.GetComponent<AudioSource>().clip = DownloadHandlerAudioClip.GetContent(www);
+
+                RecordConductor.instance.songBPM = recorderSongData.songBPM;
+
+                RecordConductor.instance.secPerBeat = 60 / RecordConductor.instance.songBPM;
+
+                RecordConductor.instance.totalBeats = RecordConductor.instance.gameObject.GetComponent<AudioSource>().clip.length / RecordConductor.instance.secPerBeat;
+
             }
         }
 
@@ -310,6 +321,8 @@ public class RecorderDataController : MonoBehaviour
         SongData data = new SongData();
 
         data.songName = GetComponent<Recorder>().songSelected;
+
+        data.songBPM = RecordConductor.instance.songBPM;
 
         data.songLength = RecordConductor.instance.songAudioSource.clip.length;
 

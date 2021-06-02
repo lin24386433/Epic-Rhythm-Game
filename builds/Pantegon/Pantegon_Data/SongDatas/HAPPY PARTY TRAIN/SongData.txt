@@ -1,0 +1,11 @@
+{
+    "songName": "HAPPY PARTY TRAIN",
+    "songBPM": 85.0,
+    "songLength": 111.64800262451172,
+    "songDifficulty": 2,
+    "maxCombo": 134,
+    "maxScore": 67000,
+    "playerHighCombo": 117,
+    "playerHighScore": 66050,
+    "playTimes": 2
+}

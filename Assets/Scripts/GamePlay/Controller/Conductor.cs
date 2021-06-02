@@ -11,14 +11,14 @@ public class Conductor : MonoBehaviour
 	// How many beats each minute last.
 	public float songBPM;
 
-	[System.NonSerialized]
-	public float totalBeats;
+	//[System.NonSerialized]
+	//public float totalBeats;
 
 	// How many seconds each beat last. This could be calculated by (60 / BPM).
 	[System.NonSerialized]
 	public float secPerBeat;
 
-	[System.NonSerialized]
+	//[System.NonSerialized]
 	public float songPosInBeats;
 
 	// How many beats are contained on the screen. (Imagine this as "how many beats per bar" on music sheets.)
@@ -66,7 +66,10 @@ public class Conductor : MonoBehaviour
 		//StartCoroutine(WaitForPlayTime(timeBeforeStart));
 	}
 
-
+	private void Start()
+    {
+		
+	}
 
 	void Update()
 	{
@@ -81,8 +84,6 @@ public class Conductor : MonoBehaviour
 		beatToShow = songAudioSource.time / secPerBeat + BeatsShownInAdvance;
 
 	}
-
-	
 
 	public IEnumerator WaitForPlayTime()
 	{

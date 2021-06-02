@@ -23,6 +23,9 @@ public class Recorder : MonoBehaviour
     [SerializeField]
     private Dropdown dropDown;
 
+    [SerializeField]
+    private InputField BPMInputField;
+
     public string songSelected;
 
     private int selectedIndex = 0;
@@ -43,10 +46,11 @@ public class Recorder : MonoBehaviour
         songPlaySlider.onValueChanged.AddListener((delegate { OnSliderValueChanged(); }));
 
         dropDown.ClearOptions();
-
         dropDown.AddOptions(GetComponent<RecorderDataController>().songsInFolder);
-
         dropDown.onValueChanged.AddListener(delegate { OnDropDownValueChanged(); });
+
+        BPMInputField.onValueChanged.AddListener(delegate { OnBPMInputFieldValueChanged(); });
+        BPMInputField.text = RecordConductor.instance.songBPM.ToString();
 
         noteDetailWindow.SetActive(false);
 
@@ -112,15 +116,28 @@ public class Recorder : MonoBehaviour
         songSelected = dataController.songsInFolder[selectedIndex];
 
         beatNowTxt.text = 0.ToString("0.00");
+        RecordConductor.instance.songAudioSource.Stop();
         RecordConductor.instance.songAudioSource.time = 0f;
+
+        dataController.recorderSongData = dataController.SongDataLoadedFromJson(songSelected);
         StartCoroutine(dataController.SetAudioFromFileToConductor(songSelected));
+        BPMInputField.text = dataController.recorderSongData.songBPM.ToString();
 
         dataController.notesDataToLoad = dataController.NotesDataLoadedFromJson(songSelected);
-        dataController.SongDataLoadedFromJson(songSelected);
+
 
         dataController.SetLoadedDataToAllRecorder();
 
         dataController.UpdateAllRecorder();
 
+    }
+
+    private void OnBPMInputFieldValueChanged()
+    {
+        RecordConductor.instance.songBPM = int.Parse(BPMInputField.text);
+
+        RecordConductor.instance.secPerBeat = 60 / RecordConductor.instance.songBPM;
+
+        RecordConductor.instance.totalBeats = RecordConductor.instance.songAudioSource.clip.length / RecordConductor.instance.secPerBeat;
     }
 }
