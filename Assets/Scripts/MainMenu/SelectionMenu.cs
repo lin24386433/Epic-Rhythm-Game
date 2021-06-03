@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SelectionMenu : MonoBehaviour
 {
+    //[SerializeField]
     private float angle = 0f;
 
     public MainMenuDataController dataController;
@@ -36,6 +37,7 @@ public class SelectionMenu : MonoBehaviour
 
     private int index = 0;
 
+    //[SerializeField]
     private int selectedIndex = 0;
 
     private AudioSource audioSource;
@@ -166,6 +168,7 @@ public class SelectionMenu : MonoBehaviour
             menuBars[barNow].GetComponentsInChildren<Image>()[1].sprite = selectedPoint;
 
             GameInfo.songName = dataController.songNames[index % songNameCount];
+            GameInfo.indexOfAllSongs = index % songNameCount;
 
             menuBarTxts[(barNow + 1) >= menuBars.Length ? 0 : barNow + 1].text = dataController.songNames[(index % songNameCount + 1) >= songNameCount ? 0 : index % songNameCount + 1];
             menuBars[(barNow + 1) >= menuBars.Length ? 0 : barNow + 1].localScale = new Vector2(0.9f, 0.9f);
@@ -187,6 +190,7 @@ public class SelectionMenu : MonoBehaviour
             menuBars[barNow].GetComponentsInChildren<Image>()[1].sprite = selectedPoint;
 
             GameInfo.songName = dataController.songNames[x];
+            GameInfo.indexOfAllSongs = x;
 
             menuBarTxts[(barNow + 1) >= menuBars.Length ? 0 : barNow + 1].text = (x + 1) >= songNameCount ? dataController.songNames[0] : dataController.songNames[x + 1];
             menuBars[(barNow + 1) >= menuBars.Length ? 0 : barNow + 1].localScale = new Vector2(0.9f, 0.9f);

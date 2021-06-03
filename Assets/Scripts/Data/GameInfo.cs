@@ -6,6 +6,8 @@ public static class GameInfo
 {
     public static string songName = "Fantastic Departure";
 
+    public static int indexOfAllSongs;
+
     public static Sprite songImg;
 
     public static int gameScore = 146000;
