@@ -8,7 +8,7 @@ public class CircleDetecter : MonoBehaviour
     private AudioSource beatSound;
 
     [SerializeField]
-    private KeyCode keyToPress;
+    public KeyCode keyToPress;
 
     [SerializeField]
     private GameObject[] effects;

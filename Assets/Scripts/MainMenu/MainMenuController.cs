@@ -8,7 +8,10 @@ public class MainMenuController : MonoBehaviour
     public static MainMenuController instance;
 
     [SerializeField]
-    private MainMenuDataController dataCtrl;
+    public MainMenuDataController dataCtrl;
+
+    [SerializeField]
+    private OptionWindow optionWindow;
 
     [Space(20)]
     [SerializeField]
@@ -40,6 +43,14 @@ public class MainMenuController : MonoBehaviour
     private void Start()
     {
         StartCoroutine(SetSongInfo());
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && !optionWindow.gameObject.activeSelf)
+        {
+            optionWindow.gameObject.SetActive(true);
+        }
     }
 
     public IEnumerator SetSongInfo()

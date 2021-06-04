@@ -8,10 +8,10 @@ public class RazerLine : MonoBehaviour
 
     [Space(10)]
     [SerializeField]
-    private KeyCode keyToPress;
+    public KeyCode keyToPress;
 
     [SerializeField]
-    private KeyCode keyToPress2;
+    public KeyCode keyToPress2;
 
     [SerializeField]
     private GameObject[] effects;

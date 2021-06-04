@@ -1,0 +1,11 @@
+{
+    "volume": 77,
+    "noteSpeed": 1,
+    "keyCodes": [
+        "E",
+        "S",
+        "X",
+        "B",
+        "H"
+    ]
+}

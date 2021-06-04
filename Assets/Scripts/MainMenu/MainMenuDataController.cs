@@ -13,7 +13,10 @@ public class MainMenuDataController : MonoBehaviour
     public GameObject selectionMenu;
     public GameObject mask;
 
+    public PlayerSetting playerSetting;
+
     public SongData data;
+
 
     private void Awake()
     {
@@ -42,6 +45,33 @@ public class MainMenuDataController : MonoBehaviour
 
         //把字串轉換成Data物件
         return JsonUtility.FromJson<SongData>(loadData);
+
+    }
+
+    public PlayerSetting PlayerSettingLoadedFromJson()
+    {
+        // Get data from path : Application.dataPath/SongDatas/[songName]/NoteData.txt
+        string path = Path.Combine(Application.dataPath, "Player.txt");
+
+        if (!File.Exists(path))
+        {
+            PlayerSetting data = new PlayerSetting();
+
+            // Data To Json String
+            string jsonInfo = JsonUtility.ToJson(data, true);
+
+            // Json String Save in text file
+            File.WriteAllText(path, jsonInfo);
+
+            return data;
+        }
+
+        string loadData;
+
+        loadData = File.ReadAllText(path);
+
+        //把字串轉換成Data物件
+        return JsonUtility.FromJson<PlayerSetting>(loadData);
 
     }
 

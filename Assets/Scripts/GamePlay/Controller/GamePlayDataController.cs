@@ -38,6 +38,28 @@ public class GamePlayDataController : MonoBehaviour
 
         Conductor.instance.secPerBeat = 60 / Conductor.instance.songBPM;
 
+        PlayerSetting playerSetting = PlayerSettingLoadedFromJson();
+
+        switch (playerSetting.noteSpeed)
+        {
+            case 0:
+                Conductor.instance.BeatsShownInAdvance = 8;
+                break;
+            case 1:
+                Conductor.instance.BeatsShownInAdvance = 4;
+                break;
+            case 2:
+                Conductor.instance.BeatsShownInAdvance = 2;
+                break;
+        }
+
+        for(int i = 0; i < playerSetting.keyCodes.Length; i++)
+        {
+            GamePlayController.instance.keyCodes[i] = (KeyCode)System.Enum.Parse(typeof(KeyCode), playerSetting.keyCodes[i]);
+        }
+
+        
+
         //Conductor.instance.totalBeats = Conductor.instance.gameObject.GetComponent<AudioSource>().clip.length / Conductor.instance.secPerBeat;
     }
 
@@ -69,6 +91,33 @@ public class GamePlayDataController : MonoBehaviour
 
         //把字串轉換成Data物件
         return JsonUtility.FromJson<SongData>(loadData);
+
+    }
+
+    public PlayerSetting PlayerSettingLoadedFromJson()
+    {
+        // Get data from path : Application.dataPath/SongDatas/[songName]/NoteData.txt
+        string path = Path.Combine(Application.dataPath, "Player.txt");
+
+        if (!File.Exists(path))
+        {
+            PlayerSetting data = new PlayerSetting();
+
+            // Data To Json String
+            string jsonInfo = JsonUtility.ToJson(data, true);
+
+            // Json String Save in text file
+            File.WriteAllText(path, jsonInfo);
+
+            return data;
+        }
+
+        string loadData;
+
+        loadData = File.ReadAllText(path);
+
+        //把字串轉換成Data物件
+        return JsonUtility.FromJson<PlayerSetting>(loadData);
 
     }
 

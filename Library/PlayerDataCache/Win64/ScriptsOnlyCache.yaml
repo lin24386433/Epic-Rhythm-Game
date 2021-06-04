@@ -16,6 +16,7 @@ ScriptsOnlyBuild:
     - MissDetecter
     - Note
     - NoteGenerator
+    - OptionWindow
     - Particles
     - PauseController
     - RazerLine
@@ -57,6 +58,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.Mask
     - UnityEngine.UI.Outline
+    - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/ConcludeScene.unity:
@@ -107,7 +109,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3378}
     - Class: 114
-      Script: {instanceID: 3984}
+      Script: {instanceID: 3986}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -123,6 +125,12 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
     Assets/Scenes/GamePlayScene.unity:
     - Class: 1
@@ -188,21 +196,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3112}
     - Class: 114
-      Script: {instanceID: 3470}
+      Script: {instanceID: 3472}
     - Class: 114
-      Script: {instanceID: 3570}
+      Script: {instanceID: 3572}
     - Class: 114
-      Script: {instanceID: 3594}
+      Script: {instanceID: 3596}
     - Class: 114
-      Script: {instanceID: 3828}
+      Script: {instanceID: 3830}
     - Class: 114
-      Script: {instanceID: 4362}
+      Script: {instanceID: 4364}
     - Class: 114
-      Script: {instanceID: 4652}
+      Script: {instanceID: 4654}
     - Class: 114
-      Script: {instanceID: 4774}
+      Script: {instanceID: 4776}
     - Class: 114
-      Script: {instanceID: 4982}
+      Script: {instanceID: 4984}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -226,6 +234,12 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 225
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
     - Class: 331
       Script: {instanceID: 0}
@@ -263,6 +277,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1574}
     - Class: 114
+      Script: {instanceID: 1668}
+    - Class: 114
       Script: {instanceID: 2100}
     - Class: 114
       Script: {instanceID: 2476}
@@ -277,7 +293,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3010}
     - Class: 114
-      Script: {instanceID: 3984}
+      Script: {instanceID: 3112}
+    - Class: 114
+      Script: {instanceID: 3986}
+    - Class: 114
+      Script: {instanceID: 23250}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -299,6 +319,14 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     - Class: 225
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
+      Script: {instanceID: 0}
+    - Class: 329
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -447,7 +475,7 @@ ScriptsOnlyBuild:
     className: Recorder
   - hash:
       serializedVersion: 2
-      Hash: d8d52b4543fdb60a1eb4ba54a3b74e84
+      Hash: 98aa3da9f7a5437b034966837b7724fb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GamePlayController
@@ -579,7 +607,7 @@ ScriptsOnlyBuild:
     className: SelectionMenu
   - hash:
       serializedVersion: 2
-      Hash: 687feea977aceba9116201addc1d359e
+      Hash: cf995817c60ede9bef87b821d8f2678c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainMenuController
@@ -691,6 +719,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Outline
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Arduino
   - hash:
       serializedVersion: 2
       Hash: bc189f94b1df123bc83108586337ebff
@@ -1015,6 +1049,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: d33296554c406d6cf634692a84a7b45a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OptionWindow
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainMenu.unity

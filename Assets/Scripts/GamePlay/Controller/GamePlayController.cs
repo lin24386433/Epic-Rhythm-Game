@@ -45,6 +45,15 @@ public class GamePlayController : MonoBehaviour
     [SerializeField]
     private Text songNameTxt;
 
+    [System.NonSerialized]
+    public KeyCode[] keyCodes = new KeyCode[5];
+
+    public RazerLine[] razerlines;
+
+    public ShowLineController[] showlines;
+
+    public CircleDetecter[] circleDetecters;
+
     private void Awake()
     {
         if (instance == null)
@@ -56,6 +65,20 @@ public class GamePlayController : MonoBehaviour
         songNameTxt.text = GameInfo.songName;
 
         //mask.GetComponent<Animator>().SetBool("Start", true);
+    }
+
+    private void Start()
+    {
+        for(int i = 0; i < keyCodes.Length; i++)
+        {
+            circleDetecters[i].keyToPress = keyCodes[i];
+            razerlines[i].keyToPress = keyCodes[i];
+            showlines[i].keyToPress = keyCodes[i];
+
+            razerlines[i].keyToPress2 = keyCodes[i+1 >= keyCodes.Length? 0 : i+1];
+            showlines[i].keyToPress2 = keyCodes[i + 1 >= keyCodes.Length ? 0 : i + 1];
+        }
+        
     }
 
     public void SongFinished()
