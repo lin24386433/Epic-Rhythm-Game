@@ -1,0 +1,11 @@
+{
+    "songName": "TheHero",
+    "songBPM": 130.0,
+    "songLength": 89.91300201416016,
+    "songDifficulty": 2,
+    "maxCombo": 171,
+    "maxScore": 85500,
+    "playerHighCombo": 53,
+    "playerHighScore": 72950,
+    "playTimes": 1
+}

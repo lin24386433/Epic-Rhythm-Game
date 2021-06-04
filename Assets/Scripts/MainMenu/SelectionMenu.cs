@@ -148,7 +148,7 @@ public class SelectionMenu : MonoBehaviour
        
 
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync(2);
     }
 
     public void SelectionMenuUpdate()

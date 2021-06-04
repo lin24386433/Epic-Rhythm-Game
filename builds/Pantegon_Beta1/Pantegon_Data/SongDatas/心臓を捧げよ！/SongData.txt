@@ -1,0 +1,11 @@
+{
+    "songName": "心臓を捧げよ！",
+    "songBPM": 160.0,
+    "songLength": 89.5469970703125,
+    "songDifficulty": 3,
+    "maxCombo": 198,
+    "maxScore": 99000,
+    "playerHighCombo": 68,
+    "playerHighScore": 85100,
+    "playTimes": 3
+}

@@ -82,7 +82,7 @@ public class PauseController : MonoBehaviour
     private void OnRetryBtnClicked() 
     {
         Time.timeScale = 1f;
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync(2);
     }
 
     private void OnResumeBtnClicked()
@@ -98,7 +98,7 @@ public class PauseController : MonoBehaviour
     private void OnExitBtnClicked()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadSceneAsync(0);
+        SceneManager.LoadSceneAsync(1);
     }
 
 }

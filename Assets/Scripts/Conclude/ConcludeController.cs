@@ -343,14 +343,23 @@ public class ConcludeController : MonoBehaviour
     {
         nextBtn.gameObject.GetComponent<AudioSource>().Play();
         sceneMaskAnimator.gameObject.SetActive(true);
-        StartCoroutine(WaitForChangeScene(0));
+
+        string path = Path.Combine(Application.dataPath, "SongDatas");
+
+        DirectoryInfo info = new DirectoryInfo(path);
+
+        DirectoryInfo[] folders = info.GetDirectories();
+
+        GameInfo.songName = folders[0].Name;
+
+        StartCoroutine(WaitForChangeScene(1));
     }
 
     private void OnRetryBtnClicked()
     {
         retryBtn.gameObject.GetComponent<AudioSource>().Play();
         pantegonAnimator.SetTrigger("GameEnd");
-        StartCoroutine(WaitForChangeScene(1));
+        StartCoroutine(WaitForChangeScene(2));
     }
 
 

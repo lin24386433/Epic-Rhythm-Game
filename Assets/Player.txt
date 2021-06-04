@@ -1,5 +1,5 @@
 {
-    "volume": 77,
+    "volume": 76,
     "noteSpeed": 1,
     "keyCodes": [
         "E",

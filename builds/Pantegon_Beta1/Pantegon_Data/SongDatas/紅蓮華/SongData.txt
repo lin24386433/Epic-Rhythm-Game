@@ -1,0 +1,11 @@
+{
+    "songName": "紅蓮華",
+    "songBPM": 135.0,
+    "songLength": 89.39099884033203,
+    "songDifficulty": 1,
+    "maxCombo": 143,
+    "maxScore": 71500,
+    "playerHighCombo": 82,
+    "playerHighScore": 61600,
+    "playTimes": 4
+}

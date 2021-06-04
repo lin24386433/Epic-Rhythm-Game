@@ -90,7 +90,7 @@ public class GamePlayController : MonoBehaviour
         GameInfo.gameScore = score;
         GameInfo.gameCombo = highCombo;
 
-        StartCoroutine(transitionController.ExitScene(2));
+        StartCoroutine(transitionController.ExitScene(3));
 
         
 

@@ -1,0 +1,11 @@
+{
+    "songName": "五等分のカタチ",
+    "songBPM": 158.0,
+    "songLength": 90.12200164794922,
+    "songDifficulty": 2,
+    "maxCombo": 141,
+    "maxScore": 70500,
+    "playerHighCombo": 38,
+    "playerHighScore": 59250,
+    "playTimes": 1
+}
