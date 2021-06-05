@@ -14,6 +14,7 @@ ScriptsOnlyBuild:
     - MainMenuController
     - MainMenuDataController
     - MissDetecter
+    - MouseClickedEffect
     - Note
     - NoteGenerator
     - OptionWindow
@@ -100,19 +101,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2100}
     - Class: 114
-      Script: {instanceID: 2480}
+      Script: {instanceID: 2482}
     - Class: 114
-      Script: {instanceID: 2626}
+      Script: {instanceID: 2628}
     - Class: 114
-      Script: {instanceID: 2802}
+      Script: {instanceID: 2804}
     - Class: 114
-      Script: {instanceID: 3014}
+      Script: {instanceID: 3016}
     - Class: 114
-      Script: {instanceID: 3116}
+      Script: {instanceID: 3118}
     - Class: 114
-      Script: {instanceID: 3382}
+      Script: {instanceID: 3384}
     - Class: 114
-      Script: {instanceID: 3990}
+      Script: {instanceID: 3992}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -187,33 +188,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2164}
     - Class: 114
-      Script: {instanceID: 2480}
+      Script: {instanceID: 2482}
     - Class: 114
-      Script: {instanceID: 2626}
+      Script: {instanceID: 2628}
     - Class: 114
-      Script: {instanceID: 2700}
+      Script: {instanceID: 2702}
     - Class: 114
-      Script: {instanceID: 2802}
+      Script: {instanceID: 2804}
     - Class: 114
-      Script: {instanceID: 3014}
+      Script: {instanceID: 3016}
     - Class: 114
-      Script: {instanceID: 3116}
+      Script: {instanceID: 3118}
     - Class: 114
-      Script: {instanceID: 3476}
+      Script: {instanceID: 3478}
     - Class: 114
-      Script: {instanceID: 3576}
+      Script: {instanceID: 3578}
     - Class: 114
-      Script: {instanceID: 3600}
+      Script: {instanceID: 3602}
     - Class: 114
-      Script: {instanceID: 3834}
+      Script: {instanceID: 3836}
     - Class: 114
-      Script: {instanceID: 4368}
+      Script: {instanceID: 4370}
     - Class: 114
-      Script: {instanceID: 4658}
+      Script: {instanceID: 4660}
     - Class: 114
-      Script: {instanceID: 4780}
+      Script: {instanceID: 4782}
     - Class: 114
-      Script: {instanceID: 4988}
+      Script: {instanceID: 4990}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -282,23 +283,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2100}
     - Class: 114
-      Script: {instanceID: 2374}
+      Script: {instanceID: 2376}
     - Class: 114
-      Script: {instanceID: 2480}
+      Script: {instanceID: 2482}
     - Class: 114
-      Script: {instanceID: 2626}
+      Script: {instanceID: 2628}
     - Class: 114
-      Script: {instanceID: 2706}
+      Script: {instanceID: 2708}
     - Class: 114
-      Script: {instanceID: 2786}
+      Script: {instanceID: 2788}
     - Class: 114
-      Script: {instanceID: 2802}
+      Script: {instanceID: 2804}
     - Class: 114
-      Script: {instanceID: 3014}
+      Script: {instanceID: 3016}
     - Class: 114
-      Script: {instanceID: 3116}
+      Script: {instanceID: 3118}
     - Class: 114
-      Script: {instanceID: 3990}
+      Script: {instanceID: 3992}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -357,15 +358,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2100}
     - Class: 114
-      Script: {instanceID: 2480}
+      Script: {instanceID: 2298}
     - Class: 114
-      Script: {instanceID: 2626}
+      Script: {instanceID: 2482}
     - Class: 114
-      Script: {instanceID: 2802}
+      Script: {instanceID: 2628}
     - Class: 114
-      Script: {instanceID: 3014}
+      Script: {instanceID: 2804}
     - Class: 114
-      Script: {instanceID: 22648}
+      Script: {instanceID: 3016}
+    - Class: 114
+      Script: {instanceID: 26956}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -541,7 +544,7 @@ ScriptsOnlyBuild:
     className: Recorder
   - hash:
       serializedVersion: 2
-      Hash: 98aa3da9f7a5437b034966837b7724fb
+      Hash: cb05e867269dcb55bc347abbb8a1f465
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GamePlayController
@@ -605,6 +608,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RecordConductor
+  - hash:
+      serializedVersion: 2
+      Hash: fa80019d6b46df21b13ec07756eb69ca
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StartSceneController
   - hash:
       serializedVersion: 2
       Hash: cfdd0010efd7b54c2b7512656dbc9119
@@ -1123,14 +1132,14 @@ ScriptsOnlyBuild:
     className: FabrikSolver2D
   - hash:
       serializedVersion: 2
-      Hash: fa80019d6b46df21b13ec07756eb69ca
+      Hash: ddefe7116f69beb3958bf0a483a8910f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: StartSceneController
+    className: MouseClickedEffect
   platform: 19
   scenePathNames:
   - Assets/Scenes/StartScene.unity
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/GamePlayScene.unity
   - Assets/Scenes/ConcludeScene.unity
-  playerPath: C:/Users/lin/Documents/Epic-Rhythm-Game/builds/Pantegon/Pantegon.exe
+  playerPath: C:/Users/lin/Documents/Epic-Rhythm-Game/builds/Pantegon_Beta1/Pantegon.exe

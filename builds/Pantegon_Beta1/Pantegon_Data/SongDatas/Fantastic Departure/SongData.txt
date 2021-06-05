@@ -1,5 +1,6 @@
 {
     "songName": "Fantastic Departure",
+    "songBPM": 135.0,
     "songLength": 138.74400329589845,
     "songDifficulty": 2,
     "maxCombo": 326,

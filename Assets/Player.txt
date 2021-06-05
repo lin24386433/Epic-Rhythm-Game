@@ -1,6 +1,6 @@
 {
-    "volume": 76,
-    "noteSpeed": 1,
+    "volume": 60,
+    "noteSpeed": 2,
     "keyCodes": [
         "E",
         "S",

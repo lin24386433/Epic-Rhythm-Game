@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\GamePlay\Note\LongNote.cs" />
     <Compile Include="Assets\Scripts\Recorder\NoteRecorder.cs" />
     <Compile Include="Assets\Scripts\Recorder\RecordConductor.cs" />
+    <Compile Include="Assets\Scripts\StartScene\StartSceneController.cs" />
     <Compile Include="Assets\Scripts\MainMenu\OptionWindow.cs" />
     <Compile Include="Assets\Scripts\Data\PlayerSetting.cs" />
     <Compile Include="Assets\Scripts\GamePlay\Controller\GamePlayDataController.cs" />
@@ -96,7 +97,7 @@
     <Compile Include="Assets\Scripts\GamePlay\Detecter\CircleDetecter.cs" />
     <Compile Include="Assets\Scripts\Data\NotesData.cs" />
     <Compile Include="Assets\Scripts\GamePlay\Controller\GamePlayTransitionController.cs" />
-    <Compile Include="Assets\Scripts\StartScene\StartSceneController.cs" />
+    <Compile Include="Assets\Scripts\MouseClickedEffect.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Player.txt" />

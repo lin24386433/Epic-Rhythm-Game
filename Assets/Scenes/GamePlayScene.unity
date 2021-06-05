@@ -3090,6 +3090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionController: {fileID: 572373462}
+  comboEffectPrefab: {fileID: 2198559078793747457, guid: 623bd32b70dfdc642b8ae6fcd76f7fde, type: 3}
   mask: {fileID: 1959062447}
   perfectOffset: 0.1
   goodOffset: 0.2

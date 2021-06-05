@@ -12,7 +12,11 @@ public class GamePlayController : MonoBehaviour
 
     public GamePlayTransitionController transitionController;
 
-    public GameObject mask;
+    [SerializeField]
+    private GameObject comboEffectPrefab;
+
+    [SerializeField]
+    private GameObject mask;
 
     [System.NonSerialized]
     public bool isPaused = false;
@@ -25,6 +29,8 @@ public class GamePlayController : MonoBehaviour
 
     private int combo = 0;
 
+    private int comboToEffect = 0;
+
     private int highCombo = 0;
 
     private int perfectCount = 0;
@@ -36,6 +42,7 @@ public class GamePlayController : MonoBehaviour
     private int missCount = 0;
 
     // UI
+    [Space(20)]
     [SerializeField]
     private Text scoreTxt;
 
@@ -45,6 +52,7 @@ public class GamePlayController : MonoBehaviour
     [SerializeField]
     private Text songNameTxt;
 
+    [Space(20)]
     [System.NonSerialized]
     public KeyCode[] keyCodes = new KeyCode[5];
 
@@ -69,7 +77,9 @@ public class GamePlayController : MonoBehaviour
 
     private void Start()
     {
-        for(int i = 0; i < keyCodes.Length; i++)
+        comboToEffect = Random.Range(5, 20);
+
+        for (int i = 0; i < keyCodes.Length; i++)
         {
             circleDetecters[i].keyToPress = keyCodes[i];
             razerlines[i].keyToPress = keyCodes[i];
@@ -124,6 +134,13 @@ public class GamePlayController : MonoBehaviour
     private void AddCombo()
     {
         combo += 1;
+
+        if(combo >= comboToEffect)
+        {
+            comboToEffect = Random.Range(5, 20);
+            GameObject obj = Instantiate(comboEffectPrefab, Vector2.zero, Quaternion.identity);
+            Destroy(obj, 1f);
+        }
 
         if(combo >= highCombo)
         {
