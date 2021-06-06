@@ -2,7 +2,7 @@
     "songName": "エクストラ・マジック・アワー",
     "songBPM": 180.0,
     "songLength": 253.15199279785157,
-    "songDifficulty": 4,
+    "songDifficulty": 3,
     "maxCombo": 305,
     "maxScore": 152500,
     "playerHighCombo": 0,

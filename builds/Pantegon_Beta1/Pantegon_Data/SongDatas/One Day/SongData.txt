@@ -1,0 +1,11 @@
+{
+    "songName": "One Day",
+    "songBPM": 89.0,
+    "songLength": 150.02099609375,
+    "songDifficulty": 0,
+    "maxCombo": 280,
+    "maxScore": 140000,
+    "playerHighCombo": 0,
+    "playerHighScore": 0,
+    "playTimes": 0
+}

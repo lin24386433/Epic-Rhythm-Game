@@ -1,0 +1,11 @@
+{
+    "songName": "僕の戦争",
+    "songBPM": 144.0,
+    "songLength": 90.22599792480469,
+    "songDifficulty": 3,
+    "maxCombo": 243,
+    "maxScore": 121500,
+    "playerHighCombo": 0,
+    "playerHighScore": 0,
+    "playTimes": 0
+}

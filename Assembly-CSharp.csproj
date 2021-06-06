@@ -91,13 +91,14 @@
     <Compile Include="Assets\Scripts\Data\Enumerations.cs" />
     <Compile Include="Assets\Scripts\GamePlay\Note\Note.cs" />
     <Compile Include="Assets\Scripts\Recorder\NoteDetailWindow.cs" />
+    <Compile Include="Assets\Scripts\MouseClickedEffect.cs" />
     <Compile Include="Assets\Scripts\Recorder\RecorderCircleNote.cs" />
     <Compile Include="Assets\Scripts\Recorder\RecorderLongNote.cs" />
     <Compile Include="Assets\Scripts\GamePlay\Note\CircleNoteGenerator.cs" />
     <Compile Include="Assets\Scripts\GamePlay\Detecter\CircleDetecter.cs" />
     <Compile Include="Assets\Scripts\Data\NotesData.cs" />
     <Compile Include="Assets\Scripts\GamePlay\Controller\GamePlayTransitionController.cs" />
-    <Compile Include="Assets\Scripts\MouseClickedEffect.cs" />
+    <Compile Include="Assets\Scripts\Data\DataFunctions.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Player.txt" />

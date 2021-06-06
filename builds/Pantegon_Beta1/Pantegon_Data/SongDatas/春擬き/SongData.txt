@@ -1,0 +1,11 @@
+{
+    "songName": "春擬き",
+    "songBPM": 174.0,
+    "songLength": 90.8270034790039,
+    "songDifficulty": 1,
+    "maxCombo": 139,
+    "maxScore": 69500,
+    "playerHighCombo": 0,
+    "playerHighScore": 0,
+    "playTimes": 0
+}

@@ -574,7 +574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4396bec272fdb9f4c904567166aa8358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  donStudonStu: {fileID: 1719776442}
+  donTsudonTsu: {fileID: 1719776442}
   animator: {fileID: 543466318}
   audioSource: {fileID: 1966780721}
   updateStep: 0.075

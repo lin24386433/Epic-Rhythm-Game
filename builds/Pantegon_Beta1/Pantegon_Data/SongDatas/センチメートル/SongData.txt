@@ -2,7 +2,7 @@
     "songName": "センチメートル",
     "songBPM": 140.0,
     "songLength": 90.19999694824219,
-    "songDifficulty": 2,
+    "songDifficulty": 3,
     "maxCombo": 220,
     "maxScore": 110000,
     "playerHighCombo": 0,

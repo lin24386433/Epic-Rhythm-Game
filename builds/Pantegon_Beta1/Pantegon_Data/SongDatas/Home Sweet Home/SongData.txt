@@ -1,0 +1,11 @@
+{
+    "songName": "HomeSweetHome",
+    "songBPM": 135.0,
+    "songLength": 82.41600036621094,
+    "songDifficulty": 1,
+    "maxCombo": 144,
+    "maxScore": 72000,
+    "playerHighCombo": 0,
+    "playerHighScore": 0,
+    "playTimes": 0
+}

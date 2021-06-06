@@ -1,0 +1,11 @@
+{
+    "songName": "Dreamin On",
+    "songBPM": 172.0,
+    "songLength": 119.69300079345703,
+    "songDifficulty": 3,
+    "maxCombo": 245,
+    "maxScore": 122500,
+    "playerHighCombo": 0,
+    "playerHighScore": 0,
+    "playTimes": 0
+}

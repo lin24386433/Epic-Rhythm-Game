@@ -1,8 +1,8 @@
 {
-    "songName": "Torommow",
+    "songName": "Tomorrow",
     "songBPM": 134.0,
     "songLength": 90.61799621582031,
-    "songDifficulty": 3,
+    "songDifficulty": 2,
     "maxCombo": 158,
     "maxScore": 79000,
     "playerHighCombo": 0,

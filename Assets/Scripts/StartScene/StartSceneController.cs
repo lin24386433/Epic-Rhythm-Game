@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class StartSceneController : MonoBehaviour
 {
-    public GameObject donStudonStu;
+    public GameObject donTsudonTsu;
 
 	public Animator animator;
 
@@ -48,7 +48,7 @@ public class StartSceneController : MonoBehaviour
 
 			clipLoudness *= sizeFactor;
 			clipLoudness = Mathf.Clamp(clipLoudness, minSize, maxSize);
-			donStudonStu.transform.localScale = new Vector3(clipLoudness, clipLoudness, clipLoudness);
+			donTsudonTsu.transform.localScale = new Vector3(clipLoudness, clipLoudness, clipLoudness);
 		}
 
         if (Input.anyKey && !isStarted)

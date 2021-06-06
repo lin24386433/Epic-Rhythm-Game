@@ -1,0 +1,11 @@
+{
+    "songName": "立ち上がリーヨ",
+    "songBPM": 138.0,
+    "songLength": 89.0510025024414,
+    "songDifficulty": 3,
+    "maxCombo": 248,
+    "maxScore": 124000,
+    "playerHighCombo": 0,
+    "playerHighScore": 0,
+    "playTimes": 0
+}

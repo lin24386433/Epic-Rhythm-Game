@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class GameInfo 
 {
-    public static string songName = "Fantastic Departure";
+    public static string songName = DataFunctions.GetAllSongDataNameInFile()[0];
 
     public static int indexOfAllSongs;
 
