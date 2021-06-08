@@ -7,5 +7,5 @@
     "maxScore": 163000,
     "playerHighCombo": 152,
     "playerHighScore": 155500,
-    "playTimes": 9
+    "playTimes": 14
 }

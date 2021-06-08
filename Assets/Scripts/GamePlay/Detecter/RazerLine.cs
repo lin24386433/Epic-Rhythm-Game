@@ -6,6 +6,9 @@ public class RazerLine : MonoBehaviour
 { 
     private AudioSource beatSound;
 
+    [SerializeField] public int btn1;
+    [SerializeField] public int btn2;
+
     [Space(10)]
     [SerializeField]
     public KeyCode keyToPress;

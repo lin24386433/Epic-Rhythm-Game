@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AnimationController
+    - ArduinoController
     - CircleDetecter
     - CircleNoteGenerator
     - ConcludeController
@@ -111,7 +112,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3386}
     - Class: 114
-      Script: {instanceID: 3994}
+      Script: {instanceID: 3996}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -198,21 +199,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3480}
+      Script: {instanceID: 3482}
     - Class: 114
-      Script: {instanceID: 3580}
+      Script: {instanceID: 3582}
     - Class: 114
-      Script: {instanceID: 3604}
+      Script: {instanceID: 3606}
     - Class: 114
-      Script: {instanceID: 3838}
+      Script: {instanceID: 3840}
     - Class: 114
-      Script: {instanceID: 4372}
+      Script: {instanceID: 4374}
     - Class: 114
-      Script: {instanceID: 4664}
+      Script: {instanceID: 4666}
     - Class: 114
-      Script: {instanceID: 4786}
+      Script: {instanceID: 4788}
     - Class: 114
-      Script: {instanceID: 4994}
+      Script: {instanceID: 4996}
+    - Class: 114
+      Script: {instanceID: 17992}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -297,7 +300,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3120}
     - Class: 114
-      Script: {instanceID: 3994}
+      Script: {instanceID: 3996}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -366,7 +369,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3018}
     - Class: 114
-      Script: {instanceID: 4532}
+      Script: {instanceID: 4534}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -416,7 +419,7 @@ ScriptsOnlyBuild:
     className: ShowLineController
   - hash:
       serializedVersion: 2
-      Hash: 6225b04069a050074f72d58b656226da
+      Hash: dc75f6b245e586f30c912d466ec7b706
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RazerLine
@@ -1094,7 +1097,7 @@ ScriptsOnlyBuild:
     className: CircleNoteGenerator
   - hash:
       serializedVersion: 2
-      Hash: e0491f926ab9c11deb1b50441e0a47b9
+      Hash: 89883a842bcb75fb60da31faae258cc4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CircleDetecter
@@ -1134,6 +1137,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: 6bca12f4fb25f812702193b83f7b3abb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ArduinoController
   platform: 19
   scenePathNames:
   - Assets/Scenes/StartScene.unity

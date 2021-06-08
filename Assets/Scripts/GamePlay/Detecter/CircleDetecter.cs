@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CircleDetecter : MonoBehaviour
 {
+    [SerializeField] private int indexOfThisBtn = 0;
+
     [SerializeField]
     private AudioSource beatSound;
 
@@ -31,7 +33,7 @@ public class CircleDetecter : MonoBehaviour
     {
         if(canDestroy)
         {
-            if (Input.GetKeyDown(keyToPress) && !GamePlayController.instance.isPaused)
+            if ((Input.GetKeyDown(keyToPress)) && !GamePlayController.instance.isPaused)
             {
                 
 
@@ -48,11 +50,11 @@ public class CircleDetecter : MonoBehaviour
             }
             
         }
-        if (Input.GetKeyDown(keyToPress) && !GamePlayController.instance.isPaused)
+        if ((Input.GetKeyDown(keyToPress) && !GamePlayController.instance.isPaused))
         {
             point.transform.localScale = new Vector2(1.2f, 1.2f);
         }
-        if (Input.GetKeyUp(keyToPress) && !GamePlayController.instance.isPaused)
+        if ((Input.GetKeyUp(keyToPress) && !GamePlayController.instance.isPaused))
         {
             point.transform.localScale = new Vector2(1, 1);
         }

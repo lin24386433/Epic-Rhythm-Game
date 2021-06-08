@@ -728,6 +728,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e83fca7d94f3f4097493a57296d77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btn1: 4
+  btn2: 0
   keyToPress: 106
   keyToPress2: 121
   effects:
@@ -860,9 +862,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 9fdb5f9e8df0ba344b02275f97d6e930, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 32f190c4f4b343941914b74a5afa3921, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4ed665e3dae60b14caf21d4ab3435459, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1095,6 +1097,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e83fca7d94f3f4097493a57296d77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btn1: 2
+  btn2: 3
   keyToPress: 98
   keyToPress2: 110
   effects:
@@ -1227,9 +1231,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 9fdb5f9e8df0ba344b02275f97d6e930, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 32f190c4f4b343941914b74a5afa3921, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4ed665e3dae60b14caf21d4ab3435459, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1697,9 +1701,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 9fdb5f9e8df0ba344b02275f97d6e930, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 32f190c4f4b343941914b74a5afa3921, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4ed665e3dae60b14caf21d4ab3435459, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1795,6 +1799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f659504680d56496fb05750f0905721d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexOfThisBtn: 1
   beatSound: {fileID: 0}
   keyToPress: 103
   effects:
@@ -1943,6 +1948,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e83fca7d94f3f4097493a57296d77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btn1: 1
+  btn2: 2
   keyToPress: 103
   keyToPress2: 98
   effects:
@@ -2087,9 +2094,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 9fdb5f9e8df0ba344b02275f97d6e930, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 32f190c4f4b343941914b74a5afa3921, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4ed665e3dae60b14caf21d4ab3435459, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2297,9 +2304,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 9fdb5f9e8df0ba344b02275f97d6e930, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 32f190c4f4b343941914b74a5afa3921, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4ed665e3dae60b14caf21d4ab3435459, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2395,6 +2402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f659504680d56496fb05750f0905721d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexOfThisBtn: 2
   beatSound: {fileID: 0}
   keyToPress: 98
   effects:
@@ -2941,6 +2949,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e83fca7d94f3f4097493a57296d77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btn1: 0
+  btn2: 1
   keyToPress: 121
   keyToPress2: 103
   effects:
@@ -2958,9 +2968,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 9fdb5f9e8df0ba344b02275f97d6e930, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 32f190c4f4b343941914b74a5afa3921, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4ed665e3dae60b14caf21d4ab3435459, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4563,9 +4573,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 9fdb5f9e8df0ba344b02275f97d6e930, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 32f190c4f4b343941914b74a5afa3921, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4ed665e3dae60b14caf21d4ab3435459, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4661,6 +4671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f659504680d56496fb05750f0905721d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexOfThisBtn: 4
   beatSound: {fileID: 0}
   keyToPress: 106
   effects:
@@ -4720,6 +4731,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e83fca7d94f3f4097493a57296d77e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btn1: 3
+  btn2: 4
   keyToPress: 110
   keyToPress2: 106
   effects:
@@ -4852,9 +4865,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 9fdb5f9e8df0ba344b02275f97d6e930, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 32f190c4f4b343941914b74a5afa3921, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4ed665e3dae60b14caf21d4ab3435459, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5639,9 +5652,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 9fdb5f9e8df0ba344b02275f97d6e930, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 32f190c4f4b343941914b74a5afa3921, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4ed665e3dae60b14caf21d4ab3435459, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5737,6 +5750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f659504680d56496fb05750f0905721d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexOfThisBtn: 3
   beatSound: {fileID: 0}
   keyToPress: 110
   effects:
@@ -6192,9 +6206,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 9fdb5f9e8df0ba344b02275f97d6e930, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 32f190c4f4b343941914b74a5afa3921, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4ed665e3dae60b14caf21d4ab3435459, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6290,6 +6304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f659504680d56496fb05750f0905721d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexOfThisBtn: 0
   beatSound: {fileID: 0}
   keyToPress: 121
   effects:
@@ -6531,7 +6546,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 9fdb5f9e8df0ba344b02275f97d6e930, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.8
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6944,6 +6959,50 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &2010927606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2010927608}
+  - component: {fileID: 2010927607}
+  m_Layer: 0
+  m_Name: Arduino Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &2010927607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010927606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6c8d68dde39c540a64531f756637e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputNow: 0
+--- !u!4 &2010927608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010927606}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 823.12946, y: 619.6978, z: -1844.8088}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2052795475
 GameObject:
   m_ObjectHideFlags: 0

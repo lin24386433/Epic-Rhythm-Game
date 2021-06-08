@@ -1,0 +1,11 @@
+{
+    "songName": "蒼のワルツ",
+    "songBPM": 120.0,
+    "songLength": 130.14199829101563,
+    "songDifficulty": 1,
+    "maxCombo": 209,
+    "maxScore": 104500,
+    "playerHighCombo": 0,
+    "playerHighScore": 0,
+    "playTimes": 0
+}
